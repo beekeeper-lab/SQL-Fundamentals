@@ -1,0 +1,7 @@
+{
+  "prompt": "Two bank vaults with money being transferred between them. One side shows -$500 (withdrawal) and the other shows +$500 (deposit). A safety rope labeled 'TRANSACTION' connects both operations. Below: 'Both succeed or both fail.'",
+  "full_prompt": "editorial illustration for a programming textbook. Two bank vaults with money being transferred between them. One side shows -$500 (withdrawal) and the other shows +$500 (deposit). A safety rope labeled 'TRANSACTION' connects both operations. Below: 'Both succeed or both fail.' Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m08-bank-transfer-01.png",
+  "generated": "2026-04-08T21:26:40Z"
+}

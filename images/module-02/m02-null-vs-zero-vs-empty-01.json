@@ -1,0 +1,7 @@
+{
+  "prompt": "Three boxes side by side: one labeled 'NULL' is completely transparent/see-through (nothing inside), one labeled '0' has a big zero in it, one labeled 'empty string' has an empty speech bubble. Below reads 'These are NOT the same thing'.",
+  "full_prompt": "editorial illustration for a programming textbook. Three boxes side by side: one labeled 'NULL' is completely transparent/see-through (nothing inside), one labeled '0' has a big zero in it, one labeled 'empty string' has an empty speech bubble. Below reads 'These are NOT the same thing'. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m02-null-vs-zero-vs-empty-01.png",
+  "generated": "2026-04-08T21:24:11Z"
+}

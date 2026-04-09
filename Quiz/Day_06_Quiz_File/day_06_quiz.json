@@ -1,0 +1,157 @@
+{
+  "quiz_title": "Day 6: Aggregate Functions",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which aggregate function returns the total number of rows in a result set?",
+      "options": ["SUM()", "COUNT()", "TOTAL()", "ROWS()"],
+      "answer": "COUNT()"
+    },
+    {
+      "id": 2,
+      "question": "What does SELECT SUM(credits) FROM courses; return?",
+      "options": ["The average of the credits column", "The total of all values in the credits column", "The number of rows in the courses table", "The maximum value in the credits column"],
+      "answer": "The total of all values in the credits column"
+    },
+    {
+      "id": 3,
+      "question": "Which aggregate function calculates the arithmetic mean of a numeric column?",
+      "options": ["MEAN()", "AVERAGE()", "AVG()", "MID()"],
+      "answer": "AVG()"
+    },
+    {
+      "id": 4,
+      "question": "What is the purpose of the GROUP BY clause?",
+      "options": ["To sort results in ascending order", "To split rows into groups and apply aggregate functions to each group", "To filter individual rows before aggregation", "To limit the number of rows returned"],
+      "answer": "To split rows into groups and apply aggregate functions to each group"
+    },
+    {
+      "id": 5,
+      "question": "Which clause filters groups after aggregation?",
+      "options": ["WHERE", "HAVING", "GROUP BY", "ORDER BY"],
+      "answer": "HAVING"
+    },
+    {
+      "id": 6,
+      "question": "What does COUNT(*) count?",
+      "options": ["Only non-NULL values in a specific column", "All rows including those with NULL values", "Only distinct values", "Only numeric columns"],
+      "answer": "All rows including those with NULL values"
+    },
+    {
+      "id": 7,
+      "question": "Which SQL statement is invalid?",
+      "options": ["SELECT major, COUNT(*) FROM students GROUP BY major;", "SELECT major, COUNT(*) FROM students WHERE COUNT(*) > 2 GROUP BY major;", "SELECT major, COUNT(*) FROM students GROUP BY major HAVING COUNT(*) > 2;", "SELECT COUNT(*) FROM students;"],
+      "answer": "SELECT major, COUNT(*) FROM students WHERE COUNT(*) > 2 GROUP BY major;"
+    },
+    {
+      "id": 8,
+      "question": "When does the WHERE clause filter rows relative to GROUP BY?",
+      "options": ["After GROUP BY", "Before GROUP BY", "At the same time as GROUP BY", "WHERE cannot be used with GROUP BY"],
+      "answer": "Before GROUP BY"
+    },
+    {
+      "id": 9,
+      "question": "When does the HAVING clause filter groups relative to GROUP BY?",
+      "options": ["Before GROUP BY", "After GROUP BY", "HAVING replaces GROUP BY", "At the same time as WHERE"],
+      "answer": "After GROUP BY"
+    },
+    {
+      "id": 10,
+      "question": "Which query correctly finds the minimum and maximum age of students?",
+      "options": ["SELECT MINIMUM(age), MAXIMUM(age) FROM students;", "SELECT MIN(age), MAX(age) FROM students;", "SELECT LEAST(age), GREATEST(age) FROM students;", "SELECT LOW(age), HIGH(age) FROM students;"],
+      "answer": "SELECT MIN(age), MAX(age) FROM students;"
+    },
+    {
+      "id": 11,
+      "question": "What happens if you use an aggregate function in a WHERE clause?",
+      "options": ["It works correctly", "It returns NULL", "It causes an error", "It is silently ignored"],
+      "answer": "It causes an error"
+    },
+    {
+      "id": 12,
+      "question": "Which query correctly counts the number of students in each major?",
+      "options": ["SELECT major, COUNT(*) FROM students;", "SELECT major, COUNT(*) FROM students GROUP BY major;", "SELECT COUNT(*) FROM students GROUP BY major;", "SELECT major, COUNT(*) FROM students HAVING major;"],
+      "answer": "SELECT major, COUNT(*) FROM students GROUP BY major;"
+    },
+    {
+      "id": 13,
+      "question": "What does the ROUND() function do when used with AVG()?",
+      "options": ["It rounds the result to the nearest integer by default", "It truncates the result", "It rounds the average to a specified number of decimal places", "It converts the result to a string"],
+      "answer": "It rounds the average to a specified number of decimal places"
+    },
+    {
+      "id": 14,
+      "question": "Which query shows only majors with more than 2 students?",
+      "options": ["SELECT major, COUNT(*) FROM students WHERE COUNT(*) > 2 GROUP BY major;", "SELECT major, COUNT(*) FROM students GROUP BY major HAVING COUNT(*) > 2;", "SELECT major, COUNT(*) FROM students GROUP BY major WHERE COUNT(*) > 2;", "SELECT major FROM students HAVING COUNT(*) > 2;"],
+      "answer": "SELECT major, COUNT(*) FROM students GROUP BY major HAVING COUNT(*) > 2;"
+    },
+    {
+      "id": 15,
+      "question": "Can you use WHERE and HAVING in the same query?",
+      "options": ["No, they are mutually exclusive", "Yes, WHERE filters rows before grouping and HAVING filters groups after", "Yes, but they do the same thing", "Only if GROUP BY is not used"],
+      "answer": "Yes, WHERE filters rows before grouping and HAVING filters groups after"
+    },
+    {
+      "id": 16,
+      "question": "What does SELECT AVG(gpa) FROM students; return if the table has no rows?",
+      "options": ["0", "NULL", "An error", "An empty string"],
+      "answer": "NULL"
+    },
+    {
+      "id": 17,
+      "question": "Which query groups courses by both department and credits?",
+      "options": ["SELECT department, credits, COUNT(*) FROM courses GROUP BY department AND credits;", "SELECT department, credits, COUNT(*) FROM courses GROUP BY department, credits;", "SELECT department, credits, COUNT(*) FROM courses GROUP BY (department, credits);", "SELECT department + credits, COUNT(*) FROM courses GROUP BY department;"],
+      "answer": "SELECT department, credits, COUNT(*) FROM courses GROUP BY department, credits;"
+    },
+    {
+      "id": 18,
+      "question": "What is an alias in the context of aggregate queries?",
+      "options": ["A backup name for a table", "A temporary name given to a column or expression using AS", "A type of JOIN operation", "A way to rename a database"],
+      "answer": "A temporary name given to a column or expression using AS"
+    },
+    {
+      "id": 19,
+      "question": "Which clause would you use to sort the results of a GROUP BY query?",
+      "options": ["SORT BY", "ARRANGE BY", "ORDER BY", "RANK BY"],
+      "answer": "ORDER BY"
+    },
+    {
+      "id": 20,
+      "question": "What does LIMIT 1 do at the end of a query?",
+      "options": ["Returns only the first row of the result set", "Limits the query to one column", "Limits the number of groups to one", "Filters rows where the count equals one"],
+      "answer": "Returns only the first row of the result set"
+    },
+    {
+      "id": 21,
+      "question": "Which aggregate function would you NOT use on a text column?",
+      "options": ["COUNT()", "MIN()", "MAX()", "SUM()"],
+      "answer": "SUM()"
+    },
+    {
+      "id": 22,
+      "question": "In SELECT major, AVG(gpa) FROM students GROUP BY major HAVING AVG(gpa) > 3.0; what does HAVING filter on?",
+      "options": ["Individual student GPAs", "The average GPA of each major group", "The total GPA sum", "Students with GPA above 3.0"],
+      "answer": "The average GPA of each major group"
+    },
+    {
+      "id": 23,
+      "question": "What is the correct order of clauses in a SQL query that uses WHERE, GROUP BY, HAVING, and ORDER BY?",
+      "options": ["GROUP BY, WHERE, HAVING, ORDER BY", "WHERE, HAVING, GROUP BY, ORDER BY", "WHERE, GROUP BY, HAVING, ORDER BY", "HAVING, WHERE, GROUP BY, ORDER BY"],
+      "answer": "WHERE, GROUP BY, HAVING, ORDER BY"
+    },
+    {
+      "id": 24,
+      "question": "How does COUNT(column_name) differ from COUNT(*)?",
+      "options": ["COUNT(column_name) counts only non-NULL values in that column", "There is no difference", "COUNT(column_name) is faster", "COUNT(*) counts only non-NULL values"],
+      "answer": "COUNT(column_name) counts only non-NULL values in that column"
+    },
+    {
+      "id": 25,
+      "question": "Which query finds majors where the average GPA of students aged 21 or older is above 3.2?",
+      "options": ["SELECT major, AVG(gpa) FROM students HAVING age >= 21 AND AVG(gpa) > 3.2 GROUP BY major;", "SELECT major, AVG(gpa) FROM students WHERE age >= 21 GROUP BY major HAVING AVG(gpa) > 3.2;", "SELECT major, AVG(gpa) FROM students GROUP BY major WHERE age >= 21 HAVING AVG(gpa) > 3.2;", "SELECT major, AVG(gpa) FROM students WHERE AVG(gpa) > 3.2 GROUP BY major HAVING age >= 21;"],
+      "answer": "SELECT major, AVG(gpa) FROM students WHERE age >= 21 GROUP BY major HAVING AVG(gpa) > 3.2;"
+    }
+  ]
+}

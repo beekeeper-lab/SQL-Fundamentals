@@ -1,0 +1,7 @@
+{
+  "prompt": "A hand slipping a forged letter into a mail slot. The letter reads 'Dear Database, DROP TABLE students; --'. A security guard labeled 'Parameterized Query' is blocking a second attempt, holding a shield.",
+  "full_prompt": "editorial illustration for a programming textbook. A hand slipping a forged letter into a mail slot. The letter reads 'Dear Database, DROP TABLE students; --'. A security guard labeled 'Parameterized Query' is blocking a second attempt, holding a shield. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m09-sql-injection-letter-01.png",
+  "generated": "2026-04-08T21:27:04Z"
+}

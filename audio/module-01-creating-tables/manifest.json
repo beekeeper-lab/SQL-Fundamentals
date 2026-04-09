@@ -1,0 +1,58 @@
+[
+  {
+    "index": 1,
+    "module": "module-01-creating-tables",
+    "audio_file": "01_module-01-creating-tables.mp3",
+    "text": "In Module 0, you built your first tables. They worked, but they were a little... naive. You could shove any data into any column. No rules, no guardrails. That's like building a house without a building code -- sure, it stands up, but the first strong wind is going to cause problems. In this module, we're going to learn how to design tables with data types, constraints, and relationships. These are the blueprints and building codes for your data.",
+    "size_bytes": 463978
+  },
+  {
+    "index": 2,
+    "module": "module-01-creating-tables",
+    "audio_file": "02_module-01-creating-tables.mp3",
+    "text": "Here's a quirk about SQLite that confuses people coming from other databases. SQLite uses something called \"type affinity\" -- it's flexible about types. If you declare a column as INTEGER but insert the text \"hello,\" SQLite won't stop you. Other databases would throw an error. This is why constraints -- which we'll cover next -- are extra important in SQLite. They're your real enforcement mechanism.",
+    "size_bytes": 458127
+  },
+  {
+    "index": 3,
+    "module": "module-01-creating-tables",
+    "audio_file": "03_module-01-creating-tables.mp3",
+    "text": "Here's the mindset shift. Without constraints, YOU are responsible for making sure every piece of data is valid -- every time, forever. With constraints, the DATABASE is responsible. It never gets tired, it never forgets to check, and it never lets bad data slip through because it's Friday afternoon and everyone wants to go home. Constraints are your safety net. Use them generously.",
+    "size_bytes": 414241
+  },
+  {
+    "index": 4,
+    "module": "module-01-creating-tables",
+    "audio_file": "04_module-01-creating-tables.mp3",
+    "text": "Foreign keys are where the magic of relational databases really shows up. Without them, you could enroll a student who doesn't exist in a course that doesn't exist. With them, the database guarantees that every reference points to something real. It's like a hyperlink that's guaranteed to never be a 404 error.",
+    "size_bytes": 341934
+  },
+  {
+    "index": 5,
+    "module": "module-01-creating-tables",
+    "audio_file": "05_module-01-creating-tables.mp3",
+    "text": "DROP TABLE is the delete key for tables. Use it freely during learning -- you can always recreate the table. But in a production database with real data? Treat it like a loaded weapon. The IF EXISTS clause is your safety catch -- always include it.",
+    "size_bytes": 302646
+  },
+  {
+    "index": 6,
+    "module": "module-01-creating-tables",
+    "audio_file": "06_module-01-creating-tables.mp3",
+    "text": "Exercise 4 is the most important one here. The enrollments table has a composite primary key AND foreign keys -- that's real-world table design. If you can build that table and understand why each constraint is there, you've leveled up significantly from Module 0. Take your time and make sure you understand every line.",
+    "size_bytes": 316021
+  },
+  {
+    "index": 7,
+    "module": "module-01-creating-tables",
+    "audio_file": "07_module-01-creating-tables.mp3",
+    "text": "Let's recap. You started this module knowing how to create basic tables. Now you know how to create tables with real rules -- types that describe the data, constraints that enforce quality, and foreign keys that connect tables together. Your tables went from empty spreadsheets to self-defending data structures. In the next module, you'll learn how to fill these tables with data -- and what happens when data breaks the rules.",
+    "size_bytes": 427616
+  },
+  {
+    "index": 8,
+    "module": "module-01-creating-tables",
+    "audio_file": "08_module-01-creating-tables.mp3",
+    "text": "That's Module 1 in the books. You know data types, constraints, composite keys, foreign keys, ALTER TABLE, and DROP TABLE. That's a serious toolkit. Next up, we're going to fill these tables with data using INSERT -- single rows, multiple rows, and what to do when things go wrong. See you in Module 2.",
+    "size_bytes": 354891
+  }
+]

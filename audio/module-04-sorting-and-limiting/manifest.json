@@ -1,0 +1,86 @@
+[
+  {
+    "index": 1,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "01_module-04-sorting-and-limiting.mp3",
+    "text": "Welcome to Module 4. In the last module, you learned how to filter data -- how to ask the right questions. But getting the right rows is only half the battle. If your results come back in random order, or you get 10,000 rows when you only need the top 5, you've got a presentation problem. This module solves that. We're going to sort, limit, paginate, and deduplicate your results until they're exactly what you need.",
+    "size_bytes": 454365
+  },
+  {
+    "index": 2,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "02_module-04-sorting-and-limiting.mp3",
+    "text": "The key mental model is this: without ORDER BY, you have a pile of cards tossed on a table. With ORDER BY, you have a neatly arranged stack. The database will not sort for you automatically -- ever. If order matters to you, say so explicitly.",
+    "size_bytes": 297631
+  },
+  {
+    "index": 3,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "03_module-04-sorting-and-limiting.mp3",
+    "text": "Multi-column sorting is one of those features that feels obvious once you see it, but it's surprisingly powerful. Any time you need a \"sort by this, then by that\" structure -- which is most of the time in real applications -- this is how you do it.",
+    "size_bytes": 285510
+  },
+  {
+    "index": 4,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "04_module-04-sorting-and-limiting.mp3",
+    "text": "NULL sorting is one of those details that bites you exactly once, and then you remember it forever. In SQLite, NULLs come first when sorting ascending. If that's not what you want, filter them out with WHERE IS NOT NULL before sorting.",
+    "size_bytes": 268373
+  },
+  {
+    "index": 5,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "05_module-04-sorting-and-limiting.mp3",
+    "text": "LIMIT plus ORDER BY is one of the most common query patterns in all of SQL. \"Show me the top 10 by sales.\" \"Show me the 5 most recent orders.\" \"What's the single most expensive product?\" You'll write this pattern hundreds of times in your career. It's simple, it's powerful, and it's everywhere.",
+    "size_bytes": 318946
+  },
+  {
+    "index": 6,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "06_module-04-sorting-and-limiting.mp3",
+    "text": "The pagination formula is worth memorizing: offset equals page number minus one, times page size. It's one of those formulas that comes up in almost every web application. Any time you see a \"page 2 of 47\" interface, there's probably a LIMIT and OFFSET query running behind it.",
+    "size_bytes": 351965
+  },
+  {
+    "index": 7,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "07_module-04-sorting-and-limiting.mp3",
+    "text": "DISTINCT is your deduplication tool. Need a list of all majors? All states? All departments? DISTINCT gives you the unique values. Just remember: when you SELECT DISTINCT with multiple columns, it's looking for unique combinations, not unique values in each individual column.",
+    "size_bytes": 342770
+  },
+  {
+    "index": 8,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "08_module-04-sorting-and-limiting.mp3",
+    "text": "Notice the pattern in all of these: filter with WHERE, sort with ORDER BY, restrict with LIMIT. That three-step combo is the bread and butter of SQL. You'll write it so often it'll become muscle memory. And remember -- the clause order matters. SQL is very particular about that.",
+    "size_bytes": 364504
+  },
+  {
+    "index": 9,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "09_module-04-sorting-and-limiting.mp3",
+    "text": "The most common mistake I see is LIMIT without ORDER BY. Without ORDER BY, LIMIT just gives you arbitrary rows. It's like asking for \"the top 5\" without saying what they're the top 5 of. Always sort first, then limit.",
+    "size_bytes": 259596
+  },
+  {
+    "index": 10,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "10_module-04-sorting-and-limiting.mp3",
+    "text": "Exercise 6 is the real test. It combines everything from both this module and the last one -- filtering, sorting, limiting, and NULL handling -- into a single query. If you can write that one from scratch without looking back, you're in great shape.",
+    "size_bytes": 291779
+  },
+  {
+    "index": 11,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "11_module-04-sorting-and-limiting.mp3",
+    "text": "Here's the summary for Module 4. ORDER BY sorts, LIMIT restricts, OFFSET paginates, and DISTINCT deduplicates. Combined with the filtering you learned in Module 3, you now have all the tools to write clean, organized, presentation-ready queries. Next up: we stop looking at individual rows and start looking at patterns. Aggregate functions are next.",
+    "size_bytes": 396269
+  },
+  {
+    "index": 12,
+    "module": "module-04-sorting-and-limiting",
+    "audio_file": "12_module-04-sorting-and-limiting.mp3",
+    "text": "You've learned to filter and sort individual rows. But what if you want to zoom out? What's the average GPA? How many students per major? What's the highest enrollment year? Module 5 introduces aggregate functions -- the tools that let you see patterns instead of individual data points. See you there.",
+    "size_bytes": 298466
+  }
+]

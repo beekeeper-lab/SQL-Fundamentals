@@ -1,0 +1,7 @@
+{
+  "prompt": "Three tables shown as connected bulletin boards: Students, Courses, and Enrollments in the middle. Red string/yarn connects pins on the Enrollments board to matching pins on Students and Courses, like a detective's evidence board.",
+  "full_prompt": "editorial illustration for a programming textbook. Three tables shown as connected bulletin boards: Students, Courses, and Enrollments in the middle. Red string/yarn connects pins on the Enrollments board to matching pins on Students and Courses, like a detective's evidence board. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m01-foreign-key-arrows-01.png",
+  "generated": "2026-04-08T21:23:47Z"
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "index": 1,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "01_module-03-select-and-filtering.mp3",
+    "text": "Welcome to Module 3. This is where SQL stops being a toy and starts being a tool. Up until now, you've been looking at tables and understanding structure. Now? Now you're going to learn how to ask your database questions -- specific questions, filtered questions, fuzzy questions. By the end of this module, you'll be able to pull exactly the data you need from any table. Let's go.",
+    "size_bytes": 411315
+  },
+  {
+    "index": 2,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "02_module-03-select-and-filtering.mp3",
+    "text": "Here's a habit to build early: stop using SELECT star in production code. It's fine for quick exploration -- like when you're poking around a table to see what's in there. But when you're writing a real query, name your columns. It's clearer, it's faster, and it won't break when someone adds a new column to the table next month.",
+    "size_bytes": 362832
+  },
+  {
+    "index": 3,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "03_module-03-select-and-filtering.mp3",
+    "text": "Aliases might seem like a small thing, but they make your query results dramatically more readable. When you're presenting data to someone who doesn't know what \"stu_fn\" means, aliases are your best friend. Get in the habit of using them whenever column names aren't self-explanatory.",
+    "size_bytes": 322708
+  },
+  {
+    "index": 4,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "04_module-03-select-and-filtering.mp3",
+    "text": "The WHERE clause is where SQL goes from \"show me a table\" to \"answer my question.\" Every comparison operator gives you a different way to slice the data. Equal, not equal, greater than, less than -- these are the fundamental building blocks of every filter you'll ever write.",
+    "size_bytes": 310169
+  },
+  {
+    "index": 5,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "05_module-03-select-and-filtering.mp3",
+    "text": "AND and OR are straightforward on their own. The trouble starts when you combine them. AND binds tighter than OR -- just like multiplication before addition. The solution is simple: use parentheses every single time you mix AND and OR in the same WHERE clause. It makes your intent crystal clear and prevents bugs that are really hard to spot.",
+    "size_bytes": 414241
+  },
+  {
+    "index": 6,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "06_module-03-select-and-filtering.mp3",
+    "text": "BETWEEN is syntactic sugar -- it doesn't do anything you can't do with greater-than-or-equal and less-than-or-equal. But it reads better, and readable SQL is maintainable SQL. One thing to remember: BETWEEN is inclusive on both ends. If you say BETWEEN 3.0 AND 3.5, both 3.0 and 3.5 are included.",
+    "size_bytes": 379968
+  },
+  {
+    "index": 7,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "07_module-03-select-and-filtering.mp3",
+    "text": "IN is one of those features that, once you learn it, you'll use constantly. Any time you find yourself writing three or more OR conditions on the same column, switch to IN. It's cleaner, it's shorter, and it's less likely to have a bug hiding in it.",
+    "size_bytes": 250819
+  },
+  {
+    "index": 8,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "08_module-03-select-and-filtering.mp3",
+    "text": "LIKE is your fuzzy search. The percent sign matches any number of characters, the underscore matches exactly one. Between these two wildcards, you can express just about any text pattern you need. It's especially useful for searching names, emails, and any free-text field where exact matching would be too rigid.",
+    "size_bytes": 345696
+  },
+  {
+    "index": 9,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "09_module-03-select-and-filtering.mp3",
+    "text": "NULL will bite you if you're not careful. It's not zero, it's not an empty string, it's not false -- it's the complete absence of data. And because of that, normal comparison operators don't work with it. You must use IS NULL and IS NOT NULL. Burn this into your brain. You will forget it at least once, spend twenty minutes debugging, and then remember this warning.",
+    "size_bytes": 408808
+  },
+  {
+    "index": 10,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "10_module-03-select-and-filtering.mp3",
+    "text": "These complex queries are where everything comes together. Notice how each one reads almost like English: \"Show me students where GPA is above 3.7 and major is in this list and they have an advisor.\" That's the beauty of SQL -- when you write it well, it tells you exactly what it does. No decoding required.",
+    "size_bytes": 373281
+  },
+  {
+    "index": 11,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "11_module-03-select-and-filtering.mp3",
+    "text": "That NULL question comes up every single time, and it trips up people who've been writing SQL for years. There's no shame in finding it confusing. Three-valued logic is genuinely weird. The practical takeaway is simple: for NULL, always use IS NULL or IS NOT NULL. For everything else, use equals.",
+    "size_bytes": 348204
+  },
+  {
+    "index": 12,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "12_module-03-select-and-filtering.mp3",
+    "text": "Exercises 3 and 4 are the real test here. They force you to combine multiple techniques in a single query. Don't skip exercise 5 either -- understanding operator precedence with AND and OR will save you hours of debugging in your career.",
+    "size_bytes": 270045
+  },
+  {
+    "index": 13,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "13_module-03-select-and-filtering.mp3",
+    "text": "Let's wrap up Module 3. You now have the tools to ask your database precise questions. SELECT picks the columns, WHERE filters the rows, and everything in between -- the comparisons, the logical operators, BETWEEN, IN, LIKE, IS NULL -- gives you the precision to find exactly what you need. In the next module, you'll learn how to sort and organize those results.",
+    "size_bytes": 385402
+  },
+  {
+    "index": 14,
+    "module": "module-03-select-and-filtering",
+    "audio_file": "14_module-03-select-and-filtering.mp3",
+    "text": "Now that you can filter your data, the next question is: how do you organize it? Module 4 covers sorting, limiting, and pagination -- the tools that turn a pile of matching rows into a clean, presentable result set. See you there.",
+    "size_bytes": 256671
+  }
+]

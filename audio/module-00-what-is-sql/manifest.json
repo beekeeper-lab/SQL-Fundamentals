@@ -1,0 +1,65 @@
+[
+  {
+    "index": 1,
+    "module": "module-00-what-is-sql",
+    "audio_file": "01_module-00-what-is-sql.mp3",
+    "text": "Welcome to Module 0 -- the very beginning. If you've never touched a database before, perfect. If you've used spreadsheets, even better -- because you already understand more than you think. We're about to learn how to talk to databases using a language called SQL, and by the end of this module, you'll have created your first database, built a table, stuffed data into it, and asked it questions. Let's go.",
+    "size_bytes": 421764
+  },
+  {
+    "index": 2,
+    "module": "module-00-what-is-sql",
+    "audio_file": "02_module-00-what-is-sql.mp3",
+    "text": "Think of it this way. You wouldn't just dump a thousand paper records into a cardboard box and call it \"organized.\" You'd file them into labeled folders, in labeled drawers, in a cabinet. A relational database does the same thing -- but digitally, and with the ability to search through millions of records in milliseconds.",
+    "size_bytes": 321454
+  },
+  {
+    "index": 3,
+    "module": "module-00-what-is-sql",
+    "audio_file": "03_module-00-what-is-sql.mp3",
+    "text": "Here's a way to remember the three categories. DDL is the architect -- it designs the building. DML is the moving crew -- it puts stuff in, rearranges it, and takes stuff out. DQL is the detective -- it asks questions and finds answers. Architect, movers, detective. That's all of SQL.",
+    "size_bytes": 362832
+  },
+  {
+    "index": 4,
+    "module": "module-00-what-is-sql",
+    "audio_file": "04_module-00-what-is-sql.mp3",
+    "text": "Real talk -- the SQL you learn with SQLite works in MySQL, PostgreSQL, and everywhere else. The language is the same. So we're using the simplest tool to learn the universal skill. Once you know SQL, switching databases later is like switching from driving an automatic to a manual -- same road, same rules, just a few different controls.",
+    "size_bytes": 415495
+  },
+  {
+    "index": 5,
+    "module": "module-00-what-is-sql",
+    "audio_file": "05_module-00-what-is-sql.mp3",
+    "text": "Here's a common gotcha. You type a query, hit Enter, and... nothing happens. Just a weird ...> prompt staring at you. Don't panic. You just forgot the semicolon at the end. Type a semicolon, hit Enter, and your query will run. Every single person learning SQL hits this at least once. Now you know the fix.",
+    "size_bytes": 371191
+  },
+  {
+    "index": 6,
+    "module": "module-00-what-is-sql",
+    "audio_file": "06_module-00-what-is-sql.mp3",
+    "text": "Take a moment here. You just went from an empty terminal to a fully functioning database with five employee records. That first SELECT query -- where data you typed actually comes back in a nice organized table -- that's the moment it clicks for most people. You told the database what you wanted, and it delivered. That's SQL.",
+    "size_bytes": 377879
+  },
+  {
+    "index": 7,
+    "module": "module-00-what-is-sql",
+    "audio_file": "07_module-00-what-is-sql.mp3",
+    "text": "Exercise 6 is the important one. Anyone can copy and paste a CREATE TABLE statement. Writing one from scratch -- adapting a pattern you've seen to a new situation -- that's where learning happens. Take your time with it. Get it wrong. Fix it. That's the process.",
+    "size_bytes": 313931
+  },
+  {
+    "index": 8,
+    "module": "module-00-what-is-sql",
+    "audio_file": "08_module-00-what-is-sql.mp3",
+    "text": "Here's your recap. You learned what databases are -- organized collections of tables. You learned what SQL is -- the language databases speak. You installed SQLite, created a database file, built a table, loaded data into it, and asked questions about that data. And you built a second table on your own. That's a real foundation. In the next module, we'll learn how to design better tables with rules that keep bad data out.",
+    "size_bytes": 475681
+  },
+  {
+    "index": 9,
+    "module": "module-00-what-is-sql",
+    "audio_file": "09_module-00-what-is-sql.mp3",
+    "text": "That wraps up Module 0. You've got a database, you've got data in it, and you've got the basics down. Next up, we're going to learn how to build tables that are much smarter -- tables with rules, constraints, and guardrails that keep bad data out. See you in Module 1.",
+    "size_bytes": 313095
+  }
+]

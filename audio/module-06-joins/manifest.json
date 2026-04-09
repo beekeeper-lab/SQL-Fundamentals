@@ -1,0 +1,79 @@
+[
+  {
+    "index": 1,
+    "module": "module-06-joins",
+    "audio_file": "01_module-06-joins.mp3",
+    "text": "Welcome to Module 6, and honestly? This is the one. If there's a single concept that separates someone who \"knows a little SQL\" from someone who actually gets relational databases, it's joins. Everything you've done so far has been querying one table at a time. That's like reading one chapter of a book and saying you've read the whole thing. Joins let you read the whole story.",
+    "size_bytes": 404628
+  },
+  {
+    "index": 2,
+    "module": "module-06-joins",
+    "audio_file": "02_module-06-joins.mp3",
+    "text": "The reason data lives in separate tables has a fancy name -- normalization -- but the idea is simple. Don't repeat yourself. Keep each fact in one place. When you need to see the full picture, joins reassemble the pieces. It's elegant, it's efficient, and once you get it, you'll never want to go back to spreadsheet-style everything-in-one-table thinking.",
+    "size_bytes": 381640
+  },
+  {
+    "index": 3,
+    "module": "module-06-joins",
+    "audio_file": "03_module-06-joins.mp3",
+    "text": "INNER JOIN is the most common join you'll write. If someone just says \"join\" without specifying a type, they almost always mean INNER JOIN. In fact, you can even drop the word INNER -- just writing JOIN by itself defaults to an inner join. But I'd recommend being explicit, at least while you're learning. Say what you mean.",
+    "size_bytes": 365340
+  },
+  {
+    "index": 4,
+    "module": "module-06-joins",
+    "audio_file": "04_module-06-joins.mp3",
+    "text": "Here's a pro tip that will save you from a common mistake. The table order matters in a LEFT JOIN. The left table -- the one listed first, after FROM -- is the one that keeps all its rows. If you write FROM students LEFT JOIN enrollments, all students are preserved. Flip the order and you preserve all enrollments instead. The word \"left\" refers to position in the query, not some abstract concept.",
+    "size_bytes": 439319
+  },
+  {
+    "index": 5,
+    "module": "module-06-joins",
+    "audio_file": "05_module-06-joins.mp3",
+    "text": "Don't stress about RIGHT JOIN or FULL OUTER JOIN too much. RIGHT JOIN is just a LEFT JOIN with the tables swapped, and FULL OUTER JOIN is rare in the wild. If you master INNER JOIN and LEFT JOIN, you'll handle 95% of the joins you'll ever write. The other 5%? You'll Google them and be fine.",
+    "size_bytes": 379968
+  },
+  {
+    "index": 6,
+    "module": "module-06-joins",
+    "audio_file": "06_module-06-joins.mp3",
+    "text": "Self-joins are one of those things that seem weird until they click, and then you see uses for them everywhere. The key insight is that aliases let the same table pretend to be two different tables. Table \"a\" is one copy of students, table \"b\" is another copy. SQL doesn't care that they're actually the same table -- it treats them as two separate participants in the join.",
+    "size_bytes": 390417
+  },
+  {
+    "index": 7,
+    "module": "module-06-joins",
+    "audio_file": "07_module-06-joins.mp3",
+    "text": "These complex queries are the payoff for everything you've learned so far. Joins bring the tables together. WHERE filters individual rows. GROUP BY collapses rows into groups. HAVING filters those groups. Aggregate functions crunch the numbers. And ORDER BY presents the results the way you want. Each piece you've learned is a tool, and now you're combining all of them in a single query. This is real SQL.",
+    "size_bytes": 492817
+  },
+  {
+    "index": 8,
+    "module": "module-06-joins",
+    "audio_file": "08_module-06-joins.mp3",
+    "text": "The most common confusion I see is people using INNER JOIN when they should be using LEFT JOIN, and then wondering why some rows disappeared from their results. If rows are vanishing, check your join type. INNER JOIN drops unmatched rows. LEFT JOIN keeps everything from the left side. That's usually the answer.",
+    "size_bytes": 364504
+  },
+  {
+    "index": 9,
+    "module": "module-06-joins",
+    "audio_file": "09_module-06-joins.mp3",
+    "text": "Exercise 6 is the tricky one. When you use LEFT JOIN with COUNT, you need to count a column from the right table, not use COUNT star. COUNT star counts all rows including the NULL ones from the left join, which would give you 1 instead of 0 for unenrolled students. COUNT of a specific column skips NULLs. Try it both ways and see the difference.",
+    "size_bytes": 385402
+  },
+  {
+    "index": 10,
+    "module": "module-06-joins",
+    "audio_file": "10_module-06-joins.mp3",
+    "text": "Here's your cheat sheet. INNER JOIN for matched rows only. LEFT JOIN for everything from the left plus matches from the right. CROSS JOIN for every possible combination. Self-join when you need to compare rows within the same table. And when in doubt, start with LEFT JOIN -- you can always see what's missing and then switch to INNER JOIN if you don't need the unmatched rows.",
+    "size_bytes": 444752
+  },
+  {
+    "index": 11,
+    "module": "module-06-joins",
+    "audio_file": "11_module-06-joins.mp3",
+    "text": "You just learned how to connect tables together with joins. In the next module, you'll learn how to nest queries inside other queries -- like Russian dolls made of SQL. Combined with joins, subqueries let you answer questions that would be nearly impossible with a single flat query. See you in Module 7.",
+    "size_bytes": 296795
+  }
+]

@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 8: Subqueries and Views",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a subquery?",
+      "options": [
+        "A query that runs on a separate database",
+        "A query nested inside another query",
+        "A query that only returns one column",
+        "A query that modifies table structure"
+      ],
+      "answer": "A query nested inside another query"
+    },
+    {
+      "id": 2,
+      "question": "What is a scalar subquery?",
+      "options": [
+        "A subquery that returns multiple rows and columns",
+        "A subquery that returns a single value",
+        "A subquery that modifies data",
+        "A subquery that creates a new table"
+      ],
+      "answer": "A subquery that returns a single value"
+    },
+    {
+      "id": 3,
+      "question": "Which SQL clause is most commonly used to place a subquery that filters rows?",
+      "options": [
+        "SELECT",
+        "FROM",
+        "WHERE",
+        "GROUP BY"
+      ],
+      "answer": "WHERE"
+    },
+    {
+      "id": 4,
+      "question": "What does the following query return?\nSELECT name FROM students WHERE gpa > (SELECT AVG(gpa) FROM students);",
+      "options": [
+        "All students",
+        "Students with GPA above the overall average",
+        "The student with the highest GPA",
+        "Students with GPA below the overall average"
+      ],
+      "answer": "Students with GPA above the overall average"
+    },
+    {
+      "id": 5,
+      "question": "Which keyword is used with a subquery that returns a list of values?",
+      "options": [
+        "BETWEEN",
+        "LIKE",
+        "IN",
+        "HAVING"
+      ],
+      "answer": "IN"
+    },
+    {
+      "id": 6,
+      "question": "What does NOT IN do when used with a subquery?",
+      "options": [
+        "Returns rows where the value matches any result from the subquery",
+        "Returns rows where the value does not match any result from the subquery",
+        "Returns rows where the subquery returns no results",
+        "Deletes rows that match the subquery results"
+      ],
+      "answer": "Returns rows where the value does not match any result from the subquery"
+    },
+    {
+      "id": 7,
+      "question": "What does the EXISTS keyword check?",
+      "options": [
+        "Whether a table exists in the database",
+        "Whether a column contains NULL values",
+        "Whether a subquery returns any rows at all",
+        "Whether a view has been created"
+      ],
+      "answer": "Whether a subquery returns any rows at all"
+    },
+    {
+      "id": 8,
+      "question": "What value is commonly selected inside an EXISTS subquery?",
+      "options": [
+        "SELECT *",
+        "SELECT COUNT(*)",
+        "SELECT 1",
+        "SELECT NULL"
+      ],
+      "answer": "SELECT 1"
+    },
+    {
+      "id": 9,
+      "question": "What is a derived table?",
+      "options": [
+        "A table created with CREATE TABLE",
+        "A subquery placed in the FROM clause that acts as a temporary table",
+        "A table that stores derived calculations permanently",
+        "A table that references another database"
+      ],
+      "answer": "A subquery placed in the FROM clause that acts as a temporary table"
+    },
+    {
+      "id": 10,
+      "question": "When using a subquery in the FROM clause, what must you provide?",
+      "options": [
+        "A WHERE clause",
+        "An alias for the derived table",
+        "A LIMIT clause",
+        "A PRIMARY KEY"
+      ],
+      "answer": "An alias for the derived table"
+    },
+    {
+      "id": 11,
+      "question": "What is a correlated subquery?",
+      "options": [
+        "A subquery that runs independently of the outer query",
+        "A subquery that references a column from the outer query",
+        "A subquery that returns exactly two columns",
+        "A subquery that uses only aggregate functions"
+      ],
+      "answer": "A subquery that references a column from the outer query"
+    },
+    {
+      "id": 12,
+      "question": "How many times does a correlated subquery execute?",
+      "options": [
+        "Once for the entire query",
+        "Once per table in the database",
+        "Once for each row processed by the outer query",
+        "Twice: once for filtering and once for sorting"
+      ],
+      "answer": "Once for each row processed by the outer query"
+    },
+    {
+      "id": 13,
+      "question": "What is a view in SQL?",
+      "options": [
+        "A copy of a table stored in memory",
+        "A saved query that acts like a virtual table",
+        "A temporary table that persists between sessions",
+        "A backup of the database schema"
+      ],
+      "answer": "A saved query that acts like a virtual table"
+    },
+    {
+      "id": 14,
+      "question": "Which statement creates a view?",
+      "options": [
+        "MAKE VIEW view_name AS SELECT ...",
+        "CREATE VIEW view_name AS SELECT ...",
+        "BUILD VIEW view_name FROM SELECT ...",
+        "DEFINE VIEW view_name AS SELECT ..."
+      ],
+      "answer": "CREATE VIEW view_name AS SELECT ..."
+    },
+    {
+      "id": 15,
+      "question": "Does a view store data by itself?",
+      "options": [
+        "Yes, it stores a snapshot of the data at creation time",
+        "Yes, it duplicates the data from the underlying tables",
+        "No, it runs the stored query each time it is accessed",
+        "No, but it caches results after the first query"
+      ],
+      "answer": "No, it runs the stored query each time it is accessed"
+    },
+    {
+      "id": 16,
+      "question": "How do you query a view after it has been created?",
+      "options": [
+        "EXECUTE VIEW view_name",
+        "RUN view_name",
+        "SELECT * FROM view_name",
+        "CALL view_name"
+      ],
+      "answer": "SELECT * FROM view_name"
+    },
+    {
+      "id": 17,
+      "question": "Which statement removes a view from the database?",
+      "options": [
+        "DELETE VIEW view_name",
+        "REMOVE VIEW view_name",
+        "DROP VIEW view_name",
+        "DESTROY VIEW view_name"
+      ],
+      "answer": "DROP VIEW view_name"
+    },
+    {
+      "id": 18,
+      "question": "What does DROP VIEW IF EXISTS prevent?",
+      "options": [
+        "Dropping a view that contains data",
+        "An error if the view does not exist",
+        "Accidentally dropping a table instead of a view",
+        "Other users from accessing the view"
+      ],
+      "answer": "An error if the view does not exist"
+    },
+    {
+      "id": 19,
+      "question": "Which of the following is a valid use case for a view?",
+      "options": [
+        "Permanently storing calculated columns on disk",
+        "Simplifying complex queries by saving them as a reusable virtual table",
+        "Increasing the storage capacity of the database",
+        "Automatically backing up data every hour"
+      ],
+      "answer": "Simplifying complex queries by saving them as a reusable virtual table"
+    },
+    {
+      "id": 20,
+      "question": "In the query below, what type of subquery is used?\nSELECT name FROM students s1 WHERE gpa > (SELECT AVG(gpa) FROM students s2 WHERE s2.major = s1.major);",
+      "options": [
+        "Scalar subquery",
+        "List subquery",
+        "Correlated subquery",
+        "Derived table"
+      ],
+      "answer": "Correlated subquery"
+    },
+    {
+      "id": 21,
+      "question": "What does NOT EXISTS return?",
+      "options": [
+        "TRUE when the subquery returns at least one row",
+        "TRUE when the subquery returns no rows",
+        "The count of rows not matching",
+        "NULL if the subquery is empty"
+      ],
+      "answer": "TRUE when the subquery returns no rows"
+    },
+    {
+      "id": 22,
+      "question": "Which clause can you use on a view just like on a regular table?",
+      "options": [
+        "ALTER COLUMN",
+        "ADD CONSTRAINT",
+        "WHERE",
+        "CREATE INDEX"
+      ],
+      "answer": "WHERE"
+    },
+    {
+      "id": 23,
+      "question": "What happens if a subquery used with a comparison operator (=, >, <) returns more than one row?",
+      "options": [
+        "Only the first row is used",
+        "The query returns all matching rows",
+        "An error occurs",
+        "The results are automatically averaged"
+      ],
+      "answer": "An error occurs"
+    },
+    {
+      "id": 24,
+      "question": "Which of the following correctly uses a derived table?",
+      "options": [
+        "SELECT * FROM (SELECT major, AVG(gpa) AS avg_gpa FROM students GROUP BY major) AS stats;",
+        "SELECT * FROM SELECT major, AVG(gpa) FROM students GROUP BY major;",
+        "SELECT * INTO (SELECT major, AVG(gpa) FROM students GROUP BY major);",
+        "SELECT * FROM DERIVED (SELECT major FROM students);"
+      ],
+      "answer": "SELECT * FROM (SELECT major, AVG(gpa) AS avg_gpa FROM students GROUP BY major) AS stats;"
+    },
+    {
+      "id": 25,
+      "question": "Why might you prefer EXISTS over IN when checking for matching rows in a large table?",
+      "options": [
+        "EXISTS always returns fewer rows",
+        "EXISTS can stop as soon as it finds one matching row, which can be faster",
+        "IN does not work with subqueries",
+        "EXISTS supports more data types than IN"
+      ],
+      "answer": "EXISTS can stop as soon as it finds one matching row, which can be faster"
+    }
+  ]
+}

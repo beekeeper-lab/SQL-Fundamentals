@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 10: Indexes and Best Practices",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a database index most similar to?",
+      "options": [
+        "A table of contents in a book",
+        "The index at the back of a textbook",
+        "A bookmark in a browser",
+        "A file folder on a desktop"
+      ],
+      "answer": "The index at the back of a textbook"
+    },
+    {
+      "id": 2,
+      "question": "What SQL command creates an index on a column?",
+      "options": [
+        "ADD INDEX",
+        "CREATE INDEX",
+        "MAKE INDEX",
+        "SET INDEX"
+      ],
+      "answer": "CREATE INDEX"
+    },
+    {
+      "id": 3,
+      "question": "What is a 'full table scan'?",
+      "options": [
+        "A query that returns all columns from a table",
+        "A process where the database checks every row to find matching results",
+        "A command that displays the full schema of a table",
+        "A backup procedure that copies every table in the database"
+      ],
+      "answer": "A process where the database checks every row to find matching results"
+    },
+    {
+      "id": 4,
+      "question": "Which SQL statement correctly creates an index named idx_students_major on the major column of the students table?",
+      "options": [
+        "CREATE INDEX idx_students_major FOR students(major);",
+        "CREATE INDEX idx_students_major ON students(major);",
+        "ADD INDEX idx_students_major TO students(major);",
+        "INDEX CREATE idx_students_major ON students.major;"
+      ],
+      "answer": "CREATE INDEX idx_students_major ON students(major);"
+    },
+    {
+      "id": 5,
+      "question": "What does a UNIQUE INDEX enforce?",
+      "options": [
+        "That the column can only contain numeric values",
+        "That no two rows can have the same value in the indexed column",
+        "That the column cannot be NULL",
+        "That the index can only be used once per query"
+      ],
+      "answer": "That no two rows can have the same value in the indexed column"
+    },
+    {
+      "id": 6,
+      "question": "Which SQL command removes an existing index?",
+      "options": [
+        "DELETE INDEX idx_name;",
+        "REMOVE INDEX idx_name;",
+        "DROP INDEX idx_name;",
+        "DESTROY INDEX idx_name;"
+      ],
+      "answer": "DROP INDEX idx_name;"
+    },
+    {
+      "id": 7,
+      "question": "On which type of column should you generally create an index?",
+      "options": [
+        "A column that stores boolean values with only two distinct values",
+        "A column frequently used in WHERE clauses",
+        "A column that is updated thousands of times per second",
+        "A column in a table with only 3 rows"
+      ],
+      "answer": "A column frequently used in WHERE clauses"
+    },
+    {
+      "id": 8,
+      "question": "Why should you avoid creating indexes on columns that are updated very frequently?",
+      "options": [
+        "Indexes prevent columns from being updated",
+        "Indexes slow down write operations because they must be updated alongside the data",
+        "Indexes cause the column data to become corrupted during updates",
+        "Indexes are automatically deleted whenever a column is updated"
+      ],
+      "answer": "Indexes slow down write operations because they must be updated alongside the data"
+    },
+    {
+      "id": 9,
+      "question": "What is a composite index?",
+      "options": [
+        "An index that is created automatically by the database",
+        "An index on multiple columns",
+        "An index that combines two tables",
+        "An index that stores compressed data"
+      ],
+      "answer": "An index on multiple columns"
+    },
+    {
+      "id": 10,
+      "question": "Given a composite index on (student_id, course_id), which query benefits from it?",
+      "options": [
+        "SELECT * FROM enrollments WHERE course_id = 5;",
+        "SELECT * FROM enrollments WHERE student_id = 3;",
+        "SELECT * FROM enrollments WHERE grade = 'A';",
+        "SELECT * FROM enrollments ORDER BY course_id;"
+      ],
+      "answer": "SELECT * FROM enrollments WHERE student_id = 3;"
+    },
+    {
+      "id": 11,
+      "question": "What does EXPLAIN QUERY PLAN do in SQLite?",
+      "options": [
+        "Executes the query and returns its results",
+        "Shows how the database will execute a query without running it",
+        "Creates an execution log file for the query",
+        "Optimizes the query automatically"
+      ],
+      "answer": "Shows how the database will execute a query without running it"
+    },
+    {
+      "id": 12,
+      "question": "In EXPLAIN QUERY PLAN output, what does 'SCAN students' indicate?",
+      "options": [
+        "The query uses an index on the students table",
+        "The query performs a full table scan on the students table",
+        "The students table is being created",
+        "The students table has been deleted"
+      ],
+      "answer": "The query performs a full table scan on the students table"
+    },
+    {
+      "id": 13,
+      "question": "In EXPLAIN QUERY PLAN output, what does 'SEARCH students USING INDEX' indicate?",
+      "options": [
+        "The database is creating a new index",
+        "The database is performing a full table scan",
+        "The database is using an index to find the matching rows efficiently",
+        "The database is dropping an existing index"
+      ],
+      "answer": "The database is using an index to find the matching rows efficiently"
+    },
+    {
+      "id": 14,
+      "question": "What is SQL injection?",
+      "options": [
+        "A method for optimizing SQL queries",
+        "A security vulnerability where an attacker inserts malicious SQL through user input",
+        "A technique for inserting large amounts of data quickly",
+        "A feature that allows dynamic table creation"
+      ],
+      "answer": "A security vulnerability where an attacker inserts malicious SQL through user input"
+    },
+    {
+      "id": 15,
+      "question": "Which Python code is vulnerable to SQL injection?",
+      "options": [
+        "cursor.execute('SELECT * FROM students WHERE name = ?', (user_input,))",
+        "cursor.execute('SELECT * FROM students WHERE name = ' + user_input)",
+        "cursor.execute('SELECT * FROM students')",
+        "cursor.execute('SELECT COUNT(*) FROM students')"
+      ],
+      "answer": "cursor.execute('SELECT * FROM students WHERE name = ' + user_input)"
+    },
+    {
+      "id": 16,
+      "question": "What is a parameterized query?",
+      "options": [
+        "A query that runs with administrative privileges",
+        "A query that uses placeholders for user input, treating it as data rather than SQL code",
+        "A query that automatically creates indexes",
+        "A query that returns parameters about the database"
+      ],
+      "answer": "A query that uses placeholders for user input, treating it as data rather than SQL code"
+    },
+    {
+      "id": 17,
+      "question": "In Python's sqlite3 module, which placeholder is used in parameterized queries?",
+      "options": [
+        "%s",
+        "$1",
+        "@param",
+        "?"
+      ],
+      "answer": "?"
+    },
+    {
+      "id": 18,
+      "question": "What is the primary goal of database normalization?",
+      "options": [
+        "To make queries run faster by adding indexes",
+        "To reduce data redundancy and improve data integrity",
+        "To combine all data into a single table for simplicity",
+        "To encrypt sensitive data in the database"
+      ],
+      "answer": "To reduce data redundancy and improve data integrity"
+    },
+    {
+      "id": 19,
+      "question": "What does First Normal Form (1NF) require?",
+      "options": [
+        "Every non-key column depends on the entire primary key",
+        "No non-key column depends on another non-key column",
+        "Each column contains a single value and each row is unique",
+        "All tables must have at least one foreign key"
+      ],
+      "answer": "Each column contains a single value and each row is unique"
+    },
+    {
+      "id": 20,
+      "question": "A table has columns: order_id, customer_name, and items (which stores comma-separated product names). Which normal form does this violate?",
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "It does not violate any normal form"
+      ],
+      "answer": "First Normal Form (1NF)"
+    },
+    {
+      "id": 21,
+      "question": "What does Third Normal Form (3NF) require beyond 2NF?",
+      "options": [
+        "Each column must have a unique constraint",
+        "No non-key column depends on another non-key column",
+        "All tables must have composite primary keys",
+        "Every column must be indexed"
+      ],
+      "answer": "No non-key column depends on another non-key column"
+    },
+    {
+      "id": 22,
+      "question": "A students table has columns: id, name, major, department_building. If department_building depends on major rather than on id, which normal form is violated?",
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "No normal form is violated"
+      ],
+      "answer": "Third Normal Form (3NF)"
+    },
+    {
+      "id": 23,
+      "question": "According to common SQL naming conventions, which is the correct way to name a table?",
+      "options": [
+        "StudentData",
+        "student_data",
+        "STUDENT_DATA",
+        "studentData"
+      ],
+      "answer": "student_data"
+    },
+    {
+      "id": 24,
+      "question": "According to common naming conventions, what is the recommended naming pattern for indexes?",
+      "options": [
+        "index_table_column",
+        "idx_table_column",
+        "i_table_column",
+        "table_column_index"
+      ],
+      "answer": "idx_table_column"
+    },
+    {
+      "id": 25,
+      "question": "Why should you use explicit JOIN syntax instead of listing tables with commas in the FROM clause?",
+      "options": [
+        "Explicit JOINs run faster than comma-separated tables",
+        "Comma-separated tables are not valid SQL",
+        "Explicit JOINs are clearer, separate join conditions from filter conditions, and are easier to maintain",
+        "Explicit JOINs automatically create indexes on the join columns"
+      ],
+      "answer": "Explicit JOINs are clearer, separate join conditions from filter conditions, and are easier to maintain"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "prompt": "A Venn diagram where the entire left circle (Students) is brightly colored, including the non-overlapping part. The overlap with Courses is also colored. Students in the non-overlapping left area look lonely, holding NULL signs.",
+  "full_prompt": "editorial illustration for a programming textbook. A Venn diagram where the entire left circle (Students) is brightly colored, including the non-overlapping part. The overlap with Courses is also colored. Students in the non-overlapping left area look lonely, holding NULL signs. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m06-left-join-venn.png",
+  "generated": "2026-04-08T21:25:50Z"
+}

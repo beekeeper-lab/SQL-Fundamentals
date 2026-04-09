@@ -1,0 +1,7 @@
+{
+  "prompt": "An architect at a drafting table rolling out a blueprint, but the blueprint shows a database table schema instead of a building -- column names, data types, and constraint annotations are visible on the paper.",
+  "full_prompt": "editorial illustration for a programming textbook. An architect at a drafting table rolling out a blueprint, but the blueprint shows a database table schema instead of a building -- column names, data types, and constraint annotations are visible on the paper. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m01-hero-blueprint-01.png",
+  "generated": "2026-04-08T21:23:20Z"
+}

@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 1: What Is SQL?",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does SQL stand for?",
+      "options": [
+        "Simple Query Language",
+        "Structured Query Language",
+        "Standard Question Language",
+        "Sequential Query Logic"
+      ],
+      "answer": "Structured Query Language"
+    },
+    {
+      "id": 2,
+      "question": "What is a relational database?",
+      "options": [
+        "A database that stores data in JSON documents",
+        "A database that stores data in tables with columns and rows",
+        "A database that stores data in key-value pairs",
+        "A database that stores data as a single flat file"
+      ],
+      "answer": "A database that stores data in tables with columns and rows"
+    },
+    {
+      "id": 3,
+      "question": "In a relational database table, what are columns also called?",
+      "options": [
+        "Records",
+        "Entries",
+        "Fields",
+        "Keys"
+      ],
+      "answer": "Fields"
+    },
+    {
+      "id": 4,
+      "question": "In a relational database table, what does each row represent?",
+      "options": [
+        "A column header",
+        "A data type definition",
+        "One record or entry in the table",
+        "A relationship between two tables"
+      ],
+      "answer": "One record or entry in the table"
+    },
+    {
+      "id": 5,
+      "question": "What does RDBMS stand for?",
+      "options": [
+        "Relational Database Management System",
+        "Rapid Database Modification Software",
+        "Relational Data Backup and Migration System",
+        "Remote Database Monitoring Service"
+      ],
+      "answer": "Relational Database Management System"
+    },
+    {
+      "id": 6,
+      "question": "Which of the following is NOT an example of an RDBMS?",
+      "options": [
+        "SQLite",
+        "MySQL",
+        "MongoDB",
+        "PostgreSQL"
+      ],
+      "answer": "MongoDB"
+    },
+    {
+      "id": 7,
+      "question": "What does DDL stand for in SQL?",
+      "options": [
+        "Data Definition Language",
+        "Data Delivery Language",
+        "Database Design Logic",
+        "Dynamic Data Loader"
+      ],
+      "answer": "Data Definition Language"
+    },
+    {
+      "id": 8,
+      "question": "Which SQL category includes the CREATE TABLE command?",
+      "options": [
+        "DML",
+        "DQL",
+        "DDL",
+        "DCL"
+      ],
+      "answer": "DDL"
+    },
+    {
+      "id": 9,
+      "question": "What does DML stand for in SQL?",
+      "options": [
+        "Database Manipulation Language",
+        "Data Modification Logic",
+        "Data Manipulation Language",
+        "Dynamic Markup Language"
+      ],
+      "answer": "Data Manipulation Language"
+    },
+    {
+      "id": 10,
+      "question": "Which SQL command is used to retrieve data from a table?",
+      "options": [
+        "GET",
+        "FETCH",
+        "RETRIEVE",
+        "SELECT"
+      ],
+      "answer": "SELECT"
+    },
+    {
+      "id": 11,
+      "question": "Which SQL category does the SELECT command belong to?",
+      "options": [
+        "DDL",
+        "DML",
+        "DQL",
+        "DCL"
+      ],
+      "answer": "DQL"
+    },
+    {
+      "id": 12,
+      "question": "Which of the following is a DML command?",
+      "options": [
+        "CREATE TABLE",
+        "SELECT",
+        "INSERT",
+        "DROP TABLE"
+      ],
+      "answer": "INSERT"
+    },
+    {
+      "id": 13,
+      "question": "Why is SQLite used for learning SQL in this course?",
+      "options": [
+        "It is the fastest database available",
+        "It requires zero configuration and the entire database is a single file",
+        "It supports the most concurrent users",
+        "It is the only database that supports SQL"
+      ],
+      "answer": "It requires zero configuration and the entire database is a single file"
+    },
+    {
+      "id": 14,
+      "question": "Which feature distinguishes SQLite from MySQL and PostgreSQL?",
+      "options": [
+        "SQLite supports stricter data types",
+        "SQLite requires a server installation",
+        "SQLite does not require a server and stores data in a single file",
+        "SQLite has excellent concurrency support"
+      ],
+      "answer": "SQLite does not require a server and stores data in a single file"
+    },
+    {
+      "id": 15,
+      "question": "What is the SQLite dot-command to list all tables in the database?",
+      "options": [
+        ".list",
+        ".show",
+        ".tables",
+        ".schema"
+      ],
+      "answer": ".tables"
+    },
+    {
+      "id": 16,
+      "question": "What does the .schema dot-command do in SQLite?",
+      "options": [
+        "Deletes all tables from the database",
+        "Lists all databases on the server",
+        "Shows the CREATE TABLE statements for all tables",
+        "Displays the number of rows in each table"
+      ],
+      "answer": "Shows the CREATE TABLE statements for all tables"
+    },
+    {
+      "id": 17,
+      "question": "Which dot-command exits the SQLite shell?",
+      "options": [
+        ".exit",
+        ".close",
+        ".quit",
+        ".stop"
+      ],
+      "answer": ".quit"
+    },
+    {
+      "id": 18,
+      "question": "What does the .headers on dot-command do in SQLite?",
+      "options": [
+        "Adds row numbers to query output",
+        "Displays column headers in query output",
+        "Creates headers for new tables",
+        "Shows the database file header information"
+      ],
+      "answer": "Displays column headers in query output"
+    },
+    {
+      "id": 19,
+      "question": "What does the .mode column dot-command do in SQLite?",
+      "options": [
+        "Creates a new column in a table",
+        "Formats output in aligned columns",
+        "Switches to column-based storage",
+        "Displays only column names without data"
+      ],
+      "answer": "Formats output in aligned columns"
+    },
+    {
+      "id": 20,
+      "question": "What SQL command is used to add new rows of data into a table?",
+      "options": [
+        "ADD",
+        "INSERT INTO",
+        "APPEND",
+        "PUT INTO"
+      ],
+      "answer": "INSERT INTO"
+    },
+    {
+      "id": 21,
+      "question": "What does SELECT * FROM employees; do?",
+      "options": [
+        "Deletes all rows from the employees table",
+        "Creates a new table called employees",
+        "Returns all columns and all rows from the employees table",
+        "Counts the number of employees"
+      ],
+      "answer": "Returns all columns and all rows from the employees table"
+    },
+    {
+      "id": 22,
+      "question": "What does the INTEGER PRIMARY KEY designation mean for a column?",
+      "options": [
+        "The column stores text values and must be unique",
+        "The column stores whole numbers and uniquely identifies each row",
+        "The column automatically stores the current date",
+        "The column stores decimal numbers and can be null"
+      ],
+      "answer": "The column stores whole numbers and uniquely identifies each row"
+    },
+    {
+      "id": 23,
+      "question": "What is the REAL data type in SQLite used for?",
+      "options": [
+        "Storing text strings",
+        "Storing boolean values",
+        "Storing floating-point (decimal) numbers",
+        "Storing binary data"
+      ],
+      "answer": "Storing floating-point (decimal) numbers"
+    },
+    {
+      "id": 24,
+      "question": "What does SELECT COUNT(*) FROM employees; return?",
+      "options": [
+        "All rows from the employees table",
+        "The names of all columns in the employees table",
+        "The total number of rows in the employees table",
+        "The sum of all salary values in the employees table"
+      ],
+      "answer": "The total number of rows in the employees table"
+    },
+    {
+      "id": 25,
+      "question": "Which SQL command is used to remove a table and all its data from the database?",
+      "options": [
+        "REMOVE TABLE",
+        "DELETE TABLE",
+        "DROP TABLE",
+        "DESTROY TABLE"
+      ],
+      "answer": "DROP TABLE"
+    }
+  ]
+}

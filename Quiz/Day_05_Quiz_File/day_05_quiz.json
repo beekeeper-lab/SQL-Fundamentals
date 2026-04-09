@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 5: Sorting and Limiting",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does the ORDER BY clause do in SQL?",
+      "options": [
+        "Filters rows based on a condition",
+        "Groups rows that share a common value",
+        "Sorts the result set by one or more columns",
+        "Limits the number of rows returned"
+      ],
+      "answer": "Sorts the result set by one or more columns"
+    },
+    {
+      "id": 2,
+      "question": "What is the default sort order when using ORDER BY without specifying ASC or DESC?",
+      "options": [
+        "Descending",
+        "Ascending",
+        "Random",
+        "The order depends on the database engine"
+      ],
+      "answer": "Ascending"
+    },
+    {
+      "id": 3,
+      "question": "Which SQL query correctly sorts students by GPA from highest to lowest?",
+      "options": [
+        "SELECT * FROM students ORDER BY gpa;",
+        "SELECT * FROM students ORDER BY gpa DESC;",
+        "SELECT * FROM students SORT BY gpa DESC;",
+        "SELECT * FROM students ORDER BY gpa DESCENDING;"
+      ],
+      "answer": "SELECT * FROM students ORDER BY gpa DESC;"
+    },
+    {
+      "id": 4,
+      "question": "In SQLite, where do NULL values appear when sorting with ORDER BY column ASC?",
+      "options": [
+        "At the end of the results",
+        "At the beginning of the results",
+        "They are excluded from the results",
+        "In the middle of the results"
+      ],
+      "answer": "At the beginning of the results"
+    },
+    {
+      "id": 5,
+      "question": "In SQLite, where do NULL values appear when sorting with ORDER BY column DESC?",
+      "options": [
+        "At the beginning of the results",
+        "At the end of the results",
+        "They are excluded from the results",
+        "They cause an error"
+      ],
+      "answer": "At the end of the results"
+    },
+    {
+      "id": 6,
+      "question": "What does the following query do? SELECT * FROM courses ORDER BY department ASC, credits DESC;",
+      "options": [
+        "Sorts by credits descending, then by department ascending",
+        "Sorts by department ascending, then breaks ties by credits descending",
+        "Sorts only by department ascending and ignores credits",
+        "Returns an error because you cannot sort by two columns"
+      ],
+      "answer": "Sorts by department ascending, then breaks ties by credits descending"
+    },
+    {
+      "id": 7,
+      "question": "What does the LIMIT clause do?",
+      "options": [
+        "Filters rows based on a condition",
+        "Restricts the number of rows returned in the result set",
+        "Limits the number of columns displayed",
+        "Sets a maximum value for a column"
+      ],
+      "answer": "Restricts the number of rows returned in the result set"
+    },
+    {
+      "id": 8,
+      "question": "What does the following query return? SELECT * FROM students LIMIT 5;",
+      "options": [
+        "All students except the first 5",
+        "Every 5th student",
+        "Only the first 5 rows from the result set",
+        "5 randomly selected students"
+      ],
+      "answer": "Only the first 5 rows from the result set"
+    },
+    {
+      "id": 9,
+      "question": "What does OFFSET do in SQL?",
+      "options": [
+        "It limits the number of rows returned",
+        "It skips a specified number of rows before returning results",
+        "It removes duplicate rows",
+        "It sorts the result set in reverse order"
+      ],
+      "answer": "It skips a specified number of rows before returning results"
+    },
+    {
+      "id": 10,
+      "question": "Which query skips the first 10 rows and then returns the next 5?",
+      "options": [
+        "SELECT * FROM students LIMIT 10 OFFSET 5;",
+        "SELECT * FROM students LIMIT 5 OFFSET 10;",
+        "SELECT * FROM students OFFSET 10 LIMIT 5;",
+        "SELECT * FROM students SKIP 10 LIMIT 5;"
+      ],
+      "answer": "SELECT * FROM students LIMIT 5 OFFSET 10;"
+    },
+    {
+      "id": 11,
+      "question": "Using a page size of 5, what is the correct OFFSET for page 3?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "3"
+      ],
+      "answer": "10"
+    },
+    {
+      "id": 12,
+      "question": "What is the general formula for calculating OFFSET in pagination?",
+      "options": [
+        "OFFSET = page_number * page_size",
+        "OFFSET = (page_number - 1) * page_size",
+        "OFFSET = page_number + page_size",
+        "OFFSET = page_size / page_number"
+      ],
+      "answer": "OFFSET = (page_number - 1) * page_size"
+    },
+    {
+      "id": 13,
+      "question": "What does the DISTINCT keyword do?",
+      "options": [
+        "Sorts results in a unique order",
+        "Removes duplicate rows from the result set",
+        "Selects only the first occurrence of each row",
+        "Counts the number of unique values"
+      ],
+      "answer": "Removes duplicate rows from the result set"
+    },
+    {
+      "id": 14,
+      "question": "Which query returns each unique department from the courses table?",
+      "options": [
+        "SELECT UNIQUE department FROM courses;",
+        "SELECT department FROM courses GROUP BY department;",
+        "SELECT DISTINCT department FROM courses;",
+        "SELECT department FROM courses LIMIT 1;"
+      ],
+      "answer": "SELECT DISTINCT department FROM courses;"
+    },
+    {
+      "id": 15,
+      "question": "When using DISTINCT with multiple columns, what determines uniqueness?",
+      "options": [
+        "Only the first column listed",
+        "Only the last column listed",
+        "The combination of all listed columns",
+        "Each column is evaluated independently"
+      ],
+      "answer": "The combination of all listed columns"
+    },
+    {
+      "id": 16,
+      "question": "What is the correct clause order in a SELECT statement that uses WHERE, ORDER BY, LIMIT, and OFFSET?",
+      "options": [
+        "SELECT, FROM, ORDER BY, WHERE, LIMIT, OFFSET",
+        "SELECT, FROM, WHERE, LIMIT, ORDER BY, OFFSET",
+        "SELECT, FROM, WHERE, ORDER BY, LIMIT, OFFSET",
+        "SELECT, FROM, LIMIT, OFFSET, WHERE, ORDER BY"
+      ],
+      "answer": "SELECT, FROM, WHERE, ORDER BY, LIMIT, OFFSET"
+    },
+    {
+      "id": 17,
+      "question": "Which query returns the single student with the highest GPA?",
+      "options": [
+        "SELECT * FROM students ORDER BY gpa DESC;",
+        "SELECT * FROM students ORDER BY gpa DESC LIMIT 1;",
+        "SELECT MAX(gpa) FROM students LIMIT 1;",
+        "SELECT TOP 1 * FROM students ORDER BY gpa DESC;"
+      ],
+      "answer": "SELECT * FROM students ORDER BY gpa DESC LIMIT 1;"
+    },
+    {
+      "id": 18,
+      "question": "How would you retrieve the student with the second-highest GPA?",
+      "options": [
+        "SELECT * FROM students ORDER BY gpa DESC LIMIT 2;",
+        "SELECT * FROM students ORDER BY gpa DESC LIMIT 1 OFFSET 1;",
+        "SELECT * FROM students ORDER BY gpa DESC OFFSET 1;",
+        "SELECT * FROM students WHERE gpa = 2 ORDER BY gpa DESC;"
+      ],
+      "answer": "SELECT * FROM students ORDER BY gpa DESC LIMIT 1 OFFSET 1;"
+    },
+    {
+      "id": 19,
+      "question": "Which query returns the 3 students with the lowest GPA, excluding NULLs?",
+      "options": [
+        "SELECT * FROM students ORDER BY gpa ASC LIMIT 3;",
+        "SELECT * FROM students WHERE gpa IS NOT NULL ORDER BY gpa ASC LIMIT 3;",
+        "SELECT * FROM students WHERE gpa > 0 ORDER BY gpa LIMIT 3;",
+        "SELECT * FROM students ORDER BY gpa DESC LIMIT 3;"
+      ],
+      "answer": "SELECT * FROM students WHERE gpa IS NOT NULL ORDER BY gpa ASC LIMIT 3;"
+    },
+    {
+      "id": 20,
+      "question": "What happens if you use OFFSET without LIMIT?",
+      "options": [
+        "It returns all rows after skipping the offset amount",
+        "It causes a syntax error in most databases",
+        "It is ignored entirely",
+        "It returns only one row"
+      ],
+      "answer": "It returns all rows after skipping the offset amount"
+    },
+    {
+      "id": 21,
+      "question": "When sorting by multiple columns, how are ties handled?",
+      "options": [
+        "Tied rows are removed from the result",
+        "Tied rows appear in random order",
+        "Ties in the first column are broken by the second column, and so on",
+        "Only the first sort column matters; additional columns are ignored"
+      ],
+      "answer": "Ties in the first column are broken by the second column, and so on"
+    },
+    {
+      "id": 22,
+      "question": "Does DISTINCT consider NULL as a distinct value?",
+      "options": [
+        "No, NULL values are always excluded",
+        "Yes, NULL appears as a distinct value in the results",
+        "It depends on the database engine",
+        "NULL values cause DISTINCT to fail"
+      ],
+      "answer": "Yes, NULL appears as a distinct value in the results"
+    },
+    {
+      "id": 23,
+      "question": "Which query correctly finds the top 5 students by GPA whose first name starts with a letter from A through M?",
+      "options": [
+        "SELECT * FROM students WHERE first_name < 'N' ORDER BY gpa DESC LIMIT 5;",
+        "SELECT * FROM students WHERE first_name BETWEEN 'A' AND 'M' ORDER BY gpa DESC LIMIT 5;",
+        "SELECT * FROM students WHERE first_name < 'N' AND gpa IS NOT NULL ORDER BY gpa DESC LIMIT 5;",
+        "SELECT * FROM students WHERE first_name > 'M' ORDER BY gpa DESC LIMIT 5;"
+      ],
+      "answer": "SELECT * FROM students WHERE first_name < 'N' AND gpa IS NOT NULL ORDER BY gpa DESC LIMIT 5;"
+    },
+    {
+      "id": 24,
+      "question": "What is the purpose of combining ORDER BY with LIMIT in a 'Top-N' query?",
+      "options": [
+        "To sort results and then return only the top N rows based on that sort order",
+        "To randomly select N rows from the result set",
+        "To remove the bottom N rows from the result",
+        "To group results into N categories"
+      ],
+      "answer": "To sort results and then return only the top N rows based on that sort order"
+    },
+    {
+      "id": 25,
+      "question": "In the pagination pattern, what SQL would you use for page 2 with a page size of 5, sorted by last_name?",
+      "options": [
+        "SELECT * FROM students ORDER BY last_name LIMIT 5 OFFSET 2;",
+        "SELECT * FROM students ORDER BY last_name LIMIT 5 OFFSET 5;",
+        "SELECT * FROM students ORDER BY last_name LIMIT 2 OFFSET 5;",
+        "SELECT * FROM students ORDER BY last_name LIMIT 10 OFFSET 0;"
+      ],
+      "answer": "SELECT * FROM students ORDER BY last_name LIMIT 5 OFFSET 5;"
+    }
+  ]
+}

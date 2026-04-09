@@ -1,0 +1,7 @@
+{
+  "prompt": "A nightclub entrance with several bouncers at the door, each wearing a name tag: NOT NULL (turning away an empty ghost), UNIQUE (checking IDs against a list), CHECK (holding a measuring tape), PRIMARY KEY (wearing a VIP badge), DEFAULT (handing a visitor a default name tag).",
+  "full_prompt": "editorial illustration for a programming textbook. A nightclub entrance with several bouncers at the door, each wearing a name tag: NOT NULL (turning away an empty ghost), UNIQUE (checking IDs against a list), CHECK (holding a measuring tape), PRIMARY KEY (wearing a VIP badge), DEFAULT (handing a visitor a default name tag). Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m01-constraint-bouncers-01.png",
+  "generated": "2026-04-08T21:23:38Z"
+}

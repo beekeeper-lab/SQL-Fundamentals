@@ -1,0 +1,7 @@
+{
+  "prompt": "A mail sorting scenario with three paths: a letter arrives at a mailbox. Path 1 labeled 'ERROR' shows the letter bouncing back. Path 2 labeled 'IGNORE' shows the letter being quietly shredded. Path 3 labeled 'REPLACE' shows the old letter being removed and the new one taking its place.",
+  "full_prompt": "editorial illustration for a programming textbook. A mail sorting scenario with three paths: a letter arrives at a mailbox. Path 1 labeled 'ERROR' shows the letter bouncing back. Path 2 labeled 'IGNORE' shows the letter being quietly shredded. Path 3 labeled 'REPLACE' shows the old letter being removed and the new one taking its place. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m02-conflict-handling-01.png",
+  "generated": "2026-04-08T21:24:21Z"
+}

@@ -1,0 +1,7 @@
+{
+  "prompt": "Five labeled containers/jars on a shelf, each holding a different type of content: INTEGER (jar of numbered balls), REAL (jar with a measuring beaker showing 3.14), TEXT (jar of alphabet letters), BLOB (jar of mixed colorful objects), NULL (an empty transparent jar).",
+  "full_prompt": "editorial illustration for a programming textbook. Five labeled containers/jars on a shelf, each holding a different type of content: INTEGER (jar of numbered balls), REAL (jar with a measuring beaker showing 3.14), TEXT (jar of alphabet letters), BLOB (jar of mixed colorful objects), NULL (an empty transparent jar). Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m01-five-data-types-01.png",
+  "generated": "2026-04-08T21:23:29Z"
+}

@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 4: SELECT and Filtering",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which SQL statement is used to retrieve data from a table?",
+      "options": [
+        "GET",
+        "FETCH",
+        "SELECT",
+        "RETRIEVE"
+      ],
+      "answer": "SELECT"
+    },
+    {
+      "id": 2,
+      "question": "What does SELECT * FROM students; return?",
+      "options": [
+        "Only the first row of the students table",
+        "All columns and all rows from the students table",
+        "Only the column names of the students table",
+        "The number of rows in the students table"
+      ],
+      "answer": "All columns and all rows from the students table"
+    },
+    {
+      "id": 3,
+      "question": "Which clause is used to filter rows based on a condition?",
+      "options": [
+        "FILTER",
+        "HAVING",
+        "WHERE",
+        "LIMIT"
+      ],
+      "answer": "WHERE"
+    },
+    {
+      "id": 4,
+      "question": "What does the <> operator mean in SQL?",
+      "options": [
+        "Less than or greater than",
+        "Not equal to",
+        "Approximately equal to",
+        "Assignment operator"
+      ],
+      "answer": "Not equal to"
+    },
+    {
+      "id": 5,
+      "question": "Which query finds all students with a GPA greater than 3.0?",
+      "options": [
+        "SELECT * FROM students WHERE gpa > 3.0;",
+        "SELECT * FROM students WHERE gpa IS 3.0;",
+        "SELECT * FROM students HAVING gpa > 3.0;",
+        "SELECT * FROM students FILTER gpa > 3.0;"
+      ],
+      "answer": "SELECT * FROM students WHERE gpa > 3.0;"
+    },
+    {
+      "id": 6,
+      "question": "What does the AND operator do in a WHERE clause?",
+      "options": [
+        "Returns rows where at least one condition is true",
+        "Returns rows where both conditions are true",
+        "Combines two tables together",
+        "Negates the following condition"
+      ],
+      "answer": "Returns rows where both conditions are true"
+    },
+    {
+      "id": 7,
+      "question": "What does the OR operator do in a WHERE clause?",
+      "options": [
+        "Returns rows where both conditions are true",
+        "Returns rows where at least one condition is true",
+        "Returns rows where neither condition is true",
+        "Combines results from two SELECT statements"
+      ],
+      "answer": "Returns rows where at least one condition is true"
+    },
+    {
+      "id": 8,
+      "question": "What does the NOT operator do in SQL?",
+      "options": [
+        "Combines two conditions",
+        "Checks if a value is NULL",
+        "Negates a condition",
+        "Joins two tables"
+      ],
+      "answer": "Negates a condition"
+    },
+    {
+      "id": 9,
+      "question": "What does BETWEEN 3.0 AND 3.5 include?",
+      "options": [
+        "Values from 3.0 up to but not including 3.5",
+        "Values from 3.1 to 3.4",
+        "Values from 3.0 to 3.5, inclusive on both ends",
+        "Values greater than 3.0 and less than 3.5"
+      ],
+      "answer": "Values from 3.0 to 3.5, inclusive on both ends"
+    },
+    {
+      "id": 10,
+      "question": "Which operator tests if a value matches any value in a list?",
+      "options": [
+        "BETWEEN",
+        "LIKE",
+        "IN",
+        "ANY"
+      ],
+      "answer": "IN"
+    },
+    {
+      "id": 11,
+      "question": "In a LIKE pattern, what does the % wildcard match?",
+      "options": [
+        "Exactly one character",
+        "Zero or more characters",
+        "Only numeric characters",
+        "Only alphabetic characters"
+      ],
+      "answer": "Zero or more characters"
+    },
+    {
+      "id": 12,
+      "question": "In a LIKE pattern, what does the _ wildcard match?",
+      "options": [
+        "Zero or more characters",
+        "Exactly one character",
+        "Any whitespace character",
+        "An underscore literal"
+      ],
+      "answer": "Exactly one character"
+    },
+    {
+      "id": 13,
+      "question": "Which query finds students whose first name starts with 'A'?",
+      "options": [
+        "SELECT * FROM students WHERE first_name = 'A%';",
+        "SELECT * FROM students WHERE first_name LIKE 'A%';",
+        "SELECT * FROM students WHERE first_name STARTS 'A';",
+        "SELECT * FROM students WHERE first_name IN ('A');"
+      ],
+      "answer": "SELECT * FROM students WHERE first_name LIKE 'A%';"
+    },
+    {
+      "id": 14,
+      "question": "How do you check for NULL values in SQL?",
+      "options": [
+        "WHERE column = NULL",
+        "WHERE column == NULL",
+        "WHERE column IS NULL",
+        "WHERE column EQUALS NULL"
+      ],
+      "answer": "WHERE column IS NULL"
+    },
+    {
+      "id": 15,
+      "question": "What is the correct way to find rows where gpa has a value (is not missing)?",
+      "options": [
+        "WHERE gpa != NULL",
+        "WHERE gpa <> NULL",
+        "WHERE gpa IS NOT NULL",
+        "WHERE gpa NOT NULL"
+      ],
+      "answer": "WHERE gpa IS NOT NULL"
+    },
+    {
+      "id": 16,
+      "question": "What does the AS keyword do in a SELECT statement?",
+      "options": [
+        "Filters rows based on a condition",
+        "Assigns an alias to a column or table in the output",
+        "Sorts the result set",
+        "Groups rows by a column"
+      ],
+      "answer": "Assigns an alias to a column or table in the output"
+    },
+    {
+      "id": 17,
+      "question": "Which query correctly uses a column alias?",
+      "options": [
+        "SELECT first_name ALIAS 'Name' FROM students;",
+        "SELECT first_name AS 'Name' FROM students;",
+        "SELECT first_name RENAME 'Name' FROM students;",
+        "SELECT first_name LABEL 'Name' FROM students;"
+      ],
+      "answer": "SELECT first_name AS 'Name' FROM students;"
+    },
+    {
+      "id": 18,
+      "question": "Which query finds courses in either 'Computer Science' or 'Mathematics' using the IN operator?",
+      "options": [
+        "SELECT * FROM courses WHERE department = 'Computer Science' AND 'Mathematics';",
+        "SELECT * FROM courses WHERE department IN ('Computer Science', 'Mathematics');",
+        "SELECT * FROM courses WHERE department BETWEEN 'Computer Science' AND 'Mathematics';",
+        "SELECT * FROM courses WHERE department LIKE 'Computer Science' OR 'Mathematics';"
+      ],
+      "answer": "SELECT * FROM courses WHERE department IN ('Computer Science', 'Mathematics');"
+    },
+    {
+      "id": 19,
+      "question": "What does the LIKE pattern '__101' match?",
+      "options": [
+        "Any string ending with 101",
+        "A string with exactly two characters followed by 101",
+        "A string starting with 101",
+        "Any string containing 101"
+      ],
+      "answer": "A string with exactly two characters followed by 101"
+    },
+    {
+      "id": 20,
+      "question": "Why can't you use = to compare with NULL?",
+      "options": [
+        "NULL is not a valid SQL value",
+        "The = operator only works with numbers",
+        "NULL represents an unknown value, so any comparison with = returns NULL, not true or false",
+        "You need to use == instead of ="
+      ],
+      "answer": "NULL represents an unknown value, so any comparison with = returns NULL, not true or false"
+    },
+    {
+      "id": 21,
+      "question": "What is the purpose of parentheses in a WHERE clause with multiple conditions?",
+      "options": [
+        "They are required syntax for all WHERE clauses",
+        "They control the evaluation order of AND and OR operators",
+        "They improve query performance",
+        "They indicate subqueries"
+      ],
+      "answer": "They control the evaluation order of AND and OR operators"
+    },
+    {
+      "id": 22,
+      "question": "Which query correctly combines AND and OR with proper grouping?",
+      "options": [
+        "SELECT * FROM students WHERE gpa > 3.0 AND department = 'CS' OR gpa > 3.8;",
+        "SELECT * FROM students WHERE (gpa > 3.0 AND department = 'CS') OR gpa > 3.8;",
+        "SELECT * FROM students WHERE gpa > 3.0 AND (department = 'CS') OR (gpa > 3.8);",
+        "Both the first and second options produce the same result"
+      ],
+      "answer": "SELECT * FROM students WHERE (gpa > 3.0 AND department = 'CS') OR gpa > 3.8;"
+    },
+    {
+      "id": 23,
+      "question": "Which query finds all students whose email contains the word 'university'?",
+      "options": [
+        "SELECT * FROM students WHERE email LIKE 'university';",
+        "SELECT * FROM students WHERE email LIKE '%university%';",
+        "SELECT * FROM students WHERE email CONTAINS 'university';",
+        "SELECT * FROM students WHERE email IN ('university');"
+      ],
+      "answer": "SELECT * FROM students WHERE email LIKE '%university%';"
+    },
+    {
+      "id": 24,
+      "question": "What is the equivalent of WHERE gpa BETWEEN 3.0 AND 3.5?",
+      "options": [
+        "WHERE gpa > 3.0 AND gpa < 3.5",
+        "WHERE gpa >= 3.0 AND gpa <= 3.5",
+        "WHERE gpa >= 3.0 OR gpa <= 3.5",
+        "WHERE gpa IN (3.0, 3.5)"
+      ],
+      "answer": "WHERE gpa >= 3.0 AND gpa <= 3.5"
+    },
+    {
+      "id": 25,
+      "question": "Which operator would you use to find students whose last name comes after 'M' alphabetically?",
+      "options": [
+        "WHERE last_name AFTER 'M'",
+        "WHERE last_name > 'M'",
+        "WHERE last_name LIKE 'M%'",
+        "WHERE last_name >= 'N'"
+      ],
+      "answer": "WHERE last_name > 'M'"
+    }
+  ]
+}

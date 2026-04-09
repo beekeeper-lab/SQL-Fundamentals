@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 2: Creating Tables",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which SQL statement is used to create a new table?",
+      "options": [
+        "MAKE TABLE",
+        "NEW TABLE",
+        "CREATE TABLE",
+        "ADD TABLE"
+      ],
+      "answer": "CREATE TABLE"
+    },
+    {
+      "id": 2,
+      "question": "How many storage classes does SQLite have?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "id": 3,
+      "question": "Which SQLite storage class is used for whole numbers?",
+      "options": [
+        "REAL",
+        "INTEGER",
+        "TEXT",
+        "NUMERIC"
+      ],
+      "answer": "INTEGER"
+    },
+    {
+      "id": 4,
+      "question": "Which SQLite storage class is used for floating-point numbers?",
+      "options": [
+        "FLOAT",
+        "DECIMAL",
+        "REAL",
+        "DOUBLE"
+      ],
+      "answer": "REAL"
+    },
+    {
+      "id": 5,
+      "question": "What does the NOT NULL constraint do?",
+      "options": [
+        "Sets the column value to zero if not provided",
+        "Ensures the column must have a value and rejects NULL",
+        "Makes the column a primary key",
+        "Prevents duplicate values in the column"
+      ],
+      "answer": "Ensures the column must have a value and rejects NULL"
+    },
+    {
+      "id": 6,
+      "question": "What does the UNIQUE constraint enforce?",
+      "options": [
+        "The column cannot be NULL",
+        "The column must be an integer",
+        "No two rows can have the same value in that column",
+        "The column must have a default value"
+      ],
+      "answer": "No two rows can have the same value in that column"
+    },
+    {
+      "id": 7,
+      "question": "What does the DEFAULT constraint do?",
+      "options": [
+        "Rejects any INSERT that does not specify a value",
+        "Provides a fallback value when none is specified during INSERT",
+        "Sets the column type automatically",
+        "Makes the column required"
+      ],
+      "answer": "Provides a fallback value when none is specified during INSERT"
+    },
+    {
+      "id": 8,
+      "question": "What does the CHECK constraint do?",
+      "options": [
+        "Checks if the table exists before inserting",
+        "Validates that a condition is true before accepting the data",
+        "Checks for duplicate values",
+        "Verifies the data type matches"
+      ],
+      "answer": "Validates that a condition is true before accepting the data"
+    },
+    {
+      "id": 9,
+      "question": "How many PRIMARY KEY constraints can a table have?",
+      "options": [
+        "Unlimited",
+        "One per column",
+        "One per table",
+        "Two per table"
+      ],
+      "answer": "One per table"
+    },
+    {
+      "id": 10,
+      "question": "What does AUTOINCREMENT do when used with INTEGER PRIMARY KEY?",
+      "options": [
+        "Automatically deletes old rows",
+        "Automatically assigns the next integer value",
+        "Automatically creates an index",
+        "Automatically backs up the table"
+      ],
+      "answer": "Automatically assigns the next integer value"
+    },
+    {
+      "id": 11,
+      "question": "What is a composite primary key?",
+      "options": [
+        "A primary key that auto-increments",
+        "A primary key made up of two or more columns together",
+        "A primary key that references another table",
+        "A primary key with a CHECK constraint"
+      ],
+      "answer": "A primary key made up of two or more columns together"
+    },
+    {
+      "id": 12,
+      "question": "What does a FOREIGN KEY constraint do?",
+      "options": [
+        "Creates a new table automatically",
+        "Ensures a column's values must exist in a referenced table's column",
+        "Prevents any updates to the column",
+        "Makes the column auto-increment"
+      ],
+      "answer": "Ensures a column's values must exist in a referenced table's column"
+    },
+    {
+      "id": 13,
+      "question": "Which PRAGMA statement enables foreign key enforcement in SQLite?",
+      "options": [
+        "PRAGMA enable_fk = ON;",
+        "PRAGMA foreign_keys = ON;",
+        "PRAGMA fk_check = TRUE;",
+        "PRAGMA references = ON;"
+      ],
+      "answer": "PRAGMA foreign_keys = ON;"
+    },
+    {
+      "id": 14,
+      "question": "What is the correct syntax to add a new column to an existing table?",
+      "options": [
+        "ALTER TABLE table_name ADD column_name TYPE;",
+        "ALTER TABLE table_name ADD COLUMN column_name TYPE;",
+        "MODIFY TABLE table_name ADD COLUMN column_name TYPE;",
+        "UPDATE TABLE table_name ADD COLUMN column_name TYPE;"
+      ],
+      "answer": "ALTER TABLE table_name ADD COLUMN column_name TYPE;"
+    },
+    {
+      "id": 15,
+      "question": "What does DROP TABLE IF EXISTS table_name; do?",
+      "options": [
+        "Removes all rows from the table but keeps the table",
+        "Deletes the table entirely, only if it exists",
+        "Renames the table",
+        "Removes the primary key from the table"
+      ],
+      "answer": "Deletes the table entirely, only if it exists"
+    },
+    {
+      "id": 16,
+      "question": "Which SQLite command shows the CREATE statement for a specific table?",
+      "options": [
+        ".describe table_name",
+        ".info table_name",
+        ".schema table_name",
+        ".show table_name"
+      ],
+      "answer": ".schema table_name"
+    },
+    {
+      "id": 17,
+      "question": "What is the correct SQL to rename a table?",
+      "options": [
+        "RENAME TABLE old_name TO new_name;",
+        "ALTER TABLE old_name RENAME TO new_name;",
+        "MODIFY TABLE old_name AS new_name;",
+        "UPDATE TABLE old_name SET NAME = new_name;"
+      ],
+      "answer": "ALTER TABLE old_name RENAME TO new_name;"
+    },
+    {
+      "id": 18,
+      "question": "Which SQLite storage class represents the absence of a value?",
+      "options": [
+        "VOID",
+        "EMPTY",
+        "NONE",
+        "NULL"
+      ],
+      "answer": "NULL"
+    },
+    {
+      "id": 19,
+      "question": "Which storage class would you use to store an image in SQLite?",
+      "options": [
+        "TEXT",
+        "BLOB",
+        "REAL",
+        "IMAGE"
+      ],
+      "answer": "BLOB"
+    },
+    {
+      "id": 20,
+      "question": "What happens when you try to INSERT a row that violates a NOT NULL constraint?",
+      "options": [
+        "The row is inserted with a default value",
+        "The row is inserted with NULL",
+        "SQLite returns an error and rejects the INSERT",
+        "The column is automatically dropped"
+      ],
+      "answer": "SQLite returns an error and rejects the INSERT"
+    },
+    {
+      "id": 21,
+      "question": "Where must composite primary keys and multi-column constraints be defined?",
+      "options": [
+        "In a separate SQL file",
+        "Before the column definitions",
+        "At the table level, after all column definitions",
+        "In the ALTER TABLE statement only"
+      ],
+      "answer": "At the table level, after all column definitions"
+    },
+    {
+      "id": 22,
+      "question": "What is SQLite's flexible type system called?",
+      "options": [
+        "Type coercion",
+        "Type affinity",
+        "Type casting",
+        "Type inference"
+      ],
+      "answer": "Type affinity"
+    },
+    {
+      "id": 23,
+      "question": "Which constraint would you use to ensure a GPA column only accepts values between 0.0 and 4.0?",
+      "options": [
+        "NOT NULL",
+        "UNIQUE",
+        "DEFAULT",
+        "CHECK"
+      ],
+      "answer": "CHECK"
+    },
+    {
+      "id": 24,
+      "question": "Is foreign key enforcement enabled by default in SQLite?",
+      "options": [
+        "Yes, it is always on",
+        "No, it must be enabled with PRAGMA foreign_keys = ON",
+        "Yes, but only for INTEGER columns",
+        "No, and it cannot be enabled"
+      ],
+      "answer": "No, it must be enabled with PRAGMA foreign_keys = ON"
+    },
+    {
+      "id": 25,
+      "question": "What limitation does SQLite have with ALTER TABLE in older versions (before 3.35.0)?",
+      "options": [
+        "You cannot add new columns",
+        "You cannot rename tables",
+        "You cannot drop or rename columns",
+        "You cannot add constraints"
+      ],
+      "answer": "You cannot drop or rename columns"
+    }
+  ]
+}

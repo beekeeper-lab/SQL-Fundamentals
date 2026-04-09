@@ -1,0 +1,7 @@
+{
+  "prompt": "A book lying open, but each page shows a 'page' of database results (5 rows each). Page tabs at the bottom are labeled Page 1, Page 2, Page 3. An arrow labeled 'OFFSET' points to where the next page starts.",
+  "full_prompt": "editorial illustration for a programming textbook. A book lying open, but each page shows a 'page' of database results (5 rows each). Page tabs at the bottom are labeled Page 1, Page 2, Page 3. An arrow labeled 'OFFSET' points to where the next page starts. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m04-pagination-pages-01.png",
+  "generated": "2026-04-08T21:24:52Z"
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "index": 1,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "01_module-05-aggregate-functions.mp3",
+    "text": "Welcome to Module 5, and welcome to a fundamental shift in how you think about data. Up until now, every query you've written has returned individual rows -- individual students, individual records. That's useful, but it's like reading a city one house at a time. Aggregate functions let you zoom out and see the neighborhoods, the districts, the whole skyline. This is where SQL stops being a lookup tool and starts being an analysis tool.",
+    "size_bytes": 452693
+  },
+  {
+    "index": 2,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "02_module-05-aggregate-functions.mp3",
+    "text": "Five functions, five superpowers. COUNT tells you \"how many.\" SUM tells you \"how much total.\" AVG tells you \"what's typical.\" MIN and MAX tell you \"what are the extremes.\" Individually, they're useful. Combined -- and especially combined with GROUP BY, which we'll cover next -- they're transformative.",
+    "size_bytes": 341934
+  },
+  {
+    "index": 3,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "03_module-05-aggregate-functions.mp3",
+    "text": "Think of it as a two-step process. Step one: WHERE removes the rows you don't care about. Step two: the aggregate function summarizes what's left. The WHERE always happens first. This will become very important when we compare WHERE to HAVING in a few minutes.",
+    "size_bytes": 302646
+  },
+  {
+    "index": 4,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "04_module-05-aggregate-functions.mp3",
+    "text": "GROUP BY is the single most important concept in this module. Without it, aggregate functions give you one summary for the whole table. With it, you get a summary for each group. It's the difference between \"the average temperature this year was 65 degrees\" and \"here's the average temperature for each month.\" Both are useful, but the monthly breakdown tells a story.",
+    "size_bytes": 359071
+  },
+  {
+    "index": 5,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "05_module-05-aggregate-functions.mp3",
+    "text": "Multi-column GROUP BY gives you drill-down capability. Need stats by department? Group by one column. Need stats by department and year? Group by two. Department, year, and advisor status? Three. Each additional column creates finer and finer slices of your data.",
+    "size_bytes": 340680
+  },
+  {
+    "index": 6,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "06_module-05-aggregate-functions.mp3",
+    "text": "WHERE versus HAVING is probably the single most asked-about distinction in SQL. Here's the easy way to remember it: if you can point to the value in a single row of the original table, use WHERE. If you need to calculate the value across multiple rows first -- like a count or an average -- use HAVING. WHERE for rows, HAVING for groups. Tattoo it on your arm if you have to.",
+    "size_bytes": 458963
+  },
+  {
+    "index": 7,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "07_module-05-aggregate-functions.mp3",
+    "text": "These are the kinds of queries that get you noticed at work. Not because they're complicated -- they're not -- but because they answer real questions. \"How many students need advisors?\" \"Which departments are struggling?\" \"What's our enrollment trend?\" Aggregate queries turn data into decisions.",
+    "size_bytes": 315185
+  },
+  {
+    "index": 8,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "08_module-05-aggregate-functions.mp3",
+    "text": "That last question about NULLs is a great one. NULL means \"I don't know this value.\" It doesn't mean zero. If you have three students with GPAs of 4.0, 3.0, and NULL, the average should be 3.5 (average of the two known values), not 2.33 (which is what you'd get if NULL were treated as zero). SQL's default behavior is correct here, even if it's surprising at first.",
+    "size_bytes": 452693
+  },
+  {
+    "index": 9,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "09_module-05-aggregate-functions.mp3",
+    "text": "Exercise 5 is the critical one. It forces you to think about when WHERE runs versus when HAVING runs. If you can get that one right without help, you've got the WHERE-versus-HAVING distinction nailed. Exercise 7 is a thinking exercise -- the answer reveals how WHERE interacts with COUNT star in subtle ways.",
+    "size_bytes": 342770
+  },
+  {
+    "index": 10,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "10_module-05-aggregate-functions.mp3",
+    "text": "That's Module 5. You've made the leap from looking at individual rows to seeing patterns across your entire dataset. COUNT, SUM, AVG, MIN, MAX -- these are your summary tools. GROUP BY splits data into meaningful categories. HAVING lets you filter those categories. Combined with WHERE, ORDER BY, and LIMIT from the previous modules, you now have a seriously powerful SQL toolkit. In the next module, we'll connect tables together with JOINs -- and that's where things get really interesting.",
+    "size_bytes": 587276
+  },
+  {
+    "index": 11,
+    "module": "module-05-aggregate-functions",
+    "audio_file": "11_module-05-aggregate-functions.mp3",
+    "text": "So far, every query we've written has pulled from a single table. But real databases have many tables, and the interesting questions usually span more than one. How many courses is each student taking? Which professor teaches the most popular class? Module 6 introduces JOINs -- the tool that connects tables together. That's where SQL really opens up. See you there.",
+    "size_bytes": 394179
+  }
+]

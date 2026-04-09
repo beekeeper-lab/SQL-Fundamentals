@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 9: Updating and Deleting",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which SQL command is used to modify existing data in a table?",
+      "options": [
+        "MODIFY",
+        "ALTER",
+        "UPDATE",
+        "CHANGE"
+      ],
+      "answer": "UPDATE"
+    },
+    {
+      "id": 2,
+      "question": "Which SQL command removes rows from a table?",
+      "options": [
+        "REMOVE",
+        "DROP",
+        "DELETE",
+        "ERASE"
+      ],
+      "answer": "DELETE"
+    },
+    {
+      "id": 3,
+      "question": "What is the golden rule before running an UPDATE or DELETE statement?",
+      "options": [
+        "Always back up the entire database first",
+        "Always include a WHERE clause unless you intentionally want to affect every row",
+        "Always run the command twice to confirm it works",
+        "Always use a LIMIT clause"
+      ],
+      "answer": "Always include a WHERE clause unless you intentionally want to affect every row"
+    },
+    {
+      "id": 4,
+      "question": "What does the following statement do? DELETE FROM students;",
+      "options": [
+        "Deletes the students table structure",
+        "Deletes only the first row from students",
+        "Deletes every row from the students table",
+        "Produces a syntax error"
+      ],
+      "answer": "Deletes every row from the students table"
+    },
+    {
+      "id": 5,
+      "question": "What is the recommended safety step before running a DELETE statement?",
+      "options": [
+        "Run a ROLLBACK first",
+        "Run a SELECT with the same WHERE clause to preview affected rows",
+        "Export the table to CSV",
+        "Create an index on the table"
+      ],
+      "answer": "Run a SELECT with the same WHERE clause to preview affected rows"
+    },
+    {
+      "id": 6,
+      "question": "Which clause in an UPDATE statement specifies the new values for columns?",
+      "options": [
+        "VALUES",
+        "SET",
+        "ASSIGN",
+        "TO"
+      ],
+      "answer": "SET"
+    },
+    {
+      "id": 7,
+      "question": "What does this query do? UPDATE students SET gpa = 3.8 WHERE id = 1;",
+      "options": [
+        "Inserts a new student with GPA 3.8",
+        "Changes the GPA to 3.8 for the student with id 1",
+        "Changes all students' GPAs to 3.8",
+        "Deletes the student with id 1"
+      ],
+      "answer": "Changes the GPA to 3.8 for the student with id 1"
+    },
+    {
+      "id": 8,
+      "question": "How do you update multiple columns in a single UPDATE statement?",
+      "options": [
+        "Use multiple UPDATE statements",
+        "Separate column assignments with commas in the SET clause",
+        "Use the AND keyword between assignments",
+        "Use multiple SET clauses"
+      ],
+      "answer": "Separate column assignments with commas in the SET clause"
+    },
+    {
+      "id": 9,
+      "question": "What does the CASE expression allow you to do in an UPDATE statement?",
+      "options": [
+        "Create a new table based on conditions",
+        "Set different values based on different conditions in one statement",
+        "Delete rows that match a condition",
+        "Join two tables together"
+      ],
+      "answer": "Set different values based on different conditions in one statement"
+    },
+    {
+      "id": 10,
+      "question": "What keyword ends a CASE expression?",
+      "options": [
+        "DONE",
+        "STOP",
+        "END",
+        "CLOSE"
+      ],
+      "answer": "END"
+    },
+    {
+      "id": 11,
+      "question": "In a CASE expression, which keyword introduces each condition?",
+      "options": [
+        "IF",
+        "WHEN",
+        "CHECK",
+        "CONDITION"
+      ],
+      "answer": "WHEN"
+    },
+    {
+      "id": 12,
+      "question": "In a CASE expression, which keyword specifies the value to assign when a condition is true?",
+      "options": [
+        "RESULT",
+        "RETURN",
+        "THEN",
+        "VALUE"
+      ],
+      "answer": "THEN"
+    },
+    {
+      "id": 13,
+      "question": "In a CASE expression, what does the ELSE clause handle?",
+      "options": [
+        "Rows that match the first WHEN condition",
+        "Rows that do not match any of the WHEN conditions",
+        "Rows that should be deleted",
+        "Rows that have NULL values only"
+      ],
+      "answer": "Rows that do not match any of the WHEN conditions"
+    },
+    {
+      "id": 14,
+      "question": "What does this query do? DELETE FROM enrollments WHERE student_id IN (SELECT id FROM students WHERE major = 'Art');",
+      "options": [
+        "Deletes all students who major in Art",
+        "Deletes enrollments for students whose major is Art",
+        "Updates the major of Art students",
+        "Selects all Art students' enrollments"
+      ],
+      "answer": "Deletes enrollments for students whose major is Art"
+    },
+    {
+      "id": 15,
+      "question": "What is the purpose of a subquery in a DELETE statement's WHERE clause?",
+      "options": [
+        "To create a new table for deleted rows",
+        "To identify which rows to delete based on data from another table",
+        "To count how many rows will be deleted",
+        "To automatically back up deleted rows"
+      ],
+      "answer": "To identify which rows to delete based on data from another table"
+    },
+    {
+      "id": 16,
+      "question": "What does BEGIN TRANSACTION do?",
+      "options": [
+        "Creates a new database",
+        "Starts a group of statements that will succeed or fail together",
+        "Locks the database permanently",
+        "Backs up the database to a file"
+      ],
+      "answer": "Starts a group of statements that will succeed or fail together"
+    },
+    {
+      "id": 17,
+      "question": "What does the COMMIT command do in a transaction?",
+      "options": [
+        "Undoes all changes made in the transaction",
+        "Saves all changes made in the transaction permanently",
+        "Pauses the transaction for review",
+        "Deletes the transaction log"
+      ],
+      "answer": "Saves all changes made in the transaction permanently"
+    },
+    {
+      "id": 18,
+      "question": "What does the ROLLBACK command do in a transaction?",
+      "options": [
+        "Saves all changes permanently",
+        "Exports the transaction to a file",
+        "Undoes all changes made in the transaction",
+        "Restarts the database server"
+      ],
+      "answer": "Undoes all changes made in the transaction"
+    },
+    {
+      "id": 19,
+      "question": "Why are transactions critical when performing multiple related changes?",
+      "options": [
+        "They make queries run faster",
+        "They ensure all changes succeed together or none take effect",
+        "They automatically create backups",
+        "They allow multiple users to edit simultaneously"
+      ],
+      "answer": "They ensure all changes succeed together or none take effect"
+    },
+    {
+      "id": 20,
+      "question": "What would happen if you run UPDATE students SET gpa = 4.0; without a WHERE clause?",
+      "options": [
+        "Only the first student's GPA would change",
+        "An error would occur",
+        "Every student's GPA would be set to 4.0",
+        "Nothing would happen"
+      ],
+      "answer": "Every student's GPA would be set to 4.0"
+    },
+    {
+      "id": 21,
+      "question": "Which SQL operator can be used in a subquery to check that a student has no enrollments?",
+      "options": [
+        "IS NULL",
+        "NOT EXISTS",
+        "HAVING",
+        "BETWEEN"
+      ],
+      "answer": "NOT EXISTS"
+    },
+    {
+      "id": 22,
+      "question": "What is the correct syntax to delete rows where grade is 'F'?",
+      "options": [
+        "DELETE enrollments WHERE grade = 'F';",
+        "DELETE FROM enrollments WHERE grade = 'F';",
+        "REMOVE FROM enrollments WHERE grade = 'F';",
+        "DELETE FROM enrollments HAVING grade = 'F';"
+      ],
+      "answer": "DELETE FROM enrollments WHERE grade = 'F';"
+    },
+    {
+      "id": 23,
+      "question": "What happens to enrollments if you delete a student and the enrollments table has a foreign key referencing student_id with no ON DELETE action?",
+      "options": [
+        "The enrollments are automatically deleted",
+        "The enrollments are automatically updated to NULL",
+        "The delete may be blocked or orphan rows may remain depending on the database configuration",
+        "The enrollments table is dropped entirely"
+      ],
+      "answer": "The delete may be blocked or orphan rows may remain depending on the database configuration"
+    },
+    {
+      "id": 24,
+      "question": "Which of the following correctly updates grades using a subquery?",
+      "options": [
+        "UPDATE enrollments SET grade = 'A' WHERE student_id IN (SELECT id FROM students WHERE gpa > 3.9);",
+        "UPDATE enrollments SET grade = 'A' IN (SELECT id FROM students WHERE gpa > 3.9);",
+        "UPDATE enrollments WHERE student_id IN (SELECT id FROM students WHERE gpa > 3.9) SET grade = 'A';",
+        "UPDATE enrollments SET grade = 'A' FROM students WHERE gpa > 3.9;"
+      ],
+      "answer": "UPDATE enrollments SET grade = 'A' WHERE student_id IN (SELECT id FROM students WHERE gpa > 3.9);"
+    },
+    {
+      "id": 25,
+      "question": "In a bank transfer scenario, why would you use a transaction for debiting one account and crediting another?",
+      "options": [
+        "To make the transfer faster",
+        "To ensure both the debit and credit happen together or neither happens, preventing lost money",
+        "To allow multiple transfers at the same time",
+        "To encrypt the transfer details"
+      ],
+      "answer": "To ensure both the debit and credit happen together or neither happens, preventing lost money"
+    }
+  ]
+}

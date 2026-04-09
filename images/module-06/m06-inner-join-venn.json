@@ -1,0 +1,7 @@
+{
+  "prompt": "A Venn diagram with two overlapping circles. Left circle labeled 'Students', right circle labeled 'Courses'. The overlap is brightly colored and labeled 'INNER JOIN -- matched rows only'. People icons in the overlap are connected to course books.",
+  "full_prompt": "editorial illustration for a programming textbook. A Venn diagram with two overlapping circles. Left circle labeled 'Students', right circle labeled 'Courses'. The overlap is brightly colored and labeled 'INNER JOIN -- matched rows only'. People icons in the overlap are connected to course books. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m06-inner-join-venn.png",
+  "generated": "2026-04-08T21:25:40Z"
+}

@@ -1,0 +1,7 @@
+{
+  "prompt": "A two-stage assembly line: Stage 1 (labeled WHERE) shows individual items being filtered on a conveyor belt. Stage 2 (labeled HAVING) shows grouped boxes being checked. An arrow shows the flow: filter rows first, then filter groups.",
+  "full_prompt": "editorial illustration for a programming textbook. A two-stage assembly line: Stage 1 (labeled WHERE) shows individual items being filtered on a conveyor belt. Stage 2 (labeled HAVING) shows grouped boxes being checked. An arrow shows the flow: filter rows first, then filter groups. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m05-where-vs-having-01.png",
+  "generated": "2026-04-08T21:25:24Z"
+}

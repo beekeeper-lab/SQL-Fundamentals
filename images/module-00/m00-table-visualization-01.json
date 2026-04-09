@@ -1,0 +1,7 @@
+{
+  "prompt": "A database table shown as a colorful spreadsheet-like grid with column headers (id, name, email, department) and 5 rows of sample data. Arrows label 'columns' pointing to the headers and 'rows' pointing to the data entries.",
+  "full_prompt": "editorial illustration for a programming textbook. A database table shown as a colorful spreadsheet-like grid with column headers (id, name, email, department) and 5 rows of sample data. Arrows label 'columns' pointing to the headers and 'rows' pointing to the data entries. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m00-table-visualization-01.png",
+  "generated": "2026-04-08T21:23:05Z"
+}

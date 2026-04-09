@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 3: Inserting Data",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the basic SQL statement used to add a new row to a table?",
+      "options": [
+        "ADD INTO",
+        "INSERT INTO",
+        "PUT INTO",
+        "APPEND INTO"
+      ],
+      "answer": "INSERT INTO"
+    },
+    {
+      "id": 2,
+      "question": "Which keyword follows the table name and column list in an INSERT statement to specify the data?",
+      "options": [
+        "DATA",
+        "SET",
+        "VALUES",
+        "RECORDS"
+      ],
+      "answer": "VALUES"
+    },
+    {
+      "id": 3,
+      "question": "What is considered best practice when writing INSERT statements?",
+      "options": [
+        "Omit the column list to save typing",
+        "Always specify the column list explicitly",
+        "Use SELECT * instead of INSERT",
+        "Insert values in reverse column order"
+      ],
+      "answer": "Always specify the column list explicitly"
+    },
+    {
+      "id": 4,
+      "question": "If you omit the column list from an INSERT statement, what must you provide?",
+      "options": [
+        "Only the primary key value",
+        "Values for every column in the correct order",
+        "The table schema first",
+        "A WHERE clause to identify the row"
+      ],
+      "answer": "Values for every column in the correct order"
+    },
+    {
+      "id": 5,
+      "question": "How do you insert multiple rows in a single INSERT statement in SQLite?",
+      "options": [
+        "Use multiple INSERT keywords separated by commas",
+        "Separate each row's values with a comma after the VALUES keyword",
+        "Use the MULTI keyword before INSERT",
+        "It is not possible in SQLite"
+      ],
+      "answer": "Separate each row's values with a comma after the VALUES keyword"
+    },
+    {
+      "id": 6,
+      "question": "What is an advantage of inserting multiple rows in a single INSERT statement?",
+      "options": [
+        "It allows you to skip NOT NULL constraints",
+        "It is more efficient than multiple separate INSERT statements",
+        "It automatically creates the table if it does not exist",
+        "It bypasses foreign key checks"
+      ],
+      "answer": "It is more efficient than multiple separate INSERT statements"
+    },
+    {
+      "id": 7,
+      "question": "What does NULL represent in SQL?",
+      "options": [
+        "The number zero",
+        "An empty string",
+        "The absence of a value",
+        "A default placeholder text"
+      ],
+      "answer": "The absence of a value"
+    },
+    {
+      "id": 8,
+      "question": "What happens if you try to insert NULL into a column that has a NOT NULL constraint?",
+      "options": [
+        "The NULL is silently converted to 0",
+        "The insert succeeds with an empty string",
+        "The insert is rejected with an error",
+        "The NULL is replaced by the column's DEFAULT value"
+      ],
+      "answer": "The insert is rejected with an error"
+    },
+    {
+      "id": 9,
+      "question": "How do you trigger a column's DEFAULT value during an INSERT?",
+      "options": [
+        "Use the keyword DEFAULT in the VALUES list",
+        "Omit the column from the INSERT column list",
+        "Set the column to NULL",
+        "Use INSERT OR DEFAULT"
+      ],
+      "answer": "Omit the column from the INSERT column list"
+    },
+    {
+      "id": 10,
+      "question": "What is the default behavior when an INSERT violates a UNIQUE constraint in SQLite?",
+      "options": [
+        "The row is silently skipped",
+        "The existing row is replaced",
+        "An error is raised and the statement fails",
+        "The duplicate column value is set to NULL"
+      ],
+      "answer": "An error is raised and the statement fails"
+    },
+    {
+      "id": 11,
+      "question": "What does INSERT OR IGNORE do when a conflict occurs?",
+      "options": [
+        "Raises an error and rolls back the transaction",
+        "Replaces the existing row with the new one",
+        "Silently skips the conflicting row",
+        "Logs a warning and inserts the row anyway"
+      ],
+      "answer": "Silently skips the conflicting row"
+    },
+    {
+      "id": 12,
+      "question": "What does INSERT OR REPLACE do when a conflict occurs?",
+      "options": [
+        "Silently skips the conflicting row",
+        "Deletes the existing row and inserts the new one",
+        "Merges the new values with the existing row",
+        "Raises an error and aborts"
+      ],
+      "answer": "Deletes the existing row and inserts the new one"
+    },
+    {
+      "id": 13,
+      "question": "What does INSERT OR ABORT do?",
+      "options": [
+        "Same as default behavior -- aborts the statement on conflict",
+        "Silently skips the conflicting row",
+        "Replaces the existing row",
+        "Retries the insert after a short delay"
+      ],
+      "answer": "Same as default behavior -- aborts the statement on conflict"
+    },
+    {
+      "id": 14,
+      "question": "For a column defined as INTEGER PRIMARY KEY AUTOINCREMENT, what value should you pass to let SQLite auto-assign the ID?",
+      "options": [
+        "0",
+        "An empty string",
+        "NULL",
+        "-1"
+      ],
+      "answer": "NULL"
+    },
+    {
+      "id": 15,
+      "question": "Given the table definition: email TEXT UNIQUE NOT NULL, what happens if you INSERT OR IGNORE a row with a duplicate email?",
+      "options": [
+        "The new row replaces the old one",
+        "An error is raised",
+        "The row is silently skipped and the original remains unchanged",
+        "Both rows exist with the same email"
+      ],
+      "answer": "The row is silently skipped and the original remains unchanged"
+    },
+    {
+      "id": 16,
+      "question": "Given: department TEXT DEFAULT 'Undeclared', what value does department get if you omit it from the INSERT?",
+      "options": [
+        "NULL",
+        "An empty string",
+        "Undeclared",
+        "An error is raised because the value is required"
+      ],
+      "answer": "Undeclared"
+    },
+    {
+      "id": 17,
+      "question": "What happens to the id column when INSERT OR REPLACE deletes and re-inserts a row with an AUTOINCREMENT primary key?",
+      "options": [
+        "The id stays the same as the original row",
+        "The id may change to a new auto-generated value",
+        "The id is always set to 0",
+        "The id column is removed"
+      ],
+      "answer": "The id may change to a new auto-generated value"
+    },
+    {
+      "id": 18,
+      "question": "Which constraint type checks that a value falls within a specified range, such as gpa >= 0.0 AND gpa <= 4.0?",
+      "options": [
+        "UNIQUE",
+        "NOT NULL",
+        "CHECK",
+        "FOREIGN KEY"
+      ],
+      "answer": "CHECK"
+    },
+    {
+      "id": 19,
+      "question": "What error occurs when you try to insert a row with gpa = -1.0 into a column with CHECK(gpa >= 0.0 AND gpa <= 4.0)?",
+      "options": [
+        "Syntax error",
+        "CHECK constraint failed",
+        "Type mismatch error",
+        "Column not found error"
+      ],
+      "answer": "CHECK constraint failed"
+    },
+    {
+      "id": 20,
+      "question": "Which clause is needed to enable foreign key enforcement in SQLite?",
+      "options": [
+        "SET FOREIGN_KEYS = TRUE",
+        "PRAGMA foreign_keys = ON",
+        "ENABLE FOREIGN KEYS",
+        "ALTER DATABASE SET FK_CHECK = 1"
+      ],
+      "answer": "PRAGMA foreign_keys = ON"
+    },
+    {
+      "id": 21,
+      "question": "If a column is defined with DEFAULT (date('now')), what value is inserted when the column is omitted?",
+      "options": [
+        "The string 'now'",
+        "NULL",
+        "The current date in YYYY-MM-DD format",
+        "An empty string"
+      ],
+      "answer": "The current date in YYYY-MM-DD format"
+    },
+    {
+      "id": 22,
+      "question": "Which syntax correctly inserts three rows into a pets table in a single statement?",
+      "options": [
+        "INSERT INTO pets (name) VALUES ('A'), ('B'), ('C');",
+        "INSERT INTO pets (name) VALUES ('A'); VALUES ('B'); VALUES ('C');",
+        "INSERT INTO pets (name) VALUES 'A', 'B', 'C';",
+        "INSERT INTO pets (name) MULTI VALUES ('A', 'B', 'C');"
+      ],
+      "answer": "INSERT INTO pets (name) VALUES ('A'), ('B'), ('C');"
+    },
+    {
+      "id": 23,
+      "question": "When inserting into an enrollments table with a composite PRIMARY KEY (student_id, course_id), what causes a conflict?",
+      "options": [
+        "Inserting a row where only student_id matches an existing row",
+        "Inserting a row where only course_id matches an existing row",
+        "Inserting a row where both student_id and course_id match an existing row",
+        "Inserting a row with a NULL grade"
+      ],
+      "answer": "Inserting a row where both student_id and course_id match an existing row"
+    },
+    {
+      "id": 24,
+      "question": "What is the difference between NULL and an empty string ('') in SQL?",
+      "options": [
+        "They are identical and interchangeable",
+        "NULL means the absence of a value; an empty string is a known value that happens to be empty",
+        "An empty string is not allowed in SQL",
+        "NULL is only used for numeric columns"
+      ],
+      "answer": "NULL means the absence of a value; an empty string is a known value that happens to be empty"
+    },
+    {
+      "id": 25,
+      "question": "In a CHECK constraint defined as grade IN ('A', 'B', 'C', 'D', 'F') OR grade IS NULL, which of the following values is allowed?",
+      "options": [
+        "The string 'E'",
+        "The number 1",
+        "NULL",
+        "The string 'Pass'"
+      ],
+      "answer": "NULL"
+    }
+  ]
+}

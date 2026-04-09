@@ -1,0 +1,282 @@
+{
+  "quiz_title": "Day 7: Joins",
+  "passing_score": 20,
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does an INNER JOIN return?",
+      "options": [
+        "All rows from both tables regardless of matches",
+        "Only rows where there is a match in both tables",
+        "All rows from the left table only",
+        "All rows from the right table only"
+      ],
+      "answer": "Only rows where there is a match in both tables"
+    },
+    {
+      "id": 2,
+      "question": "What does a LEFT JOIN return?",
+      "options": [
+        "Only rows that match in both tables",
+        "All rows from the right table and matching rows from the left",
+        "All rows from the left table and matching rows from the right",
+        "The Cartesian product of both tables"
+      ],
+      "answer": "All rows from the left table and matching rows from the right"
+    },
+    {
+      "id": 3,
+      "question": "In a LEFT JOIN, what appears in the right-side columns when there is no match?",
+      "options": [
+        "An empty string",
+        "Zero",
+        "NULL",
+        "The default value of the column"
+      ],
+      "answer": "NULL"
+    },
+    {
+      "id": 4,
+      "question": "What does a CROSS JOIN produce?",
+      "options": [
+        "Only matching rows between two tables",
+        "The Cartesian product of all rows from both tables",
+        "A union of both tables",
+        "Rows where the primary keys match"
+      ],
+      "answer": "The Cartesian product of all rows from both tables"
+    },
+    {
+      "id": 5,
+      "question": "If table A has 5 rows and table B has 4 rows, how many rows does a CROSS JOIN return?",
+      "options": [
+        "9",
+        "5",
+        "20",
+        "4"
+      ],
+      "answer": "20"
+    },
+    {
+      "id": 6,
+      "question": "What is a self-join?",
+      "options": [
+        "A join that creates a copy of the table",
+        "A join where a table is joined to itself",
+        "A join that automatically matches primary keys",
+        "A join between two tables with the same schema"
+      ],
+      "answer": "A join where a table is joined to itself"
+    },
+    {
+      "id": 7,
+      "question": "Why are table aliases useful in JOIN queries?",
+      "options": [
+        "They improve query execution speed",
+        "They make queries shorter and more readable",
+        "They are required by SQL syntax for all joins",
+        "They automatically index the joined columns"
+      ],
+      "answer": "They make queries shorter and more readable"
+    },
+    {
+      "id": 8,
+      "question": "Which keyword can be omitted when defining a table alias?",
+      "options": [
+        "JOIN",
+        "ON",
+        "AS",
+        "FROM"
+      ],
+      "answer": "AS"
+    },
+    {
+      "id": 9,
+      "question": "Which SQL clause specifies the condition for matching rows in a JOIN?",
+      "options": [
+        "WHERE",
+        "HAVING",
+        "ON",
+        "USING"
+      ],
+      "answer": "ON"
+    },
+    {
+      "id": 10,
+      "question": "Which type of JOIN does SQLite NOT support?",
+      "options": [
+        "INNER JOIN",
+        "LEFT JOIN",
+        "RIGHT JOIN",
+        "CROSS JOIN"
+      ],
+      "answer": "RIGHT JOIN"
+    },
+    {
+      "id": 11,
+      "question": "How can you simulate a RIGHT JOIN in SQLite?",
+      "options": [
+        "Use a CROSS JOIN with a WHERE clause",
+        "Swap the table order and use a LEFT JOIN",
+        "Use a FULL OUTER JOIN instead",
+        "It cannot be simulated in SQLite"
+      ],
+      "answer": "Swap the table order and use a LEFT JOIN"
+    },
+    {
+      "id": 12,
+      "question": "What does a FULL OUTER JOIN return?",
+      "options": [
+        "Only rows that match in both tables",
+        "All rows from both tables, with NULLs where there is no match on either side",
+        "The Cartesian product of both tables",
+        "All rows from the left table only"
+      ],
+      "answer": "All rows from both tables, with NULLs where there is no match on either side"
+    },
+    {
+      "id": 13,
+      "question": "Given: SELECT s.name, e.grade FROM students s INNER JOIN enrollments e ON s.id = e.student_id; Which students appear in the results?",
+      "options": [
+        "All students in the students table",
+        "Only students who have at least one enrollment",
+        "Only students with a grade of A",
+        "Only the first student in the table"
+      ],
+      "answer": "Only students who have at least one enrollment"
+    },
+    {
+      "id": 14,
+      "question": "In a self-join to find pairs, why is the condition a.id < b.id used?",
+      "options": [
+        "To sort results by ID",
+        "To ensure only rows with small IDs are included",
+        "To avoid duplicate pairs and self-pairs",
+        "To limit the number of results"
+      ],
+      "answer": "To avoid duplicate pairs and self-pairs"
+    },
+    {
+      "id": 15,
+      "question": "How do you join three tables together in a single query?",
+      "options": [
+        "Use nested SELECT statements only",
+        "Chain multiple JOIN clauses one after another",
+        "Use UNION to combine three separate queries",
+        "Create a temporary table first"
+      ],
+      "answer": "Chain multiple JOIN clauses one after another"
+    },
+    {
+      "id": 16,
+      "question": "Which query finds students not enrolled in any course using a LEFT JOIN?",
+      "options": [
+        "SELECT * FROM students s LEFT JOIN enrollments e ON s.id = e.student_id WHERE e.student_id = 0;",
+        "SELECT * FROM students s LEFT JOIN enrollments e ON s.id = e.student_id WHERE e.student_id IS NULL;",
+        "SELECT * FROM students s INNER JOIN enrollments e ON s.id = e.student_id WHERE e.grade IS NULL;",
+        "SELECT * FROM students s CROSS JOIN enrollments e WHERE e.student_id IS NULL;"
+      ],
+      "answer": "SELECT * FROM students s LEFT JOIN enrollments e ON s.id = e.student_id WHERE e.student_id IS NULL;"
+    },
+    {
+      "id": 17,
+      "question": "What is the purpose of the ON clause in a JOIN?",
+      "options": [
+        "To specify which columns to display",
+        "To define the condition that relates rows between the joined tables",
+        "To filter the final result set",
+        "To order the output rows"
+      ],
+      "answer": "To define the condition that relates rows between the joined tables"
+    },
+    {
+      "id": 18,
+      "question": "Which query correctly joins students, enrollments, and courses?",
+      "options": [
+        "SELECT * FROM students s, enrollments e, courses c;",
+        "SELECT * FROM students s JOIN enrollments e ON s.id = e.student_id JOIN courses c ON c.id = e.course_id;",
+        "SELECT * FROM students s JOIN enrollments e JOIN courses c;",
+        "SELECT * FROM students s CROSS JOIN enrollments e CROSS JOIN courses c ON s.id = e.student_id;"
+      ],
+      "answer": "SELECT * FROM students s JOIN enrollments e ON s.id = e.student_id JOIN courses c ON c.id = e.course_id;"
+    },
+    {
+      "id": 19,
+      "question": "What does GROUP_CONCAT(DISTINCT e.grade) do in a JOIN query?",
+      "options": [
+        "Counts the number of distinct grades",
+        "Returns the highest grade",
+        "Concatenates all unique grade values into a comma-separated string",
+        "Groups rows by grade value"
+      ],
+      "answer": "Concatenates all unique grade values into a comma-separated string"
+    },
+    {
+      "id": 20,
+      "question": "Which JOIN type is most commonly used to find matching records between two related tables?",
+      "options": [
+        "CROSS JOIN",
+        "LEFT JOIN",
+        "INNER JOIN",
+        "FULL OUTER JOIN"
+      ],
+      "answer": "INNER JOIN"
+    },
+    {
+      "id": 21,
+      "question": "In a LEFT JOIN, which table is considered the 'left' table?",
+      "options": [
+        "The table listed after the JOIN keyword",
+        "The table listed in the FROM clause before the JOIN keyword",
+        "The table with fewer rows",
+        "The table with the primary key"
+      ],
+      "answer": "The table listed in the FROM clause before the JOIN keyword"
+    },
+    {
+      "id": 22,
+      "question": "What happens if you omit the ON clause in an INNER JOIN?",
+      "options": [
+        "It returns an empty result set",
+        "It behaves like a CROSS JOIN producing a Cartesian product",
+        "It produces a syntax error",
+        "It automatically joins on matching column names"
+      ],
+      "answer": "It produces a syntax error"
+    },
+    {
+      "id": 23,
+      "question": "Which clause is used with GROUP BY to filter groups after aggregation in a JOIN query?",
+      "options": [
+        "WHERE",
+        "HAVING",
+        "ON",
+        "FILTER"
+      ],
+      "answer": "HAVING"
+    },
+    {
+      "id": 24,
+      "question": "To count students enrolled per course using a LEFT JOIN, which aggregate function and grouping should you use?",
+      "options": [
+        "SUM(e.student_id) with GROUP BY c.name",
+        "COUNT(e.student_id) with GROUP BY c.id",
+        "MAX(e.student_id) with GROUP BY c.name",
+        "AVG(e.student_id) with GROUP BY c.department"
+      ],
+      "answer": "COUNT(e.student_id) with GROUP BY c.id"
+    },
+    {
+      "id": 25,
+      "question": "What is the key difference between WHERE and ON in a JOIN query?",
+      "options": [
+        "There is no difference; they are interchangeable",
+        "ON specifies the join condition between tables, while WHERE filters the combined result set",
+        "WHERE is used for joins and ON is used for filtering",
+        "ON only works with INNER JOIN, while WHERE works with all joins"
+      ],
+      "answer": "ON specifies the join condition between tables, while WHERE filters the combined result set"
+    }
+  ]
+}

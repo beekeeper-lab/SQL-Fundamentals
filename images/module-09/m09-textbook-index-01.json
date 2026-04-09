@@ -1,0 +1,7 @@
+{
+  "prompt": "An open textbook with the index page visible in the back. The index entries have database column names instead of topics (email: page 42, major: page 87). An arrow connects an index entry to the right page. Label: 'Same idea, different scale'.",
+  "full_prompt": "editorial illustration for a programming textbook. An open textbook with the index page visible in the back. The index entries have database column names instead of topics (email: page 42, major: page 87). An arrow connects an index entry to the right page. Label: 'Same idea, different scale'. Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "imagen-4.0-generate-001",
+  "file": "m09-textbook-index-01.png",
+  "generated": "2026-04-08T21:26:57Z"
+}

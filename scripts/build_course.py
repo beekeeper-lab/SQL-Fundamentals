@@ -23,6 +23,7 @@ SOURCE_DIR = PROJECT_ROOT / "source"
 IMAGES_DIR = PROJECT_ROOT / "images"
 AUDIO_DIR = PROJECT_ROOT / "audio"
 HTML_DIR = PROJECT_ROOT / "html"
+QUIZ_DIR = PROJECT_ROOT / "Quiz"
 
 # Module ordering and metadata
 MODULES = [
@@ -143,6 +144,53 @@ def process_narration_blocks(html_content: str, module_stem: str) -> str:
     return html_content
 
 
+_MARKER_EMOJI_RE = re.compile(
+    r'[\U0001F3F7]\uFE0F|'   # 🏷️
+    r'\U0001F3AF|'            # 🎯
+    r'[\U0001F399]\uFE0F|'   # 🎙️
+    r'\U0001F504|'            # 🔄
+    r'\U0001F4A1'             # 💡
+)
+
+
+def split_merged_blockquotes(html_content: str) -> str:
+    """Split <blockquote> blocks that contain multiple <p> marker paragraphs.
+
+    Python-Markdown merges adjacent > lines into one <blockquote> even when
+    they are separated by blank lines in the source.  The emoji processors
+    expect each marker in its own <blockquote>, so we split them here.
+    """
+    def _split_one(match: re.Match) -> str:
+        inner = match.group(1)
+        # Split on paragraph boundaries
+        paragraphs = re.split(r'</p>\s*<p>', inner)
+        if len(paragraphs) < 2:
+            return match.group(0)  # single paragraph, nothing to split
+
+        # Check if any paragraph contains a marker emoji
+        has_marker = any(_MARKER_EMOJI_RE.search(p) for p in paragraphs)
+        if not has_marker:
+            return match.group(0)  # no markers, leave untouched
+
+        # Rewrap each paragraph in its own blockquote
+        parts = []
+        for p in paragraphs:
+            p = p.strip()
+            if not p.startswith('<p>'):
+                p = '<p>' + p
+            if not p.endswith('</p>'):
+                p = p + '</p>'
+            parts.append(f'<blockquote>\n{p}\n</blockquote>')
+        return '\n'.join(parts)
+
+    return re.sub(
+        r'<blockquote>\s*(.*?)\s*</blockquote>',
+        _split_one,
+        html_content,
+        flags=re.DOTALL,
+    )
+
+
 def process_tier_badges(html_content: str) -> str:
     """Convert tier markers into styled badge elements."""
     tier_classes = {
@@ -257,8 +305,44 @@ def process_teaching_intent_blocks(html_content: str) -> str:
     return html_content
 
 
+def generate_toc(html_body: str) -> str:
+    """Generate a page-grouped TOC from the HTML body.
+
+    Each H2 starts a new page group (matching split_into_pages logic).
+    H3s nest underneath their parent H2.  Output uses toc-page-group
+    classes so the template CSS can style them.
+    """
+    heading_re = re.compile(r'<(h[23])\s[^>]*id="([^"]+)"[^>]*>(.*?)</\1>', re.DOTALL)
+    headings = [(m.group(1), m.group(2), re.sub(r'<[^>]+>', '', m.group(3)).strip())
+                for m in heading_re.finditer(html_body)]
+
+    if not headings:
+        return ''
+
+    # Group: every h2 starts a new page (page 0 is intro content merged with first h2)
+    groups: list[dict] = []       # [{h2_id, h2_text, h3s: [(id, text), ...]}]
+    for tag, hid, text in headings:
+        if tag == 'h2':
+            groups.append({'h2_id': hid, 'h2_text': text, 'h3s': []})
+        elif tag == 'h3' and groups:
+            groups[-1]['h3s'].append((hid, text))
+
+    lines = ['<ul class="toc-list">']
+    for page_num, g in enumerate(groups):
+        lines.append(f'  <li class="toc-page-group" data-toc-page="{page_num}">')
+        lines.append(f'    <a href="#{g["h2_id"]}" class="toc-h2-link">{g["h2_text"]}</a>')
+        if g['h3s']:
+            lines.append('    <ul class="toc-subsections">')
+            for h3_id, h3_text in g['h3s']:
+                lines.append(f'      <li><a href="#{h3_id}" class="toc-h3-link">{h3_text}</a></li>')
+            lines.append('    </ul>')
+        lines.append('  </li>')
+    lines.append('</ul>')
+    return '\n'.join(lines)
+
+
 def convert_markdown_to_html(source_path: Path) -> tuple[str, str]:
-    """Convert a markdown file to HTML content. Returns (title, html_body)."""
+    """Convert a markdown file to HTML content. Returns (title, html_body, toc)."""
     text = source_path.read_text()
 
     # Extract title from first H1
@@ -276,7 +360,7 @@ def convert_markdown_to_html(source_path: Path) -> tuple[str, str]:
     )
 
     html_body = md.convert(text)
-    toc = md.toc
+    toc = generate_toc(html_body)
 
     return title, html_body, toc
 
@@ -300,6 +384,65 @@ def split_into_pages(html_body: str) -> list[str]:
     return pages if pages else [f'<div class="page" data-page="0">{html_body}</div>']
 
 
+def generate_quiz_html(module_num: int, module_slug: str) -> str:
+    """Generate quiz HTML from the Day_XX quiz JSON file."""
+    quiz_dir = QUIZ_DIR / f"Day_{module_num + 1:02d}_Quiz_File"
+    quiz_file = quiz_dir / f"day_{module_num + 1:02d}_quiz.json"
+    if not quiz_file.exists():
+        return ""
+
+    data = json.loads(quiz_file.read_text())
+    title = data.get("quiz_title", f"Module {module_num} Quiz")
+    passing = data.get("passing_score", 0)
+    total = data.get("total_questions", len(data.get("questions", [])))
+    questions = data.get("questions", [])
+
+    if not questions:
+        return ""
+
+    # Build question HTML
+    q_html = []
+    for q in questions:
+        qid = q["id"]
+        opts = ""
+        for opt in q["options"]:
+            safe_opt = opt.replace('"', '&quot;').replace("'", "&#39;")
+            opts += (
+                f'<label><input type="radio" name="q{qid}" value="{safe_opt}">'
+                f' <span>{opt}</span></label>\n'
+            )
+        safe_answer = q["answer"].replace('"', '&quot;')
+        q_html.append(
+            f'<div class="quiz-question" data-answer="{safe_answer}">\n'
+            f'  <div class="quiz-question-number">Question {qid}</div>\n'
+            f'  <div class="quiz-question-text">{q["question"]}</div>\n'
+            f'  <div class="quiz-options">\n{opts}  </div>\n'
+            f'  <div class="quiz-feedback"></div>\n'
+            f'</div>'
+        )
+
+    quiz_data_json = json.dumps({
+        "moduleSlug": module_slug,
+        "passingScore": passing,
+        "totalQuestions": total,
+    })
+
+    return (
+        f'\n<h2 id="quiz">Knowledge Check: {title}</h2>\n'
+        f'<script type="application/json" id="quizData">{quiz_data_json}</script>\n'
+        f'<div class="quiz-container" id="quizForm">\n'
+        + "\n".join(q_html) +
+        f'\n<button class="quiz-submit-btn" id="quizSubmitBtn">Submit Answers</button>\n'
+        f'<div class="quiz-results" id="quizResults">\n'
+        f'  <div class="quiz-score" id="quizScore"></div>\n'
+        f'  <div class="quiz-label" id="quizLabel"></div>\n'
+        f'  <div class="quiz-detail" id="quizDetail"></div>\n'
+        f'  <button class="quiz-retry-btn" id="quizRetryBtn">Try Again</button>\n'
+        f'</div>\n'
+        f'</div>\n'
+    )
+
+
 def build_module_html(
     source_path: Path,
     prev_module: dict | None,
@@ -311,6 +454,9 @@ def build_module_html(
     """Build a complete HTML page for a module."""
     title, body, toc = convert_markdown_to_html(source_path)
     module_stem = source_path.stem
+
+    # Split merged blockquotes so each emoji marker gets its own <blockquote>
+    body = split_merged_blockquotes(body)
 
     # Process special blocks
     body = process_tier_badges(body)
@@ -324,6 +470,14 @@ def build_module_html(
     # Embed images
     if embed_media:
         body = embed_images(body)
+
+    # Append quiz page if quiz exists for this module
+    module_num_match = re.search(r'module-(\d+)', module_stem)
+    if module_num_match:
+        module_num = int(module_num_match.group(1))
+        quiz_html = generate_quiz_html(module_num, module_stem)
+        if quiz_html:
+            body += quiz_html
 
     # Split into pages
     pages = split_into_pages(body)
@@ -357,6 +511,7 @@ def build_module_html(
 def _build_card(mod: dict, prefix: str = "html/") -> str:
     """Build a single module card with embedded hero thumbnail."""
     html_file = prefix + mod["file"].replace(".md", ".html")
+    slug = mod["file"].replace(".md", "")
     hero_path = IMAGES_DIR / mod.get("hero", "")
     thumb = image_to_base64(hero_path) if hero_path.exists() else ""
     thumb_html = f'<img class="card-thumb" src="{thumb}" alt="">' if thumb else ""
@@ -364,13 +519,17 @@ def _build_card(mod: dict, prefix: str = "html/") -> str:
     tier_css = mod.get("tier_css", "")
     tier_html = f'<span class="card-tier {tier_css}">{tier}</span>' if tier else ""
     return f'''
-            <a href="{html_file}" class="module-card">
+            <a href="{html_file}" class="module-card" data-module-slug="{slug}">
                 {thumb_html}
                 <div class="card-text">
                     <div class="module-number">{mod["short"]} {tier_html}</div>
                     <div class="module-title">{mod["title"]}</div>
+                    <div class="quiz-score-line" data-quiz-score></div>
                 </div>
-                <div class="module-progress"></div>
+                <div class="card-right">
+                    <span class="quiz-badge not-taken" data-quiz-badge>Quiz</span>
+                    <div class="module-progress"></div>
+                </div>
             </a>'''
 
 
@@ -595,11 +754,39 @@ img {{
 [data-theme="dark"] .tier-when-ready {{ background: #451a03; color: #fcd34d; border-color: #92400e; }}
 [data-theme="dark"] .tier-advanced {{ background: #3b0764; color: #c4b5fd; border-color: #6b21a8; }}
 
-.module-progress {{
+.card-right {{
     margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}}
+
+.module-progress {{
     font-size: 0.85rem;
     color: var(--text-secondary);
-    flex-shrink: 0;
+}}
+
+.quiz-badge {{
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+}}
+
+.quiz-badge.not-taken {{ background: var(--bg-code); color: var(--text-secondary); border: 1px solid var(--border); }}
+.quiz-badge.passed {{ background: #dcfce7; color: #166534; border: 1px solid #86efac; }}
+.quiz-badge.failed {{ background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }}
+[data-theme="dark"] .quiz-badge.passed {{ background: #052e16; color: #86efac; border-color: #166534; }}
+[data-theme="dark"] .quiz-badge.failed {{ background: #450a0a; color: #fca5a5; border-color: #991b1b; }}
+
+.quiz-score-line {{
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.1rem;
 }}
 
 /* ── Quick Reference ── */
@@ -736,6 +923,27 @@ function toggleTheme() {{
         if (card) {{
             const prog = card.querySelector('.module-progress');
             if (prog) prog.textContent = '✓';
+        }}
+    }});
+
+    // Update quiz badges from saved results
+    const quizResults = JSON.parse(localStorage.getItem('sql-fundamentals-quiz-results') || '{{}}');
+    document.querySelectorAll('.module-card[data-module-slug]').forEach(card => {{
+        const slug = card.getAttribute('data-module-slug');
+        const badge = card.querySelector('[data-quiz-badge]');
+        const scoreLine = card.querySelector('[data-quiz-score]');
+        const result = quizResults[slug];
+        if (result && badge) {{
+            if (result.passed) {{
+                badge.className = 'quiz-badge passed';
+                badge.textContent = 'Passed';
+            }} else {{
+                badge.className = 'quiz-badge failed';
+                badge.textContent = 'Retry';
+            }}
+            if (scoreLine) {{
+                scoreLine.textContent = result.score + '/' + result.total;
+            }}
         }}
     }});
 }})();

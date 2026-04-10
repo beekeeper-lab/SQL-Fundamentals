@@ -107,6 +107,8 @@ What if your subquery returns not one value, but a whole list? You can't use `=`
 
 Think of it like a guest list at a party. The subquery produces the guest list, and then you check who's on it.
 
+![Scalar subquery returns one value, list subquery returns many](../images/module-07/m07-scalar-vs-list-01.png)
+
 ```sql
 -- Find all students who are enrolled in at least one course
 SELECT name, email
@@ -155,6 +157,8 @@ The inner query finds all `student_id` values for course 3. The outer query look
 `EXISTS` is a different animal from `IN`. It doesn't care about *what* the subquery returns -- only *whether it returns anything at all*.
 
 Think of it as knocking on a door. You're not asking "who's home?" You're asking "is *anyone* home?"
+
+![EXISTS just checks: is anyone home?](../images/module-07/m07-exists-door-knock-01.png)
 
 ```sql
 -- Find students who have at least one enrollment
@@ -337,6 +341,8 @@ You've been writing some complex queries -- three-table joins, subqueries, aggre
 **Views to the rescue.** A view is a saved query that you can use like a table.
 
 Think of it as a bookmark. The data isn't stored separately -- the view just remembers the query and runs it every time you use it.
+
+![A view is a bookmark to your favorite query](../images/module-07/m07-view-bookmark-01.png)
 
 ```sql
 -- Create a view that joins students, enrollments, and courses

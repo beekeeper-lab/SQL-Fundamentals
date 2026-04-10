@@ -1,0 +1,8 @@
+{
+  "prompt": "A hand of playing cards being sorted in two steps -- first grouped by suit into four piles, then within each pile sorted by number value, with arrows showing the two-level sorting process",
+  "full_prompt": "editorial illustration for a programming textbook. A hand of playing cards being sorted in two steps -- first grouped by suit into four piles, then within each pile sorted by number value, with arrows showing the two-level sorting process Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m04-multi-column-sort-01.png",
+  "generated": "2026-04-09T17:06:09Z",
+  "elapsed_seconds": 21.0
+}

@@ -115,6 +115,8 @@ FROM students;
 
 One query, five insights. That's the power of aggregation.
 
+![The Big Five: COUNT, SUM, AVG, MIN, MAX](../images/module-05/m05-big-five-functions-01.png)
+
 > 🎙️ Five functions, five superpowers. COUNT tells you "how many." SUM tells you "how much total." AVG tells you "what's typical." MIN and MAX tell you "what are the extremes." Individually, they're useful. Combined -- and especially combined with GROUP BY, which we'll cover next -- they're transformative.
 
 > 💡 **Remember this one thing:** All aggregate functions except `COUNT(*)` ignore NULL values. This is usually the right behavior, but it can lead to surprises if you're not expecting it.

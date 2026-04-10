@@ -1,0 +1,8 @@
+{
+  "prompt": "On the left, a subquery bubble producing a single number (3.25) being compared with an equals sign; on the right, a subquery bubble producing a list of IDs being checked against with an IN operator and a guest-list clipboard",
+  "full_prompt": "editorial illustration for a programming textbook. On the left, a subquery bubble producing a single number (3.25) being compared with an equals sign; on the right, a subquery bubble producing a list of IDs being checked against with an IN operator and a guest-list clipboard Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m07-scalar-vs-list-01.png",
+  "generated": "2026-04-09T17:07:34Z",
+  "elapsed_seconds": 18.1
+}

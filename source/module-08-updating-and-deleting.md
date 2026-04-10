@@ -27,6 +27,8 @@
 
 Here's the thing about everything you've learned so far: it was all safe. You could run any SELECT query a thousand times and your data would be exactly the same afterward. SELECT is a pencil -- you can sketch, erase, try again.
 
+![SELECT is a pencil, UPDATE and DELETE are permanent markers](../images/module-08/m08-pencil-vs-marker-01.png)
+
 UPDATE and DELETE? Those are permanent markers on a shared whiteboard.
 
 Think of it like editing a Google Doc that the entire company uses -- except there's no version history. No "undo." No "restore previous version." What you change is changed. What you delete is gone.

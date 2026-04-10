@@ -1,0 +1,8 @@
+{
+  "prompt": "On the left, a long list with repeated color-coded labels (Biology appears 5 times, CS appears 3 times, etc.); on the right, the same labels appearing exactly once each, with a DISTINCT stamp in between",
+  "full_prompt": "editorial illustration for a programming textbook. On the left, a long list with repeated color-coded labels (Biology appears 5 times, CS appears 3 times, etc.); on the right, the same labels appearing exactly once each, with a DISTINCT stamp in between Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m04-distinct-dedup-01.png",
+  "generated": "2026-04-09T17:06:31Z",
+  "elapsed_seconds": 20.5
+}

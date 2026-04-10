@@ -1,0 +1,8 @@
+{
+  "prompt": "Three small Venn diagrams side by side -- first showing the shaded intersection labeled AND, second showing both circles fully shaded labeled OR, third showing the area outside one circle shaded labeled NOT",
+  "full_prompt": "editorial illustration for a programming textbook. Three small Venn diagrams side by side -- first showing the shaded intersection labeled AND, second showing both circles fully shaded labeled OR, third showing the area outside one circle shaded labeled NOT Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m03-logical-operators-venn-01.png",
+  "generated": "2026-04-09T17:05:22Z",
+  "elapsed_seconds": 20.6
+}

@@ -1,0 +1,8 @@
+{
+  "prompt": "A balance scale where one side holds a fast rocket labeled \"Reads\" and the other holds a heavy anchor labeled \"Writes,\" with index cards piled on both sides, showing the trade-off decision",
+  "full_prompt": "editorial illustration for a programming textbook. A balance scale where one side holds a fast rocket labeled \"Reads\" and the other holds a heavy anchor labeled \"Writes,\" with index cards piled on both sides, showing the trade-off decision Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m09-index-tradeoff-balance-01.png",
+  "generated": "2026-04-09T17:09:21Z",
+  "elapsed_seconds": 19.5
+}

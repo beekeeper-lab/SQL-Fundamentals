@@ -1,0 +1,8 @@
+{
+  "prompt": "A row of letter tiles on a game board, with some tiles replaced by wildcard symbols -- a percent sign stretching across multiple tile spaces and an underscore fitting exactly one tile space, with example matches shown below",
+  "full_prompt": "editorial illustration for a programming textbook. A row of letter tiles on a game board, with some tiles replaced by wildcard symbols -- a percent sign stretching across multiple tile spaces and an underscore fitting exactly one tile space, with example matches shown below Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m03-like-wildcards-01.png",
+  "generated": "2026-04-09T17:05:46Z",
+  "elapsed_seconds": 21.7
+}

@@ -278,6 +278,8 @@ What if you want to find all pairs of students who share the same major? You nee
 
 The trick: give the same table **two different aliases** so SQL can tell them apart:
 
+![A self-join is the same table under two aliases](../images/module-06/m06-self-join-mirror-01.png)
+
 ```sql
 -- Find pairs of students in the same major
 SELECT a.name AS student_1, b.name AS student_2, a.major

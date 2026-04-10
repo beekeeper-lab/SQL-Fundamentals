@@ -1,0 +1,8 @@
+{
+  "prompt": "A split image -- on the left, a chaotic closet with shirts, shoes, and coats tangled together in one heap; on the right, the same items neatly sorted onto labeled shelves and hangers, each category in its own section",
+  "full_prompt": "editorial illustration for a programming textbook. A split image -- on the left, a chaotic closet with shirts, shoes, and coats tangled together in one heap; on the right, the same items neatly sorted onto labeled shelves and hangers, each category in its own section Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m09-normalization-closet-01.png",
+  "generated": "2026-04-09T17:08:59Z",
+  "elapsed_seconds": 18.9
+}

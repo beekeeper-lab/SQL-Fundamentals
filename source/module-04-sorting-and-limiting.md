@@ -112,6 +112,8 @@ Think of it like sorting a hand of cards:
   Then:  Within tied GPAs, sort by last name (ascending)
 ```
 
+![Multi-column sort: group by suit, then sort by value](../images/module-04/m04-multi-column-sort-01.png)
+
 > 🎙️ Multi-column sorting is one of those features that feels obvious once you see it, but it's surprisingly powerful. Any time you need a "sort by this, then by that" structure -- which is most of the time in real applications -- this is how you do it.
 
 ---
@@ -279,6 +281,8 @@ FROM students;
 ```
 
 Without DISTINCT, if 200 students major in Computer Science, you'd see "Computer Science" 200 times. With DISTINCT, you see it once.
+
+![DISTINCT removes duplicate values](../images/module-04/m04-distinct-dedup-01.png)
 
 ```sql
 -- What class years are represented?

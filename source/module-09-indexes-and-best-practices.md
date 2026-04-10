@@ -96,6 +96,8 @@ Avoid indexes when:
 - **The column has very few distinct values.** A `gender` column with only 'M' and 'F'? An index won't help much because half the table matches each value. This is called "low cardinality."
 - **The table is write-heavy.** A logging table that receives thousands of inserts per second? Every index slows down every insert. If you rarely query the table, the indexes are all cost and no benefit.
 
+![The index trade-off: faster reads, slower writes](../images/module-09/m09-index-tradeoff-balance-01.png)
+
 | Scenario | Index? | Why |
 |----------|--------|-----|
 | `users` table, 10M rows, frequent WHERE on `email` | Yes | High cardinality, read-heavy |
@@ -292,6 +294,8 @@ A: For most applications, yes. 3NF eliminates the most common redundancy problem
 Normalization is like organizing a messy closet. Right now, everything might be shoved in there -- shirts mixed with shoes, winter coats tangled with swimsuits. It "works" in the sense that all your stuff is in one place. But finding anything is a nightmare, and when you buy a new shirt, you might accidentally create a duplicate because you couldn't see what you already had.
 
 Normalization gives everything its own shelf.
+
+![Normalization: from messy closet to organized shelves](../images/module-09/m09-normalization-closet-01.png)
 
 ### The messy table (before normalization)
 

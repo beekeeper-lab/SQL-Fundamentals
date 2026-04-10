@@ -1,0 +1,8 @@
+{
+  "prompt": "A database table standing in front of a mirror, where its reflection wears a different name tag (alias), and lines connect matching rows between the original and the reflection",
+  "full_prompt": "editorial illustration for a programming textbook. A database table standing in front of a mirror, where its reflection wears a different name tag (alias), and lines connect matching rows between the original and the reflection Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational. Simple and clear. White background. Minimal or no text in the image.",
+  "model": "nano-banana-pro-preview",
+  "file": "m06-self-join-mirror-01.png",
+  "generated": "2026-04-09T17:07:13Z",
+  "elapsed_seconds": 17.4
+}

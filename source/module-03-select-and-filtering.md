@@ -213,6 +213,8 @@ WHERE NOT major = 'Computer Science';
 
 NOT inverts whatever condition follows it. True becomes false, false becomes true.
 
+![AND, OR, and NOT as Venn diagrams](../images/module-03/m03-logical-operators-venn-01.png)
+
 ### Parentheses: Because Order Matters
 
 Here's where people get tripped up. What does this query return?
@@ -350,6 +352,8 @@ Sometimes you don't know the exact value. You know it starts with "J" or contain
 |----------|---------|---------|
 | `%` | Any number of characters (including zero) | `'J%'` matches "John", "Jane", "J" |
 | `_` | Exactly one character | `'_ohn'` matches "John" but not "Jjohn" |
+
+![Wildcards: % matches many, _ matches one](../images/module-03/m03-like-wildcards-01.png)
 
 ```sql
 -- Students whose first name starts with 'J'

@@ -73,6 +73,8 @@ Look familiar? It should. It's a spreadsheet. The only differences are:
 
 > 💡 **Remember this one thing:** A database table = columns (the structure) + rows (the data). If you can read a spreadsheet, you can read a table.
 
+> 🎙️ Here's the mental model I want you to hold onto. A table is a grid. Columns describe the shape of your data -- what goes where and what type it is. Rows are the actual records -- one person, one order, one transaction per row. That's it. Everything fancy we'll do in SQL -- constraints, joins, aggregates -- all of it still comes back to this one idea. Rows and columns. You already read spreadsheets every day. You can read tables.
+
 ---
 
 ## Enter SQL: Speaking Database
@@ -225,6 +227,8 @@ A: You will, and that's fine. This is a learning environment. You can always del
 
 A: SQL is the *language*. SQLite is one specific *database system* that speaks that language. It's like the difference between "English" and "a person who speaks English." MySQL and PostgreSQL are other database systems that also speak SQL.
 
+> 🎙️ These are the questions every beginner has, and none of them are dumb. The math question is the big one -- people assume databases are a numerical thing, but they're really a logic and organization thing. The SQL-versus-SQLite question is another one that trips everyone up at first. SQL is the language. SQLite is one tool that speaks it. Keep that distinction straight and you'll never be confused by job postings that list both.
+
 ---
 
 ## Let's Do This: Your First Database
@@ -370,6 +374,8 @@ COUNT(*)
 ```
 
 We'll spend entire modules on SELECT queries later (they're the bread and butter of SQL). For now, just know that you can ask specific questions, not just "show me everything."
+
+> 🎙️ SELECT star is the firehose -- it dumps every column at you. Most of the time, you don't want the firehose. You want a sip. Naming specific columns is a tiny habit that pays off constantly. And COUNT is your first taste of what SQL is really for -- turning a pile of records into an answer. We'll do a lot more of that in later modules. For now, just get comfortable asking the database small, specific questions instead of "show me everything."
 
 ---
 

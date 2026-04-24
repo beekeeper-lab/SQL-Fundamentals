@@ -1,8 +1,8 @@
 # Image Plan
 
-Total proposed images: 45
-Already generated: 45
-New images needed: 0
+Total proposed images: 85
+Already generated: 43
+New images needed: 42 (2026-04-22 audit additions below)
 
 ---
 
@@ -13,6 +13,7 @@ New images needed: 0
 | 2026-04-08 | imagen-4.0-generate-001 | 31 (initial batch) | ~21 MB | ~$0.04 | ~$1.24 |
 | 2026-04-09 | nano-banana-pro-preview | 12 (from this plan) | 6.6 MB | ~$0.14 | $1.68 |
 | | | **43 total** | **~28 MB** | | **~$2.92** |
+| 2026-04-22 | (pending) | 42 (audit additions) | TBD | ~$0.14 est | ~$5.88 est |
 
 ---
 
@@ -693,6 +694,662 @@ New images needed: 0
 - **Prompt**:
   Goal: editorial illustration for a programming textbook
   Scene: A balance scale where one side holds a fast rocket labeled "Reads" and the other holds a heavy anchor labeled "Writes," with index cards piled on both sides, showing the trade-off decision
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+---
+
+## Audit Additions -- 2026-04-22
+
+These 42 images fill coverage gaps identified in the 2026-04-22 narration/image audit. All are pending approval and generation.
+
+### Module 00 additions
+
+#### Image 5: Why SQLite (vs. the big dogs)
+- **File**: `images/module-00/m00-sqlite-vs-big-dogs-01.png`
+- **Page**: "Why SQLite? (And What Are the Alternatives?)"
+- **Placement**: after the SQLite/MySQL/PostgreSQL comparison table
+- **Description**: SQLite as a friendly pocket-sized creature next to hulking server cabinets labeled MySQL and PostgreSQL, emphasizing simplicity vs. setup overhead.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A tiny, friendly SQLite character holding a single file labeled .db, standing next to two big intimidating server cabinets labeled MySQL and PostgreSQL, with the small character smiling confidently
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 6: SQLite Shell Command Center
+- **File**: `images/module-00/m00-shell-command-center-01.png`
+- **Page**: "The SQLite Shell: Your Command Center"
+- **Placement**: after the two-command-types explanation
+- **Description**: The SQLite shell as a control panel with two switches -- one for SQL statements (ending with semicolon), one for dot-commands. Reinforces that the shell has two languages.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A friendly retro control panel with two large labeled switches -- one labeled with a semicolon, the other labeled with a dot -- above them a screen showing a sqlite> prompt
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: First Database Journey
+- **File**: `images/module-00/m00-first-database-journey-01.png`
+- **Page**: "Let's Do This: Your First Database"
+- **Placement**: after the step-by-step CREATE/INSERT/SELECT walkthrough
+- **Description**: A four-step journey showing the complete lifecycle -- empty terminal, CREATE TABLE, INSERT, SELECT -- as a celebratory path with a trophy at the end.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Four connected stepping stones across a path, each with a small icon -- empty terminal, table blueprint, folders being loaded, magnifying glass -- leading to a trophy at the end
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 01 additions
+
+#### Image 5: Self-Documenting Table Blueprint
+- **File**: `images/module-01/m01-self-documenting-table-01.png`
+- **Page**: "Putting It All Together: A Real Table"
+- **Placement**: after the students CREATE TABLE example
+- **Description**: A CREATE TABLE statement rendered as an architectural blueprint, with each line annotated as a rule or contract. Shows that a well-designed schema is self-documenting.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: An architectural blueprint scroll showing a table schema, with callout labels pointing to each constraint line -- "required," "unique," "valid range," "auto-filled date"
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 6: ALTER vs. DROP
+- **File**: `images/module-01/m01-alter-vs-drop-01.png`
+- **Page**: "Modifying Tables: ALTER and DROP"
+- **Placement**: after the DROP TABLE section, before the Watch It callout
+- **Description**: ALTER as a contractor adding a room to a house, DROP as a wrecking ball demolishing the whole house. Emphasizes the difference between modification and destruction.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Split image -- on the left, a contractor happily adding a new wing to a small house (ALTER); on the right, a wrecking ball reducing a similar house to rubble (DROP)
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 02 additions
+
+#### Image 5: The Shortcut Pitfall
+- **File**: `images/module-02/m02-shortcut-pitfall-01.png`
+- **Page**: "The Shortcut (and Why You Shouldn't Use It)"
+- **Placement**: after the explicit-columns recommendation
+- **Description**: Two paths diverging -- the "shortcut" path leads to a cliff labeled "Schema Changed," the longer path with explicit column labels leads safely to the data. Reinforces why naming columns matters.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A fork in the road with two paths -- the shorter path has a warning sign and leads to a cliff, the longer path is lined with labeled signposts and leads safely to a database file
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 6: Multi-Row Bulk Load
+- **File**: `images/module-02/m02-multi-row-bulk-load-01.png`
+- **Page**: "Multi-Row INSERT: The Bulk Load"
+- **Placement**: after the side-by-side single-row vs. multi-row examples
+- **Description**: A single pallet truck carrying five boxes at once vs. a person carrying one box at a time. Visualizes why multi-row INSERT is more efficient.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Split image -- on the left, a small character carrying a single box with many trips shown as dotted lines; on the right, a forklift carrying a pallet stacked with five boxes in a single trip
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: DEFAULT Auto-Fill
+- **File**: `images/module-02/m02-default-autofill-01.png`
+- **Page**: "DEFAULT Values: Let the Database Fill It In"
+- **Placement**: after the enrollment_date default example
+- **Description**: A form being auto-filled by a helpful robot hand stamping today's date in the empty field. Shows the database filling in defaults for you.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A paper form with most fields handwritten, and one remaining empty field being stamped by a cheerful robot arm holding a rubber stamp that reads "TODAY"
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 03 additions
+
+#### Image 5: SELECT Picking Columns
+- **File**: `images/module-03/m03-select-picking-columns-01.png`
+- **Page**: "SELECT: The Foundation of Every Question"
+- **Placement**: after the SELECT * vs. named-columns comparison
+- **Description**: A hand picking specific columns off a buffet tray of data while ignoring others. Shows that SELECT is selective, not a firehose.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A long buffet counter full of labeled columns like dishes, with a hand using tongs to pick only two or three specific items onto a plate, while other columns stay on the counter
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 6: Column Aliases Nametags
+- **File**: `images/module-03/m03-aliases-nametags-01.png`
+- **Page**: "Column Aliases: Giving Your Results Better Names"
+- **Placement**: after the alias example with AS
+- **Description**: Stiff database column headers getting friendly nametags stuck over them -- turning stu_fn into "First Name." Visualizes aliases as renaming.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three formal table column headers with cryptic short names, each having a colorful "Hello my name is..." nametag being pressed over it by a friendly hand, revealing readable names
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: BETWEEN Range Slider
+- **File**: `images/module-03/m03-between-range-01.png`
+- **Page**: "BETWEEN: Range Queries Made Easy"
+- **Placement**: after the inclusive-range example
+- **Description**: A number line with a bracket-shaped range selector highlighting a span inclusive of both endpoints. Clarifies the "inclusive on both ends" rule.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A horizontal number line with a colorful bracket-shaped highlighter covering a span, and two arrows pointing to the endpoints labeled "included"
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 8: IN Guest List
+- **File**: `images/module-03/m03-in-guest-list-01.png`
+- **Page**: "IN: Matching Against a List"
+- **Placement**: after the IN vs. OR comparison
+- **Description**: A bouncer with a clipboard checking names against a guest list. Shows IN as "are you on the list?"
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A friendly bouncer character holding a clipboard with a bulleted list, checking names as people walk by a velvet rope, with some people being waved through and others politely turned away
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 9: IS NULL Mystery Box
+- **File**: `images/module-03/m03-is-null-mystery-01.png`
+- **Page**: "IS NULL / IS NOT NULL: The Special Case"
+- **Placement**: after the three-valued-logic explanation
+- **Description**: A mystery box with a question mark, next to a zero and an empty string, showing that NULL is different from all of them. Reinforces that NULL means "unknown."
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three cartoon boxes labeled "0", "empty string", and "NULL" -- the first two have visible contents, the NULL box is wrapped in question marks and shrugging shoulders
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 10: Complex Query Recipe
+- **File**: `images/module-03/m03-complex-query-recipe-01.png`
+- **Page**: "Putting It All Together: Complex Queries"
+- **Placement**: after the combined WHERE examples
+- **Description**: A recipe card layering SELECT, WHERE, AND, IN, and LIKE as stacked ingredients. Shows that complex queries are just combinations of building blocks.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A chef's recipe card with labeled layered ingredients stacked like a sandwich -- each layer is a SQL clause (SELECT, WHERE, AND, IN, LIKE) -- with a finished dish at the bottom
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 04 additions
+
+#### Image 5: ORDER BY Stacking Cards
+- **File**: `images/module-04/m04-order-by-stacking-01.png`
+- **Page**: "ORDER BY: Sorting Your Results"
+- **Placement**: after the ASC/DESC discussion
+- **Description**: A random pile of playing cards collapsing into a neat ascending stack via ORDER BY. Reinforces "without ORDER BY, rows come in any order."
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Two scenes side by side -- on the left, a chaotic pile of index cards; on the right, the same cards neatly stacked in order, with an arrow showing a magical transformation via ORDER BY
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 6: NULL Sorts First
+- **File**: `images/module-04/m04-null-sorts-first-01.png`
+- **Page**: "NULL Sorting: The Odd One Out"
+- **Placement**: after the ASC NULL-first example
+- **Description**: A lineup of numbers in ascending order, with a mysterious NULL figure standing at the very front. Shows the SQLite NULLs-first default.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A queue of cheerful number characters from 1 to 10 lined up in order, with a ghostly figure labeled NULL standing at the very front of the line, looking a little confused
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: LIMIT Top N
+- **File**: `images/module-04/m04-limit-top-n-01.png`
+- **Page**: "LIMIT: Just the Top N, Please"
+- **Placement**: after the Top 5 by sales example
+- **Description**: A podium with just the top three labeled 1, 2, 3 -- rest of the competitors cut off. Emphasizes "just the top N."
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A three-level winners podium with cheerful characters on places 1, 2, and 3, while a long line of other competitors stretches off into the distance blurred or faded
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 8: WHERE + ORDER BY + LIMIT Combo
+- **File**: `images/module-04/m04-power-combo-01.png`
+- **Page**: "The Power Combo: WHERE + ORDER BY + LIMIT"
+- **Placement**: after the combo overview
+- **Description**: Three gears labeled FILTER, SORT, LIMIT meshing together in a pipeline. Shows the canonical SQL query structure.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three interlocking gears or conveyor belts labeled FILTER, SORT, and LIMIT in that order, with a pile of raw rows entering the left and a clean ordered result leaving the right
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 05 additions
+
+#### Image 5: Aggregates With WHERE
+- **File**: `images/module-05/m05-aggregates-with-where-01.png`
+- **Page**: "Aggregates with WHERE: Filtered Summaries"
+- **Placement**: after the two-step filter-then-summarize explanation
+- **Description**: A sieve (WHERE) filtering rows, with a summary badge (AVG/COUNT/SUM) appearing below. Reinforces "WHERE first, then aggregate."
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A kitchen sieve strainer filtering rows labeled with values, only some fall through, and beneath it a label that reads "AVG" with a summary number emerging
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 6: Multi-Column GROUP BY Drill-Down
+- **File**: `images/module-05/m05-multi-column-drilldown-01.png`
+- **Page**: "GROUP BY with Multiple Columns"
+- **Placement**: after the department+year example
+- **Description**: Nested buckets showing department containing year buckets, illustrating multi-level grouping. Shows drill-down via additional GROUP BY columns.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A large labeled bucket "Department" containing smaller bins labeled "Year," each of which contains piles of records, showing a drill-down hierarchy
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: Real-World Analysis
+- **File**: `images/module-05/m05-real-world-analysis-01.png`
+- **Page**: "Practical Queries: Real-World Analysis"
+- **Placement**: after the example analytical queries
+- **Description**: A database query transforming into a business insight chart or headline. Shows that aggregate queries produce decisions, not just numbers.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A SQL query on the left morphing via an arrow into a business insight on the right -- a clean bar chart with a big "Insight!" lightbulb above it
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 06 additions
+
+#### Image 6: Why We Need Joins (Normalization)
+- **File**: `images/module-06/m06-why-joins-01.png`
+- **Page**: "Why Do We Even Need Joins?"
+- **Placement**: after the normalization reasoning
+- **Description**: One fat repetitive table split into two clean related tables with a connecting line. Shows why joins exist -- data lives in separate tables on purpose.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Split image -- on the left, one messy wide table with repeated data highlighted in red; on the right, two tidy separate tables connected by an arrow, with the repeated data removed
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: Table Aliases Nicknames
+- **File**: `images/module-06/m06-aliases-nicknames-01.png`
+- **Page**: "Table Aliases: Your Sanity Savers"
+- **Placement**: after the with/without aliases comparison
+- **Description**: Three long table names being given short nickname nametags. Reinforces aliases as sanity-saving shorthand.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three large cartoon table characters each with a long formal name on their chest getting a small "call me..." sticker pressed on with a single letter alias
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 8: RIGHT JOIN Mirror
+- **File**: `images/module-06/m06-right-join-mirror-01.png`
+- **Page**: "RIGHT JOIN and FULL OUTER JOIN: The Ones SQLite Skipped"
+- **Placement**: after the RIGHT JOIN workaround
+- **Description**: A LEFT JOIN reflected in a mirror, showing that RIGHT JOIN is just LEFT JOIN flipped. Demystifies the unsupported join types.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A diagram of a LEFT JOIN on one side of a mirror, and its mirror image labeled RIGHT JOIN on the other side, with a FULL OUTER JOIN Venn diagram floating above both
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 9: Three-Table Join Chain
+- **File**: `images/module-06/m06-three-table-chain-01.png`
+- **Page**: "Joining 3+ Tables: The Full Picture"
+- **Placement**: after the students-enrollments-courses example
+- **Description**: Three tables connected by chain links following foreign keys, forming a continuous path. Shows multi-table joins as links in a chain.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three labeled tables connected by visible chain links, with arrows showing foreign keys, forming one continuous chain from students through enrollments to courses
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 10: Complex Join Orchestra
+- **File**: `images/module-06/m06-complex-join-orchestra-01.png`
+- **Page**: "Complex Join Queries: Joins + GROUP BY + HAVING"
+- **Placement**: after the combined query example
+- **Description**: A conductor coordinating sections labeled JOIN, WHERE, GROUP BY, HAVING, AGGREGATE, ORDER BY -- each contributing to a unified result. Shows complex queries as orchestrated combinations.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A cheerful orchestra conductor coordinating sections of players, each section labeled with a SQL clause -- JOIN, WHERE, GROUP BY, HAVING -- with harmonious music notes rising
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 07 additions
+
+#### Image 5: Subquery Inside-Out
+- **File**: `images/module-07/m07-subquery-inside-out-01.png`
+- **Page**: "What Is a Subquery, Really?"
+- **Placement**: after the inside-out execution explanation
+- **Description**: An outer query peeling back to reveal an inner query being evaluated first, then feeding its result outward. Reinforces the "inside out" execution order.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A larger SQL scroll with a smaller SQL scroll tucked inside it -- an arrow shows the smaller scroll being read first, then its answer passed up into the larger scroll
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 6: Scalar Subquery One Value
+- **File**: `images/module-07/m07-scalar-one-value-01.png`
+- **Page**: "Scalar Subqueries: One Value to Rule Them All"
+- **Placement**: after the AVG-comparison example
+- **Description**: A subquery distilling a whole column of values into a single gem labeled with one number. Shows "scalar" means one value.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A column of many cartoon rows being funneled through a laboratory distillation apparatus, emerging as one labeled droplet with a single number inside
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: Derived Table Workbench
+- **File**: `images/module-07/m07-derived-table-workbench-01.png`
+- **Page**: "Derived Tables: Subqueries in the FROM Clause"
+- **Placement**: after the aliased-subquery example
+- **Description**: A workbench where a temporary "virtual" table is assembled from other pieces, labeled with an alias, then queried. Shows derived tables as intermediate workbenches.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A carpenter's workbench where a small wooden table is being assembled from pieces of other tables, with a name tag hanging from it, and a query magnifying glass examining it
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 8: Correlated Subquery Phone Home
+- **File**: `images/module-07/m07-correlated-phone-home-01.png`
+- **Page**: "Correlated Subqueries: The Ones That Phone Home"
+- **Placement**: after the correlated example
+- **Description**: An inner query on a phone calling the outer query, row by row. Shows correlation as "phoning home" for each outer row.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A small inner-query character on a telephone, connected by a stretched cord to an outer-query character who is walking row by row across a table, each step prompting a new call
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 9: DROP VIEW Clean Up
+- **File**: `images/module-07/m07-drop-view-cleanup-01.png`
+- **Page**: "DROP VIEW: Cleaning Up"
+- **Placement**: after the DROP-then-CREATE pattern
+- **Description**: An old view being tossed in a recycling bin while a fresh new view is being unveiled. Reinforces the drop-and-recreate workflow.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A hand tossing an old rolled-up view document into a recycling bin, while on the other side a shiny new view document is being unrolled on a pedestal
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 10: Putting It All Together (Subq + Joins + Views)
+- **File**: `images/module-07/m07-all-together-01.png`
+- **Page**: "Putting It All Together: Subqueries + Joins + Views"
+- **Placement**: after the combined-pieces walkthrough
+- **Description**: Three puzzle pieces -- subquery, join, view -- clicking together into one unified image of a completed dashboard. Shows that these three tools combine into real analytical power.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three labeled puzzle pieces -- SUBQUERY, JOIN, VIEW -- snapping together to complete a picture of a dashboard with charts and insights
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 08 additions
+
+#### Image 6: UPDATE Targeted Fix
+- **File**: `images/module-08/m08-update-targeted-fix-01.png`
+- **Page**: "UPDATE in Detail"
+- **Placement**: after the SET clause and CASE expression examples
+- **Description**: A precision tool editing exactly one row in a table while other rows sit untouched. Shows UPDATE with a WHERE as targeted surgery rather than blunt force.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A table of rows with a precision tweezers or laser pointer selecting one specific row and changing a single field, while neighboring rows glow to show they are unaffected
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: Subquery-Driven UPDATE/DELETE
+- **File**: `images/module-08/m08-subquery-driven-01.png`
+- **Page**: "UPDATE and DELETE with Subqueries"
+- **Placement**: after the cross-table DELETE example
+- **Description**: A subquery acting as a targeting scope, feeding coordinates to an UPDATE or DELETE action. Shows subqueries as aim, modification as fire.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A friendly scope or telescope labeled SUBQUERY identifying specific rows on a table, with dotted lines feeding those coordinates to an UPDATE action button below
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 8: Why Transactions Matter -- Bank Transfer
+- **File**: `images/module-08/m08-why-transactions-01.png`
+- **Page**: "Why Transactions Matter: The Bank Transfer Problem"
+- **Placement**: after the split-transfer scenario (complements existing bank-transfer image higher up)
+- **Description**: A transfer caught mid-operation with half the money in transit -- one scenario shows it aborting cleanly, another shows the broken half-state without transactions. Illustrates atomicity.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Two parallel strips -- the top labeled "No Transaction" showing a coin stuck in mid-air between two piggy banks, one missing the coin; the bottom labeled "Transaction" showing either both piggy banks intact or the coin safely arrived
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 9: Putting Transactions to Work
+- **File**: `images/module-08/m08-transactions-to-work-01.png`
+- **Page**: "Putting Transactions to Work"
+- **Placement**: after the BEGIN/COMMIT/ROLLBACK examples
+- **Description**: An envelope labeled BEGIN being sealed (COMMIT) or shredded (ROLLBACK). Reinforces the transaction-as-envelope mental model.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Three panels -- an envelope labeled BEGIN being opened, statements going inside, and finally either sealed with a green COMMIT stamp or fed into a shredder labeled ROLLBACK
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 10: The Danger Zone
+- **File**: `images/module-08/m08-danger-zone-01.png`
+- **Page**: "The Danger Zone: Common Mistakes"
+- **Placement**: after the list of common mistakes
+- **Description**: A warning-sign style collage of the four most common UPDATE/DELETE mistakes -- missing WHERE, wrong operator, forgotten cascade, and skipped SELECT preview. Reinforces awareness of pitfalls.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A yellow caution-tape border around four small illustrated pitfalls -- a missing WHERE clause, a reversed greater-than symbol, a cracked cascade chain, and a skipped preview step, each with a tiny warning icon
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+### Module 09 additions
+
+#### Image 6: Composite Index Phone Book
+- **File**: `images/module-09/m09-composite-phonebook-01.png`
+- **Page**: "Composite Indexes and Column Order"
+- **Placement**: after the phone-book analogy
+- **Description**: A phone book opened to show the last-name-then-first-name ordering, with a highlighted Smith section and a crossed-out "all Johns" search. Reinforces column-order matters.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: An open phone book sorted by last name then first name, with the Smith pages highlighted and a red X over a frustrated character trying to find "all Johns" by flipping through randomly
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 7: EXPLAIN QUERY PLAN X-Ray
+- **File**: `images/module-09/m09-explain-xray-01.png`
+- **Page**: "EXPLAIN QUERY PLAN: Seeing What the Database Sees"
+- **Placement**: after the SCAN-vs-SEARCH comparison
+- **Description**: An X-ray machine showing the internal execution of a query -- SCAN labeled slow, SEARCH labeled fast. Makes the diagnostic tool feel tangible.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: An X-ray style illustration of a query running through a database, with a highlighted bone labeled SCAN shown as cracked and slow on one side, and a healthy bone labeled SEARCH USING INDEX glowing fast on the other side
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 8: Naming Conventions Good vs. Bad
+- **File**: `images/module-09/m09-naming-conventions-01.png`
+- **Page**: "Naming Conventions: The Stuff Nobody Teaches But Everyone Judges"
+- **Placement**: after the bad-vs-good examples
+- **Description**: Side-by-side comparison -- cluttered labels like "StudentData", "FirstName", "E-mail" on the left; clean snake_case labels on the right. Shows conventions at a glance.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: Split image -- on the left, a messy jumble of label stickers with mixed capitalization and punctuation; on the right, a neatly aligned column of clean snake_case labels, each hanging straight
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 9: Query Cleanup Before/After
+- **File**: `images/module-09/m09-query-cleanup-01.png`
+- **Page**: "Query Optimization: Writing Better SQL"
+- **Placement**: after the refactored query
+- **Description**: A tangled spaghetti query being combed into a clean orderly one. Reinforces that clean SQL is a craft, not an afterthought.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A tangled mess of query lines on the left being combed out by a comb or brush into straight clean lines on the right, with labels BEFORE and AFTER
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: minimal or none
+  Avoid: photorealistic, dark, scary, complex UI screenshots
+
+#### Image 10: Schema Design Capstone
+- **File**: `images/module-09/m09-schema-capstone-01.png`
+- **Page**: "Schema Design: Putting It All Together"
+- **Placement**: after the full-schema example
+- **Description**: A finished database schema diagram like an architectural drawing -- normalized tables, foreign keys, indexes, all labeled. Signals the capstone feel of the entire course.
+- **Status**: Pending
+- **Prompt**:
+  Goal: editorial illustration for a programming textbook
+  Scene: A framed architectural blueprint of a small relational schema -- tables with column lists, foreign key arrows, index tags, all neatly labeled, hanging on a wall like a diploma
   Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
   Aspect ratio: 16:9
   Background: white

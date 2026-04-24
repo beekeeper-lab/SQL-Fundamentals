@@ -139,6 +139,8 @@ The same logic applies to composite indexes. The index above helps queries that:
 
 > 💡 **Remember this one thing:** A composite index on (A, B) helps queries on A alone or A+B together, but NOT queries on B alone. Order matters.
 
+> 🎙️ The phone book analogy is the one that sticks for most people. A phone book is sorted by last name, then first name. You can find all the Smiths instantly because last name is the primary sort. You can find John Smith quickly because within the Smiths, it's sorted by first name. But finding every John in the book? You'd have to read every page. That's exactly how composite indexes work. Put the column you filter on most often first, and the index earns its keep on almost every query.
+
 ---
 
 ## EXPLAIN QUERY PLAN: Seeing What the Database Sees
@@ -282,6 +284,8 @@ A: For small datasets (hundreds or even thousands of rows), you probably won't n
 **Q: Is 3NF always the right answer for normalization?**
 
 A: For most applications, yes. 3NF eliminates the most common redundancy problems without making queries overly complex. There are higher normal forms (BCNF, 4NF, 5NF), but they're rarely needed in practice. And sometimes you *intentionally* denormalize for performance -- but you should understand the rules before you decide to break them.
+
+> 🎙️ The question about why databases don't just auto-index everything is a really common one. The answer is always a trade-off. Every index makes reads faster and writes slower and takes up disk space. On a tiny table, none of that matters. On a table with millions of rows and lots of inserts, it matters a lot. Your job as the developer is to decide which columns get indexes based on how that table is actually used. There's no automatic answer -- it's a design call.
 
 ---
 
@@ -428,6 +432,8 @@ The good versions are self-documenting. You can read `student_id` and immediatel
 
 > 💡 **Remember this one thing:** Code is read far more often than it's written. Naming conventions are a gift to the person reading your SQL six months from now -- and that person is probably you.
 
+> 🎙️ Nobody teaches naming conventions in a beginner course, but every senior developer has strong opinions about them. Pick a convention and stick to it. Tables plural, columns singular, everything lowercase with underscores. Foreign keys name the table they point to. Indexes name the table and the columns. It looks like fussiness, but it pays off the first time you're reading someone else's schema and can figure out what every column does without having to ask. Consistency is a form of kindness to the next developer.
+
 ---
 
 ## Query Optimization: Writing Better SQL
@@ -567,6 +573,8 @@ Notice what's happening here:
    - Order items (which products in which order, quantity, price at time of purchase)
 
    Write the CREATE TABLE statements, including primary keys, foreign keys, NOT NULL constraints, and at least three indexes.
+
+> 🎙️ The e-commerce schema exercise is the capstone. It pulls together everything -- normalization, foreign keys, constraints, and indexing -- on a problem you've seen a hundred times as a customer. Pay special attention to the order-items table. That's where most beginners stumble, because it stores the price at the time of purchase separately from the current product price. That's deliberate. Prices change. Orders don't. Getting that detail right is the difference between a student schema and a production schema.
 
 ---
 

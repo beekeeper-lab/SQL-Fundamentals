@@ -87,6 +87,8 @@ No ambiguity. No fragility. No guessing.
 
 > 💡 **Remember this one thing:** Always specify the column list in INSERT statements. It's a few extra characters that save you from a world of confusion.
 
+> 🎙️ I keep coming back to this one because it matters. The shortcut saves you maybe a dozen keystrokes. But the day someone adds a new column to the table and pushes it to production, every short-form INSERT in your codebase starts failing -- or worse, silently puts data in the wrong column. That's the kind of bug that makes you look bad on a Monday morning. Write the column list. Always. Future you will thank present you.
+
 ---
 
 ## Multi-Row INSERT: The Bulk Load
@@ -295,6 +297,8 @@ A: In SQLite, it usually works because of type affinity -- SQLite will convert `
 **Q: How do I insert a text value that contains a single quote, like "O'Brien"?**
 
 A: Double the quote: `'O''Brien'`. Two single quotes inside a string represent a literal single quote. This is standard SQL.
+
+> 🎙️ That O'Brien question is a classic, and the double-quote trick surprises people every time. Two single quotes in a row -- that's how SQL escapes a quote inside a string. It looks weird, but it's the standard. The other two gotchas in this section are order-of-insertion for foreign keys, and letting AUTOINCREMENT do its job. Keep those in mind and your inserts will just work.
 
 ---
 

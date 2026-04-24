@@ -446,6 +446,8 @@ SELECT * FROM student_summary WHERE course_count > 2;
 
 > 💡 **Remember this one thing:** The DROP-then-CREATE pattern (`DROP VIEW IF EXISTS` followed by `CREATE VIEW`) is the standard way to update a view definition. Memorize it -- you'll use it constantly.
 
+> 🎙️ Views don't have an ALTER VIEW statement in most databases -- at least not one you should rely on. The accepted pattern is drop and recreate. The IF EXISTS clause keeps things safe the first time you run the script when no view exists yet. You'll find yourself keeping a little block at the top of your SQL scripts that drops every view in reverse dependency order, then recreates them all. It's a tiny bit of ceremony that makes your schema reproducible, which is exactly what you want.
+
 ---
 
 ## Putting It All Together: Subqueries + Joins + Views

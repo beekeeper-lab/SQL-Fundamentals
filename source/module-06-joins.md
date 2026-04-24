@@ -80,6 +80,8 @@ You can use the `AS` keyword (`FROM students AS s`) or just put the alias right 
 
 > 💡 **Remember this one thing:** Pick short, meaningful aliases. `s` for students, `c` for courses, `e` for enrollments. Your future self will thank you when reading queries at 2 AM.
 
+> 🎙️ Aliases look trivial, but they're one of those habits that separates cramped SQL from readable SQL. Pick the first letter of the table, or an abbreviation if that clashes. Stay consistent across your queries -- if s means students on Monday, it should still mean students on Friday. And once you start writing self-joins and derived tables in the next modules, aliases stop being optional. They become the only way the query makes sense at all.
+
 ---
 
 ## INNER JOIN: Only the Matched Pairs Dance
@@ -264,6 +266,8 @@ But be careful. CROSS JOIN a 10,000-row table with another 10,000-row table and 
 
 > 💡 **Remember this one thing:** CROSS JOIN = multiplication. Rows in Table A x Rows in Table B = Result rows. Always do the math before running one.
 
+> 🎙️ CROSS JOIN is the one you'll use the least, but when you need it, nothing else will do. The classic legitimate use is generating all valid combinations -- every day paired with every time slot to build a schedule, every product paired with every region for a sales matrix. Just remember it multiplies. Two tables of a hundred rows each becomes ten thousand rows. Check the size first or you'll lock up your session.
+
 ---
 
 ## Self-Joins: Comparing Yourself to Your Classmates
@@ -342,6 +346,8 @@ JOIN professors p ON p.id = c.professor_id;
 ```
 
 > 💡 **Remember this one thing:** Multi-table joins follow the foreign key trail. Look at your foreign keys and you have your join conditions written for you.
+
+> 🎙️ Three-table joins feel like a big leap until you realize they're just two joins stacked together. Students connect to enrollments. Enrollments connect to courses. Each join statement handles one connection, and the database walks the chain for you. Your foreign keys are the map -- they literally tell you which columns belong in each ON clause. Follow the foreign keys and the query writes itself.
 
 ---
 

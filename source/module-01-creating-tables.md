@@ -152,6 +152,8 @@ That's not just a table definition -- it's a **contract**. It documents the rule
 
 > 💡 **Remember this one thing:** A well-designed CREATE TABLE statement is both structure AND documentation. Anyone reading it can understand exactly what data is expected and what rules apply.
 
+> 🎙️ Look at that students table for a second. Six lines of SQL, and each line is doing real work. One line guarantees uniqueness. One line guarantees a valid GPA range. One line fills in today's date automatically. When you see a well-designed CREATE TABLE statement, it reads like a specification document -- except the database actually enforces every rule. That's the goal. Make your tables self-documenting and self-defending.
+
 ---
 
 ## Table-Level Constraints: The Big Picture Rules
@@ -276,6 +278,8 @@ A: All existing rows get NULL in the new column. If you add a column with a DEFA
 **Q: Can I have a FOREIGN KEY that references a column other than the primary key?**
 
 A: Technically yes -- it can reference any UNIQUE column. But 99% of the time, foreign keys reference primary keys. Keep it simple.
+
+> 🎙️ The primary-key-versus-unique question comes up in every cohort. Here's the shorthand. Primary key is the row's official name -- the one the database uses to find it quickly. Unique is just a promise that no two rows share a value. One table, one primary key. But you can have many unique columns. Use primary key for identity, unique for anything else that shouldn't repeat.
 
 ---
 

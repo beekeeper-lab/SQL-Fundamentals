@@ -200,6 +200,8 @@ There are legitimate reasons to empty a table (resetting test data, for example)
 
 > 💡 **Remember this one thing:** DELETE without WHERE deletes EVERYTHING. UPDATE without WHERE updates EVERYTHING. The WHERE clause isn't optional -- it's your safety net.
 
+> 🎙️ DELETE is blunt. It's not a soft delete, it's not a hide, it's not a move-to-archive. It's gone. That's why the WHERE clause is the most important part of any DELETE statement. Read your DELETE statement out loud before running it -- "delete from enrollments where grade equals F" sounds right. But "delete from enrollments" with no WHERE -- that's the one that shows up in post-mortems. Every professional DBA has a war story about a missing WHERE clause. Don't add yours to the pile.
+
 ---
 
 ## UPDATE and DELETE with Subqueries
@@ -279,6 +281,8 @@ A: That depends on how the foreign key was set up. If it was created with `ON DE
 **Q: Can I UPDATE or DELETE rows in a view?**
 
 A: In most cases, no. Views are virtual tables based on queries. Some databases support updatable views under certain conditions, but in SQLite, views are read-only. You need to UPDATE or DELETE from the underlying tables directly.
+
+> 🎙️ The cascade question is the most important one here. When you delete a student, what happens to their enrollments? If you set up the foreign key with ON DELETE CASCADE, the enrollments vanish too -- automatic cleanup. Without cascade, you either get blocked by the foreign key or you leave orphan records behind. Neither is a disaster, but both need to be a conscious choice when you design the schema. Don't just copy-paste foreign keys. Think about what should happen when the parent row goes away.
 
 ---
 
@@ -450,6 +454,8 @@ Everything is still there. ROLLBACK saved the day.
 
 > 💡 **Remember this one thing:** When in doubt, wrap it in a transaction. You can always ROLLBACK if something looks wrong, but you can't un-COMMIT.
 
+> 🎙️ Here's the workflow I want you to internalize. Type BEGIN TRANSACTION. Run your changes. Run a SELECT to verify the result looks right. If it does, COMMIT. If it doesn't, ROLLBACK. That sequence -- begin, change, verify, commit or rollback -- is the safest way to do surgery on a database. Do that every single time until it becomes muscle memory. It turns every risky operation into a preview you can walk away from.
+
 ---
 
 ## The Danger Zone: Common Mistakes
@@ -520,6 +526,8 @@ DELETE FROM courses WHERE id = 101;
    - Deletes that student from the students table
    - Then uses ROLLBACK instead of COMMIT
    - Write SELECT queries to prove the student and enrollments still exist after the ROLLBACK
+
+> 🎙️ The transaction exercise is the one I really want you to do. Seeing ROLLBACK actually undo a DELETE you just ran is a genuinely reassuring experience -- it turns transactions from an abstract concept into a tool you trust. Run the DELETE statements, check that the rows are gone with a SELECT, then ROLLBACK, then SELECT again and watch the rows come back. That moment is why we teach transactions.
 
 ---
 

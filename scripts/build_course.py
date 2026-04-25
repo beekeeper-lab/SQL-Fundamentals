@@ -31,12 +31,12 @@ MODULES = [
     {"file": "module-01-creating-tables.md", "short": "Module 1", "title": "Creating Tables", "hero": "module-01/m01-hero-blueprint-01.png", "tier": "Start Here", "tier_css": "tier-start-here"},
     {"file": "module-02-inserting-data.md", "short": "Module 2", "title": "Inserting Data", "hero": "module-02/m02-hero-filling-forms-01.png", "tier": "Start Here", "tier_css": "tier-start-here"},
     {"file": "module-03-select-and-filtering.md", "short": "Module 3", "title": "SELECT and Filtering", "hero": "module-03/m03-hero-detective-01.png", "tier": "Useful Soon", "tier_css": "tier-useful-soon"},
-    {"file": "module-04-sorting-and-limiting.md", "short": "Module 4", "title": "Sorting and Limiting", "hero": "module-04/m04-hero-sorting-cards-01.png", "tier": "Useful Soon", "tier_css": "tier-useful-soon"},
+    {"file": "module-04-sorting-and-limiting.md", "short": "Module 4", "title": "Sorting and Limiting", "hero": "module-04/m04-hero-sorted-cards-01.png", "tier": "Useful Soon", "tier_css": "tier-useful-soon"},
     {"file": "module-05-aggregate-functions.md", "short": "Module 5", "title": "Aggregate Functions", "hero": "module-05/m05-hero-zoom-out-01.png", "tier": "Useful Soon", "tier_css": "tier-useful-soon"},
     {"file": "module-06-joins.md", "short": "Module 6", "title": "Joins", "hero": "module-06/m06-hero-puzzle-pieces.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
-    {"file": "module-07-subqueries-and-views.md", "short": "Module 7", "title": "Subqueries and Views", "hero": "module-07/m07-hero-nesting-dolls-01.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
-    {"file": "module-08-updating-and-deleting.md", "short": "Module 8", "title": "Updating and Deleting", "hero": "module-08/m08-hero-permanent-marker-01.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
-    {"file": "module-09-indexes-and-best-practices.md", "short": "Module 9", "title": "Indexes and Best Practices", "hero": "module-09/m09-hero-textbook-index-01.png", "tier": "Advanced", "tier_css": "tier-advanced"},
+    {"file": "module-07-subqueries-and-views.md", "short": "Module 7", "title": "Subqueries and Views", "hero": "module-07/m07-hero-nesting-dolls.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
+    {"file": "module-08-updating-and-deleting.md", "short": "Module 8", "title": "Updating and Deleting", "hero": "module-08/m08-hero-red-button-01.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
+    {"file": "module-09-indexes-and-best-practices.md", "short": "Module 9", "title": "Indexes and Best Practices", "hero": "module-09/m09-hero-magnifying-glass-01.png", "tier": "Advanced", "tier_css": "tier-advanced"},
 ]
 
 EXTRAS = []

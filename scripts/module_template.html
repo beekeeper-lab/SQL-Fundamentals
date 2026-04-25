@@ -69,38 +69,18 @@ body {
 
 .sidebar-header a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 13px; }
 
-.toc-list { list-style: none; padding: 0; margin: 0; }
-.toc-page-group {
-    margin: 0.25rem 0.5rem; border-radius: 6px;
-    border-left: 3px solid var(--border);
-    transition: border-color 0.2s, background 0.2s;
-}
-.toc-page-group.active-group {
-    border-left-color: var(--accent);
-    background: rgba(37, 99, 235, 0.05);
-}
-[data-theme="dark"] .toc-page-group.active-group {
-    background: rgba(96, 165, 250, 0.08);
-}
-.toc-h2-link {
-    display: block; padding: 0.5rem 0.75rem;
-    font-size: 0.88rem; font-weight: 600;
+.sidebar .toc ul { list-style: none; padding-left: 0; }
+.sidebar .toc li { margin: 0.3rem 0; }
+.sidebar .toc a {
     color: var(--text-secondary); text-decoration: none;
-    border-radius: 4px; cursor: pointer;
-    transition: color 0.2s;
+    display: block; padding: 0.25rem 0.5rem; border-radius: 4px;
+    transition: background 0.2s, color 0.2s; cursor: pointer;
 }
-.toc-h2-link:hover { color: var(--accent); }
-.toc-subsections { list-style: none; padding: 0 0 0.35rem 0; }
-.toc-subsections li a {
-    display: block; padding: 0.2rem 0.75rem 0.2rem 1.5rem;
-    font-size: 0.82rem; color: var(--text-secondary);
-    text-decoration: none; opacity: 0.7;
-    border-radius: 4px; cursor: pointer;
-    transition: color 0.2s, opacity 0.2s;
+.sidebar .toc a:hover, .sidebar .toc a.active {
+    background: var(--accent-light); color: var(--accent);
 }
-.toc-subsections li a:hover { color: var(--accent); opacity: 1; }
-.toc-page-group.active-group .toc-subsections li a { opacity: 0.85; }
-.toc-page-group a.active { color: var(--accent); opacity: 1; font-weight: 600; }
+.sidebar .toc ul ul { padding-left: 1rem; }
+.sidebar .toc ul ul a { font-size: 13px; }
 
 .theme-toggle {
     background: none; border: 1px solid var(--border); border-radius: 6px;
@@ -237,8 +217,9 @@ body {
     color: var(--accent);
 }
 
-/* ── Remember One Thing ── */
-.remember-one-thing {
+/* ── Remember One Thing (both class names supported) ── */
+.remember-one-thing,
+.remember-callout {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
@@ -251,7 +232,8 @@ body {
     line-height: 1.6;
 }
 
-[data-theme="dark"] .remember-one-thing {
+[data-theme="dark"] .remember-one-thing,
+[data-theme="dark"] .remember-callout {
     background: #500724;
     border-color: #f472b6;
 }
@@ -270,11 +252,13 @@ body {
     margin: 0.2rem 0;
 }
 
-.remember-content strong {
+.remember-content strong,
+.remember-callout strong {
     color: #db2777;
 }
 
-[data-theme="dark"] .remember-content strong {
+[data-theme="dark"] .remember-content strong,
+[data-theme="dark"] .remember-callout strong {
     color: #f9a8d4;
 }
 
@@ -386,7 +370,33 @@ li > ul, li > ol { margin: 0.2rem 0; }
     margin-right: 0.35rem;
 }
 
-/* --- Day Quiz ------------------------------------------------------ */
+/* ── Mobile ── */
+.sidebar-toggle {
+    display: none; position: fixed; top: 0.75rem; left: 0.75rem; z-index: 300;
+    background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.4rem 0.6rem; cursor: pointer; font-size: 18px; color: var(--text);
+}
+
+@media (max-width: 900px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .main-content { margin-left: 0; padding: 1.5rem 1.25rem 3rem; }
+}
+
+/* ── Print ── */
+@media print {
+    .sidebar, .sidebar-toggle, .page-controls, .module-nav, .theme-toggle,
+    .narration-play, audio { display: none !important; }
+    .main-content { margin: 0; max-width: 100%; padding: 0; }
+    .page { display: block !important; border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1rem; }
+    body { font-size: 11pt; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+    img { max-width: 80%; }
+    .quiz-container { page-break-inside: avoid; }
+}
+
+/* --- Module Quiz ------------------------------------------------------ */
 .quiz-intro { font-style: italic; color: #9ca3af; margin: 0.5rem 0 1.25rem; }
 .quiz-container { background: #1e1e2e; border: 1px solid #3b3b50; border-radius: 10px; padding: 1.5rem; margin: 0.5rem 0 2rem; max-width: 800px; }
 .quiz-best { font-size: 0.9rem; color: #94a3b8; margin: 0 0 1rem; }
@@ -432,32 +442,6 @@ li > ul, li > ol { margin: 0.2rem 0; }
 .quiz-summary-row .row-head.timeout .status { color: #f59e0b; }
 .quiz-summary-row .row-detail { font-size: 0.85rem; color: #94a3b8; margin-top: 0.25rem; }
 .quiz-summary-row .row-detail .correct-ans { color: #86efac; }
-
-/* ── Mobile ── */
-.sidebar-toggle {
-    display: none; position: fixed; top: 0.75rem; left: 0.75rem; z-index: 300;
-    background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px;
-    padding: 0.4rem 0.6rem; cursor: pointer; font-size: 18px; color: var(--text);
-}
-
-@media (max-width: 900px) {
-    .sidebar { transform: translateX(-100%); }
-    .sidebar.open { transform: translateX(0); }
-    .sidebar-toggle { display: block; }
-    .main-content { margin-left: 0; padding: 1.5rem 1.25rem 3rem; }
-}
-
-/* ── Print ── */
-@media print {
-    .sidebar, .sidebar-toggle, .page-controls, .module-nav, .theme-toggle,
-    .narration-play, audio { display: none !important; }
-    .main-content { margin: 0; max-width: 100%; padding: 0; }
-    .page { display: block !important; border-bottom: 1px solid #ccc; padding-bottom: 1rem; margin-bottom: 1rem; }
-    body { font-size: 11pt; }
-    pre { white-space: pre-wrap; word-wrap: break-word; }
-    img { max-width: 80%; }
-    .quiz-container { page-break-inside: avoid; }
-}
 </style>
 </head>
 <body>
@@ -500,10 +484,10 @@ function toggleTheme() {
     const html = document.documentElement;
     const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    localStorage.setItem('sql_fund_theme', next);
 }
 (function() {
-    const saved = localStorage.getItem('theme');
+    const saved = localStorage.getItem('sql_fund_theme');
     if (saved) document.documentElement.setAttribute('data-theme', saved);
     else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -512,33 +496,23 @@ function toggleTheme() {
 // Pagination
 const pages = document.querySelectorAll('.page');
 const totalPages = pages.length;
-let currentPage = -1;
-
-function stopAllAudio() {
-    document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
-    document.querySelectorAll('.narration-play').forEach(b => b.classList.remove('playing'));
-}
+let currentPage = 0;
 
 function showPage(idx, autoPlay) {
     if (idx < 0 || idx >= totalPages) return;
 
-    var isNewPage = (idx !== currentPage);
-
-    // Only stop audio and scroll when actually changing pages
-    if (isNewPage) {
-        stopAllAudio();
-    }
+    // Stop any playing audio
+    document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
+    document.querySelectorAll('.narration-play').forEach(b => b.classList.remove('playing'));
 
     // Hide all, show target
     pages.forEach(p => p.classList.remove('active'));
     pages[idx].classList.add('active');
     currentPage = idx;
 
-    // Scroll to top only on page change
-    if (isNewPage) {
-        document.querySelector('.main-content').scrollTop = 0;
-        window.scrollTo({ top: 0, behavior: 'instant' });
-    }
+    // Scroll to top of content
+    document.querySelector('.main-content').scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
     // Update counter
     document.getElementById('pageCounter').textContent = `${idx + 1} / ${totalPages}`;
@@ -557,21 +531,16 @@ function showPage(idx, autoPlay) {
         document.getElementById('moduleNav').style.display = 'none';
     }
 
-    // Highlight active TOC item and page group
+    // Highlight active TOC item
     document.querySelectorAll('.toc a').forEach(a => a.classList.remove('active'));
-    document.querySelectorAll('.toc-page-group').forEach(g => g.classList.remove('active-group'));
     const activeHeading = pages[idx].querySelector('h1, h2');
     if (activeHeading && activeHeading.id) {
         const tocLink = document.querySelector(`.toc a[href="#${activeHeading.id}"]`);
-        if (tocLink) {
-            tocLink.classList.add('active');
-            const group = tocLink.closest('.toc-page-group');
-            if (group) group.classList.add('active-group');
-        }
+        if (tocLink) tocLink.classList.add('active');
     }
 
-    // Auto-play narration only on actual page changes and when not muted
-    if (autoPlay && isNewPage && !narrationMuted) {
+    // Auto-play narration on this page if requested
+    if (autoPlay) {
         autoPlayPageNarration(idx);
     }
 }
@@ -599,15 +568,9 @@ document.querySelectorAll('.toc a').forEach(link => {
         for (let i = 0; i < totalPages; i++) {
             const heading = pages[i].querySelector(`#${targetId}`);
             if (heading) {
-                var isSamePage = (i === currentPage);
-                if (isSamePage) {
-                    // Same page: just scroll, don't touch audio
-                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                    // Different page: switch page then scroll
-                    showPage(i, false);
-                    setTimeout(() => heading.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-                }
+                showPage(i, false);
+                // If the heading isn't at the top of the page, scroll to it
+                setTimeout(() => heading.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
                 break;
             }
         }
@@ -629,8 +592,6 @@ let narrationMuted = localStorage.getItem('sql_fund_narration_muted') === 'true'
 function updateMuteUI() {
     const btn = document.getElementById('narrationMute');
     if (!btn) return;
-    // When narration is active: show hush icon (action = "click to hush")
-    // When narration is hushed: show play icon (action = "click to resume")
     btn.textContent = narrationMuted ? '▶️' : '🤫';
     btn.title = narrationMuted ? 'Narration hushed — click to resume' : 'Click to hush narration';
 }
@@ -640,9 +601,15 @@ function toggleNarrationMute() {
     localStorage.setItem('sql_fund_narration_muted', narrationMuted);
     updateMuteUI();
     if (narrationMuted) {
-        // Stop any currently playing narration
         document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
         document.querySelectorAll('.narration-play').forEach(b => b.classList.remove('playing'));
+        hideAutoplayPrompt();
+    } else {
+        hideAutoplayPrompt();
+        const firstNarration = pages[currentPage].querySelector('.narration-play');
+        if (firstNarration) {
+            playNarration(firstNarration);
+        }
     }
 }
 
@@ -652,11 +619,23 @@ function playNarration(btn) {
     if (audio.paused) {
         document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
         document.querySelectorAll('.narration-play').forEach(b => b.classList.remove('playing'));
-        audio.play();
-        btn.classList.add('playing');
+
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                btn.classList.add('playing');
+                hideAutoplayPrompt();
+            }).catch((err) => {
+                if (err && err.name === 'NotAllowedError') {
+                    showAutoplayPrompt(btn);
+                }
+            });
+        } else {
+            btn.classList.add('playing');
+        }
+
         audio.onended = () => {
             btn.classList.remove('playing');
-            // Chain to next narration on this page if not muted
             if (!narrationMuted) {
                 const allNarrations = Array.from(pages[currentPage].querySelectorAll('.narration-play'));
                 const idx = allNarrations.indexOf(btn);
@@ -680,6 +659,38 @@ function autoPlayPageNarration(pageIdx) {
     }
 }
 
+function showAutoplayPrompt(firstBtn) {
+    let banner = document.getElementById('autoplay-prompt');
+    if (banner) return;
+    banner = document.createElement('button');
+    banner.id = 'autoplay-prompt';
+    banner.type = 'button';
+    banner.innerHTML = '▶&nbsp;&nbsp;Click to start narration';
+    banner.setAttribute('aria-label', 'Click to start narration');
+    banner.style.cssText = [
+        'position:fixed', 'top:20px', 'left:50%',
+        'transform:translateX(-50%)',
+        'background:#7c3aed', 'color:#fff',
+        'padding:12px 22px', 'border:none', 'border-radius:8px',
+        'cursor:pointer', 'z-index:10000',
+        'font-family:inherit', 'font-size:15px', 'font-weight:600',
+        'box-shadow:0 4px 14px rgba(0,0,0,0.35)',
+    ].join(';');
+    banner.onmouseenter = () => { banner.style.background = '#6d28d9'; };
+    banner.onmouseleave = () => { banner.style.background = '#7c3aed'; };
+    banner.onclick = () => {
+        hideAutoplayPrompt();
+        playNarration(firstBtn);
+    };
+    document.body.appendChild(banner);
+    setTimeout(() => hideAutoplayPrompt(), 20000);
+}
+
+function hideAutoplayPrompt() {
+    const banner = document.getElementById('autoplay-prompt');
+    if (banner) banner.remove();
+}
+
 updateMuteUI();
 
 // Mark module as visited
@@ -696,18 +707,21 @@ updateMuteUI();
 // Initialize: show first page, auto-play narration by default
 showPage(0, true);
 
-// --- Day Quiz ----------------------------------------------------------
-// Mirrors the tkinter quiz_app.py state machine but renders in the browser.
-// Reads the inline <script type="application/json" id="quiz-data"> block
-// the build step embeds for modules that have a matching quiz JSON, and
-// paints into <div id="quiz-mount"> on the Day Quiz page.
+// Close sidebar on mobile when clicking a link
+document.querySelectorAll('.sidebar a:not(.toc a)').forEach(a => {
+    a.addEventListener('click', () => {
+        if (window.innerWidth <= 900) document.querySelector('.sidebar').classList.remove('open');
+    });
+});
+
+// --- Module Quiz --------------------------------------------------------
 (function initQuizModule() {
-    const QUESTION_TIME_LIMIT = 45;      // seconds per question
-    const TIMEOUT_ADVANCE_DELAY = 2500;  // ms after timeout before auto-advance
+    const QUESTION_TIME_LIMIT = 45;
+    const TIMEOUT_ADVANCE_DELAY = 2500;
 
     const dataEl = document.getElementById('quiz-data');
     const mount = document.getElementById('quiz-mount');
-    if (!dataEl || !mount) return;  // no quiz on this page
+    if (!dataEl || !mount) return;
 
     let data;
     try {
@@ -750,12 +764,11 @@ showPage(0, true);
         return a;
     }
 
-    // --- State ---
     let questions = shuffle(data.questions);
     let currentIdx = 0;
     let score = 0;
     let answered = false;
-    let results = []; // {question, correct_answer, user_answer, status}
+    let results = [];
     let selectedOption = null;
     let shuffledOptions = [];
     let timerHandle = null;
@@ -909,7 +922,7 @@ showPage(0, true);
         if (submitBtn) {
             submitBtn.textContent = currentIdx + 1 < questions.length ? 'Next Question →' : 'See Results →';
             submitBtn.disabled = false;
-            submitBtn.replaceWith(submitBtn.cloneNode(true));  // clear prior submit handler
+            submitBtn.replaceWith(submitBtn.cloneNode(true));
             document.getElementById('quiz-submit').addEventListener('click', nextQuestion);
         }
     }
@@ -1008,16 +1021,8 @@ showPage(0, true);
         })[c]);
     }
 
-    // Kick off -- show the idle/start screen
     renderIdle();
 })();
-
-// Close sidebar on mobile when clicking a link
-document.querySelectorAll('.sidebar a:not(.toc a)').forEach(a => {
-    a.addEventListener('click', () => {
-        if (window.innerWidth <= 900) document.querySelector('.sidebar').classList.remove('open');
-    });
-});
 </script>
 
 </body>

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:02:57",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A tiny, friendly SQLite character holding a single file labeled .db, standing next to two big intimidating server cabinets labeled MySQL and PostgreSQL, with the small character smiling confidently\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m00-sqlite-vs-big-dogs-01.png",
+  "generation_time_ms": 17965,
+  "usage": {
+    "prompt_tokens": 100,
+    "candidates_tokens": 1318,
+    "total_tokens": 1645
+  }
+}

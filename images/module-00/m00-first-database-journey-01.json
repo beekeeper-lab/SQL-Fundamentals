@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:03:36",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Four connected stepping stones across a path, each with a small icon -- empty terminal, table blueprint, folders being loaded, magnifying glass -- leading to a trophy at the end\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m00-first-database-journey-01.png",
+  "generation_time_ms": 17623,
+  "usage": {
+    "prompt_tokens": 101,
+    "candidates_tokens": 1339,
+    "total_tokens": 1724
+  }
+}

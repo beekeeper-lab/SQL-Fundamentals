@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:03:18",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A friendly retro control panel with two large labeled switches -- one labeled with a semicolon, the other labeled with a dot -- above them a screen showing a sqlite> prompt\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m00-shell-command-center-01.png",
+  "generation_time_ms": 21470,
+  "usage": {
+    "prompt_tokens": 100,
+    "candidates_tokens": 1391,
+    "total_tokens": 1794
+  }
+}

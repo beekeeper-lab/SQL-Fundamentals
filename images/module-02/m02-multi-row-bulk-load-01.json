@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:04:48",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Split image -- on the left, a small character carrying a single box with many trips shown as dotted lines; on the right, a forklift carrying a pallet stacked with five boxes in a single trip\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m02-multi-row-bulk-load-01.png",
+  "generation_time_ms": 16487,
+  "usage": {
+    "prompt_tokens": 106,
+    "candidates_tokens": 1306,
+    "total_tokens": 1605
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-24T22:03:54",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: An architectural blueprint scroll showing a table schema, with callout labels pointing to each constraint line -- \"required,\" \"unique,\" \"valid range,\" \"auto-filled date\"\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m01-self-documenting-table-01.png",
+  "generation_time_ms": 17849,
+  "usage": {
+    "prompt_tokens": 102,
+    "candidates_tokens": 1327,
+    "total_tokens": 1683
+  }
+}

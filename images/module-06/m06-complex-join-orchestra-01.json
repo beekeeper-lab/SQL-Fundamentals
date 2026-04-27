@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:40:43",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A cheerful orchestra conductor coordinating sections of players, each section labeled with a SQL clause -- JOIN, WHERE, GROUP BY, HAVING -- with harmonious music notes rising\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m06-complex-join-orchestra-01.png",
+  "generation_time_ms": 17141,
+  "usage": {
+    "prompt_tokens": 98,
+    "candidates_tokens": 1329,
+    "total_tokens": 1713
+  }
+}

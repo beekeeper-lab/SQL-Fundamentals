@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:38:06",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three interlocking gears or conveyor belts labeled FILTER, SORT, and LIMIT in that order, with a pile of raw rows entering the left and a clean ordered result leaving the right\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m04-power-combo-01.png",
+  "generation_time_ms": 18814,
+  "usage": {
+    "prompt_tokens": 101,
+    "candidates_tokens": 1434,
+    "total_tokens": 1777
+  }
+}

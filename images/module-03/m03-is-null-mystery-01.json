@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:36:23",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three cartoon boxes labeled \"0\", \"empty string\", and \"NULL\" -- the first two have visible contents, the NULL box is wrapped in question marks and shrugging shoulders\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m03-is-null-mystery-01.png",
+  "generation_time_ms": 18670,
+  "usage": {
+    "prompt_tokens": 103,
+    "candidates_tokens": 1330,
+    "total_tokens": 1668
+  }
+}

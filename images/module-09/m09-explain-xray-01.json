@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:44:57",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: An X-ray style illustration of a query running through a database, with a highlighted bone labeled SCAN shown as cracked and slow on one side, and a healthy bone labeled SEARCH USING INDEX glowing fast on the other side\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m09-explain-xray-01.png",
+  "generation_time_ms": 19355,
+  "usage": {
+    "prompt_tokens": 110,
+    "candidates_tokens": 1504,
+    "total_tokens": 1835
+  }
+}

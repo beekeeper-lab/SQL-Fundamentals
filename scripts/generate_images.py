@@ -95,7 +95,13 @@ def parse_image_plan():
         if mod_match:
             current_module = line.lstrip("#").strip()
 
-        img_match = re.match(r"^###\s+Image\s+\d+:\s*(.+)", line)
+        # Audit additions section uses "### Module XX additions" headings
+        audit_mod_match = re.match(r"^###\s+(?:Module|Week)\s+\d+\s+additions\s*$", line)
+        if audit_mod_match:
+            current_module = line.lstrip("#").strip()
+
+        # Images normally use "### Image N:" but audit additions use "#### Image N:"
+        img_match = re.match(r"^#{3,4}\s+Image\s+\d+:\s*(.+)", line)
         if img_match:
             entry = {
                 "short_name": img_match.group(1).strip(),
@@ -112,11 +118,11 @@ def parse_image_plan():
             prompt_lines = []
             while j < len(lines):
                 l = lines[j]
-                if re.match(r"^###\s+Image\s+\d+:", l) or re.match(r"^##\s+", l):
+                if re.match(r"^#{3,4}\s+Image\s+\d+:", l) or re.match(r"^##\s+", l) or re.match(r"^###\s+(?:Module|Week)\s+\d+\s+additions\s*$", l):
                     break
 
                 if in_prompt:
-                    if re.match(r"^- \*\*", l) or re.match(r"^###\s+", l) or re.match(r"^##\s+", l) or l.strip() == "---":
+                    if re.match(r"^- \*\*", l) or re.match(r"^#{3,4}\s+", l) or re.match(r"^##\s+", l) or l.strip() == "---":
                         in_prompt = False
                     else:
                         prompt_lines.append(l.strip())

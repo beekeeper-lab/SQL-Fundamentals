@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:36:43",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A chef's recipe card with labeled layered ingredients stacked like a sandwich -- each layer is a SQL clause (SELECT, WHERE, AND, IN, LIKE) -- with a finished dish at the bottom\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m03-complex-query-recipe-01.png",
+  "generation_time_ms": 19767,
+  "usage": {
+    "prompt_tokens": 107,
+    "candidates_tokens": 1339,
+    "total_tokens": 1805
+  }
+}

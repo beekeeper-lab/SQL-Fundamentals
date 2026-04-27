@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:41:59",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A small inner-query character on a telephone, connected by a stretched cord to an outer-query character who is walking row by row across a table, each step prompting a new call\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m07-correlated-phone-home-01.png",
+  "generation_time_ms": 20436,
+  "usage": {
+    "prompt_tokens": 104,
+    "candidates_tokens": 1419,
+    "total_tokens": 1761
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:39:49",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three large cartoon table characters each with a long formal name on their chest getting a small \"call me...\" sticker pressed on with a single letter alias\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m06-aliases-nicknames-01.png",
+  "generation_time_ms": 19516,
+  "usage": {
+    "prompt_tokens": 96,
+    "candidates_tokens": 1404,
+    "total_tokens": 1723
+  }
+}

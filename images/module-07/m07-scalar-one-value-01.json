@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:41:21",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A column of many cartoon rows being funneled through a laboratory distillation apparatus, emerging as one labeled droplet with a single number inside\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m07-scalar-one-value-01.png",
+  "generation_time_ms": 18680,
+  "usage": {
+    "prompt_tokens": 93,
+    "candidates_tokens": 1296,
+    "total_tokens": 1647
+  }
+}

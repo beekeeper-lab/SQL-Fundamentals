@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:35:25",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three formal table column headers with cryptic short names, each having a colorful \"Hello my name is...\" nametag being pressed over it by a friendly hand, revealing readable names\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m03-aliases-nametags-01.png",
+  "generation_time_ms": 18611,
+  "usage": {
+    "prompt_tokens": 101,
+    "candidates_tokens": 1317,
+    "total_tokens": 1655
+  }
+}

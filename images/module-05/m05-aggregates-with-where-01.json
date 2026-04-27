@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:38:28",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A kitchen sieve strainer filtering rows labeled with values, only some fall through, and beneath it a label that reads \"AVG\" with a summary number emerging\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m05-aggregates-with-where-01.png",
+  "generation_time_ms": 21361,
+  "usage": {
+    "prompt_tokens": 97,
+    "candidates_tokens": 1303,
+    "total_tokens": 1648
+  }
+}

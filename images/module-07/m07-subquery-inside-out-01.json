@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:41:02",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A larger SQL scroll with a smaller SQL scroll tucked inside it -- an arrow shows the smaller scroll being read first, then its answer passed up into the larger scroll\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m07-subquery-inside-out-01.png",
+  "generation_time_ms": 18441,
+  "usage": {
+    "prompt_tokens": 99,
+    "candidates_tokens": 1373,
+    "total_tokens": 1648
+  }
+}

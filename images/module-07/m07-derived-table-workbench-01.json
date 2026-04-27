@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:41:39",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A carpenter's workbench where a small wooden table is being assembled from pieces of other tables, with a name tag hanging from it, and a query magnifying glass examining it\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m07-derived-table-workbench-01.png",
+  "generation_time_ms": 17926,
+  "usage": {
+    "prompt_tokens": 101,
+    "candidates_tokens": 1329,
+    "total_tokens": 1678
+  }
+}

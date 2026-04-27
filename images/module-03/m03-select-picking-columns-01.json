@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:35:06",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A long buffet counter full of labeled columns like dishes, with a hand using tongs to pick only two or three specific items onto a plate, while other columns stay on the counter\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m03-select-picking-columns-01.png",
+  "generation_time_ms": 21281,
+  "usage": {
+    "prompt_tokens": 102,
+    "candidates_tokens": 1319,
+    "total_tokens": 1630
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:45:18",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Split image -- on the left, a messy jumble of label stickers with mixed capitalization and punctuation; on the right, a neatly aligned column of clean snake_case labels, each hanging straight\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m09-naming-conventions-01.png",
+  "generation_time_ms": 20272,
+  "usage": {
+    "prompt_tokens": 105,
+    "candidates_tokens": 1351,
+    "total_tokens": 1768
+  }
+}

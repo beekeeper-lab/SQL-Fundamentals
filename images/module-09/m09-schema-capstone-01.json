@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:45:56",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A framed architectural blueprint of a small relational schema -- tables with column lists, foreign key arrows, index tags, all neatly labeled, hanging on a wall like a diploma\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m09-schema-capstone-01.png",
+  "generation_time_ms": 19364,
+  "usage": {
+    "prompt_tokens": 100,
+    "candidates_tokens": 1322,
+    "total_tokens": 1726
+  }
+}

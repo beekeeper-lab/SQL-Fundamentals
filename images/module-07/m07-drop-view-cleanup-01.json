@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:42:18",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A hand tossing an old rolled-up view document into a recycling bin, while on the other side a shiny new view document is being unrolled on a pedestal\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m07-drop-view-cleanup-01.png",
+  "generation_time_ms": 18909,
+  "usage": {
+    "prompt_tokens": 99,
+    "candidates_tokens": 1357,
+    "total_tokens": 1713
+  }
+}

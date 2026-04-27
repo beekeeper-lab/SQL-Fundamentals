@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:36:04",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A friendly bouncer character holding a clipboard with a bulleted list, checking names as people walk by a velvet rope, with some people being waved through and others politely turned away\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m03-in-guest-list-01.png",
+  "generation_time_ms": 22107,
+  "usage": {
+    "prompt_tokens": 102,
+    "candidates_tokens": 1330,
+    "total_tokens": 1844
+  }
+}

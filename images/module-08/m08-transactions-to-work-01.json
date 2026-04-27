@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:43:56",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: Three panels -- an envelope labeled BEGIN being opened, statements going inside, and finally either sealed with a green COMMIT stamp or fed into a shredder labeled ROLLBACK\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m08-transactions-to-work-01.png",
+  "generation_time_ms": 19658,
+  "usage": {
+    "prompt_tokens": 99,
+    "candidates_tokens": 1390,
+    "total_tokens": 1713
+  }
+}

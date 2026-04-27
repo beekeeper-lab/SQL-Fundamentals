@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-25T10:44:17",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Goal: editorial illustration for a programming textbook\nScene: A yellow caution-tape border around four small illustrated pitfalls -- a missing WHERE clause, a reversed greater-than symbol, a cracked cascade chain, and a skipped preview step, each with a tiny warning icon\nStyle: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational\nAspect ratio: 16:9\nBackground: white\nText in image: minimal or none\nAvoid: photorealistic, dark, scary, complex UI screenshots",
+  "output_file": "m08-danger-zone-01.png",
+  "generation_time_ms": 20607,
+  "usage": {
+    "prompt_tokens": 108,
+    "candidates_tokens": 1398,
+    "total_tokens": 1791
+  }
+}

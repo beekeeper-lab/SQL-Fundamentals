@@ -709,6 +709,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 00 additions
 
 #### Image 5: Why SQLite (vs. the big dogs)
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-00/m00-sqlite-vs-big-dogs-01.png`
 - **Page**: "Why SQLite? (And What Are the Alternatives?)"
 - **Placement**: after the SQLite/MySQL/PostgreSQL comparison table
@@ -724,6 +725,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 6: SQLite Shell Command Center
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-00/m00-shell-command-center-01.png`
 - **Page**: "The SQLite Shell: Your Command Center"
 - **Placement**: after the two-command-types explanation
@@ -739,6 +741,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: First Database Journey
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-00/m00-first-database-journey-01.png`
 - **Page**: "Let's Do This: Your First Database"
 - **Placement**: after the step-by-step CREATE/INSERT/SELECT walkthrough
@@ -756,6 +759,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 01 additions
 
 #### Image 5: Self-Documenting Table Blueprint
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-01/m01-self-documenting-table-01.png`
 - **Page**: "Putting It All Together: A Real Table"
 - **Placement**: after the students CREATE TABLE example
@@ -771,6 +775,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 6: ALTER vs. DROP
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-01/m01-alter-vs-drop-01.png`
 - **Page**: "Modifying Tables: ALTER and DROP"
 - **Placement**: after the DROP TABLE section, before the Watch It callout
@@ -788,6 +793,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 02 additions
 
 #### Image 5: The Shortcut Pitfall
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-02/m02-shortcut-pitfall-01.png`
 - **Page**: "The Shortcut (and Why You Shouldn't Use It)"
 - **Placement**: after the explicit-columns recommendation
@@ -803,6 +809,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 6: Multi-Row Bulk Load
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-02/m02-multi-row-bulk-load-01.png`
 - **Page**: "Multi-Row INSERT: The Bulk Load"
 - **Placement**: after the side-by-side single-row vs. multi-row examples
@@ -818,6 +825,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: DEFAULT Auto-Fill
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-02/m02-default-autofill-01.png`
 - **Page**: "DEFAULT Values: Let the Database Fill It In"
 - **Placement**: after the enrollment_date default example
@@ -835,6 +843,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 03 additions
 
 #### Image 5: SELECT Picking Columns
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-03/m03-select-picking-columns-01.png`
 - **Page**: "SELECT: The Foundation of Every Question"
 - **Placement**: after the SELECT * vs. named-columns comparison
@@ -850,6 +859,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 6: Column Aliases Nametags
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-03/m03-aliases-nametags-01.png`
 - **Page**: "Column Aliases: Giving Your Results Better Names"
 - **Placement**: after the alias example with AS
@@ -865,6 +875,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: BETWEEN Range Slider
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-03/m03-between-range-01.png`
 - **Page**: "BETWEEN: Range Queries Made Easy"
 - **Placement**: after the inclusive-range example
@@ -880,6 +891,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 8: IN Guest List
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-03/m03-in-guest-list-01.png`
 - **Page**: "IN: Matching Against a List"
 - **Placement**: after the IN vs. OR comparison
@@ -895,6 +907,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 9: IS NULL Mystery Box
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-03/m03-is-null-mystery-01.png`
 - **Page**: "IS NULL / IS NOT NULL: The Special Case"
 - **Placement**: after the three-valued-logic explanation
@@ -910,6 +923,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 10: Complex Query Recipe
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-03/m03-complex-query-recipe-01.png`
 - **Page**: "Putting It All Together: Complex Queries"
 - **Placement**: after the combined WHERE examples
@@ -927,6 +941,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 04 additions
 
 #### Image 5: ORDER BY Stacking Cards
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-04/m04-order-by-stacking-01.png`
 - **Page**: "ORDER BY: Sorting Your Results"
 - **Placement**: after the ASC/DESC discussion
@@ -942,6 +957,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 6: NULL Sorts First
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-04/m04-null-sorts-first-01.png`
 - **Page**: "NULL Sorting: The Odd One Out"
 - **Placement**: after the ASC NULL-first example
@@ -957,6 +973,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: LIMIT Top N
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-04/m04-limit-top-n-01.png`
 - **Page**: "LIMIT: Just the Top N, Please"
 - **Placement**: after the Top 5 by sales example
@@ -972,6 +989,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 8: WHERE + ORDER BY + LIMIT Combo
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-04/m04-power-combo-01.png`
 - **Page**: "The Power Combo: WHERE + ORDER BY + LIMIT"
 - **Placement**: after the combo overview
@@ -989,6 +1007,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 05 additions
 
 #### Image 5: Aggregates With WHERE
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-05/m05-aggregates-with-where-01.png`
 - **Page**: "Aggregates with WHERE: Filtered Summaries"
 - **Placement**: after the two-step filter-then-summarize explanation
@@ -1004,6 +1023,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 6: Multi-Column GROUP BY Drill-Down
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-05/m05-multi-column-drilldown-01.png`
 - **Page**: "GROUP BY with Multiple Columns"
 - **Placement**: after the department+year example
@@ -1019,6 +1039,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: Real-World Analysis
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-05/m05-real-world-analysis-01.png`
 - **Page**: "Practical Queries: Real-World Analysis"
 - **Placement**: after the example analytical queries
@@ -1036,6 +1057,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 06 additions
 
 #### Image 6: Why We Need Joins (Normalization)
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-06/m06-why-joins-01.png`
 - **Page**: "Why Do We Even Need Joins?"
 - **Placement**: after the normalization reasoning
@@ -1051,6 +1073,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: Table Aliases Nicknames
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-06/m06-aliases-nicknames-01.png`
 - **Page**: "Table Aliases: Your Sanity Savers"
 - **Placement**: after the with/without aliases comparison
@@ -1066,6 +1089,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 8: RIGHT JOIN Mirror
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-06/m06-right-join-mirror-01.png`
 - **Page**: "RIGHT JOIN and FULL OUTER JOIN: The Ones SQLite Skipped"
 - **Placement**: after the RIGHT JOIN workaround
@@ -1081,6 +1105,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 9: Three-Table Join Chain
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-06/m06-three-table-chain-01.png`
 - **Page**: "Joining 3+ Tables: The Full Picture"
 - **Placement**: after the students-enrollments-courses example
@@ -1096,6 +1121,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 10: Complex Join Orchestra
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-06/m06-complex-join-orchestra-01.png`
 - **Page**: "Complex Join Queries: Joins + GROUP BY + HAVING"
 - **Placement**: after the combined query example
@@ -1113,6 +1139,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 07 additions
 
 #### Image 5: Subquery Inside-Out
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-07/m07-subquery-inside-out-01.png`
 - **Page**: "What Is a Subquery, Really?"
 - **Placement**: after the inside-out execution explanation
@@ -1128,6 +1155,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 6: Scalar Subquery One Value
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-07/m07-scalar-one-value-01.png`
 - **Page**: "Scalar Subqueries: One Value to Rule Them All"
 - **Placement**: after the AVG-comparison example
@@ -1143,6 +1171,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: Derived Table Workbench
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-07/m07-derived-table-workbench-01.png`
 - **Page**: "Derived Tables: Subqueries in the FROM Clause"
 - **Placement**: after the aliased-subquery example
@@ -1158,6 +1187,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 8: Correlated Subquery Phone Home
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-07/m07-correlated-phone-home-01.png`
 - **Page**: "Correlated Subqueries: The Ones That Phone Home"
 - **Placement**: after the correlated example
@@ -1173,6 +1203,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 9: DROP VIEW Clean Up
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-07/m07-drop-view-cleanup-01.png`
 - **Page**: "DROP VIEW: Cleaning Up"
 - **Placement**: after the DROP-then-CREATE pattern
@@ -1188,6 +1219,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 10: Putting It All Together (Subq + Joins + Views)
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-07/m07-all-together-01.png`
 - **Page**: "Putting It All Together: Subqueries + Joins + Views"
 - **Placement**: after the combined-pieces walkthrough
@@ -1205,6 +1237,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 08 additions
 
 #### Image 6: UPDATE Targeted Fix
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-08/m08-update-targeted-fix-01.png`
 - **Page**: "UPDATE in Detail"
 - **Placement**: after the SET clause and CASE expression examples
@@ -1220,6 +1253,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: Subquery-Driven UPDATE/DELETE
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-08/m08-subquery-driven-01.png`
 - **Page**: "UPDATE and DELETE with Subqueries"
 - **Placement**: after the cross-table DELETE example
@@ -1235,6 +1269,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 8: Why Transactions Matter -- Bank Transfer
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-08/m08-why-transactions-01.png`
 - **Page**: "Why Transactions Matter: The Bank Transfer Problem"
 - **Placement**: after the split-transfer scenario (complements existing bank-transfer image higher up)
@@ -1250,6 +1285,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 9: Putting Transactions to Work
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-08/m08-transactions-to-work-01.png`
 - **Page**: "Putting Transactions to Work"
 - **Placement**: after the BEGIN/COMMIT/ROLLBACK examples
@@ -1265,6 +1301,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 10: The Danger Zone
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-08/m08-danger-zone-01.png`
 - **Page**: "The Danger Zone: Common Mistakes"
 - **Placement**: after the list of common mistakes
@@ -1282,6 +1319,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 ### Module 09 additions
 
 #### Image 6: Composite Index Phone Book
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-09/m09-composite-phonebook-01.png`
 - **Page**: "Composite Indexes and Column Order"
 - **Placement**: after the phone-book analogy
@@ -1297,6 +1335,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 7: EXPLAIN QUERY PLAN X-Ray
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-09/m09-explain-xray-01.png`
 - **Page**: "EXPLAIN QUERY PLAN: Seeing What the Database Sees"
 - **Placement**: after the SCAN-vs-SEARCH comparison
@@ -1312,6 +1351,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 8: Naming Conventions Good vs. Bad
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-09/m09-naming-conventions-01.png`
 - **Page**: "Naming Conventions: The Stuff Nobody Teaches But Everyone Judges"
 - **Placement**: after the bad-vs-good examples
@@ -1327,6 +1367,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 9: Query Cleanup Before/After
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-09/m09-query-cleanup-01.png`
 - **Page**: "Query Optimization: Writing Better SQL"
 - **Placement**: after the refactored query
@@ -1342,6 +1383,7 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Avoid: photorealistic, dark, scary, complex UI screenshots
 
 #### Image 10: Schema Design Capstone
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-09/m09-schema-capstone-01.png`
 - **Page**: "Schema Design: Putting It All Together"
 - **Placement**: after the full-schema example

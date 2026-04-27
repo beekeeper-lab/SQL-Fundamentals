@@ -73,10 +73,28 @@ def _load_resolve_quiz_json():
 
 # ── Source / HTML ────────────────────────────────────────────────────────────
 
+# A "buildable" source is one the course's build_course.py actually compiles to
+# HTML. Across the portfolio, buildable files always match one of these
+# prefixes:
+#   module-XX-*.md, day-XX-*.md, week-XX-module-YY-*.md,
+#   crash-course-*.md, reference-*.md
+# Anything else (e.g. agentic-engineering-101's knowledge_base.md or
+# anthropic-claude-code-in-action.md) is supplemental material that lives in
+# source/ for editing convenience but is intentionally not built. Excluding
+# these from the source list keeps html.missing honest.
+_BUILDABLE_SOURCE_RE = re.compile(
+    r"^(?:module-\d+-|day-\d+-|week-\d+-module-\d+-|crash-course-|reference-)",
+    re.IGNORECASE,
+)
+
+
 def _list_sources() -> list[Path]:
     if not SOURCE_DIR.exists():
         return []
-    return sorted(p for p in SOURCE_DIR.glob("*.md") if p.is_file())
+    return sorted(
+        p for p in SOURCE_DIR.glob("*.md")
+        if p.is_file() and _BUILDABLE_SOURCE_RE.match(p.name)
+    )
 
 
 def _list_html() -> set[str]:

@@ -14,6 +14,7 @@ This file queues additional teaching-page illustrations to bring SQL Fundamental
 ## Module 00: What Is SQL?
 
 #### playing-detective-better-questions
+<!-- orphan: queued for source-side wiring -->
 - **File**: `images/module-00/m00-playing-detective-better-questions.png`
 - **Page**: Playing Detective: Asking Better Questions
 - **Alt text**: A friendly detective with a magnifying glass interrogating a database, transforming a vague question ("which products are popular?") into specific, answerable SQL queries

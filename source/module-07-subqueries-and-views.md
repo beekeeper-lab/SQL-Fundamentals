@@ -2,7 +2,7 @@
 
 ## A Query Inside a Query (Inside a Query...)
 
-> 🏷️ When You're Ready
+> 🏷️ Combining and Modifying
 
 ---
 

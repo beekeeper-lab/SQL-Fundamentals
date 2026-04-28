@@ -35,16 +35,16 @@ COURSE_DISPLAY_NAME = "SQL Fundamentals"
 
 # Module ordering and metadata
 MODULES = [
-    {"file": "module-00-what-is-sql.md", "short": "Module 0", "title": "What Is SQL?", "hero": "module-00/m00-hero-database-welcome-01.png", "tier": "Start Here", "tier_css": "tier-start-here"},
-    {"file": "module-01-creating-tables.md", "short": "Module 1", "title": "Creating Tables", "hero": "module-01/m01-hero-blueprint-01.png", "tier": "Start Here", "tier_css": "tier-start-here"},
-    {"file": "module-02-inserting-data.md", "short": "Module 2", "title": "Inserting Data", "hero": "module-02/m02-hero-filling-forms-01.png", "tier": "Start Here", "tier_css": "tier-start-here"},
-    {"file": "module-03-select-and-filtering.md", "short": "Module 3", "title": "SELECT and Filtering", "hero": "module-03/m03-hero-detective-01.png", "tier": "Useful Soon", "tier_css": "tier-useful-soon"},
-    {"file": "module-04-sorting-and-limiting.md", "short": "Module 4", "title": "Sorting and Limiting", "hero": "module-04/m04-hero-sorted-cards-01.png", "tier": "Useful Soon", "tier_css": "tier-useful-soon"},
-    {"file": "module-05-aggregate-functions.md", "short": "Module 5", "title": "Aggregate Functions", "hero": "module-05/m05-hero-zoom-out-01.png", "tier": "Useful Soon", "tier_css": "tier-useful-soon"},
-    {"file": "module-06-joins.md", "short": "Module 6", "title": "Joins", "hero": "module-06/m06-hero-puzzle-pieces.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
-    {"file": "module-07-subqueries-and-views.md", "short": "Module 7", "title": "Subqueries and Views", "hero": "module-07/m07-hero-nesting-dolls.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
-    {"file": "module-08-updating-and-deleting.md", "short": "Module 8", "title": "Updating and Deleting", "hero": "module-08/m08-hero-red-button-01.png", "tier": "When You're Ready", "tier_css": "tier-when-ready"},
-    {"file": "module-09-indexes-and-best-practices.md", "short": "Module 9", "title": "Indexes and Best Practices", "hero": "module-09/m09-hero-magnifying-glass-01.png", "tier": "Advanced", "tier_css": "tier-advanced"},
+    {"file": "module-00-what-is-sql.md", "short": "Module 0", "title": "What Is SQL?", "hero": "module-00/m00-hero-database-welcome-01.png", "tier": "Schema and Data", "tier_css": "tier-start-here"},
+    {"file": "module-01-creating-tables.md", "short": "Module 1", "title": "Creating Tables", "hero": "module-01/m01-hero-blueprint-01.png", "tier": "Schema and Data", "tier_css": "tier-start-here"},
+    {"file": "module-02-inserting-data.md", "short": "Module 2", "title": "Inserting Data", "hero": "module-02/m02-hero-filling-forms-01.png", "tier": "Schema and Data", "tier_css": "tier-start-here"},
+    {"file": "module-03-select-and-filtering.md", "short": "Module 3", "title": "SELECT and Filtering", "hero": "module-03/m03-hero-detective-01.png", "tier": "Querying Data", "tier_css": "tier-useful-soon"},
+    {"file": "module-04-sorting-and-limiting.md", "short": "Module 4", "title": "Sorting and Limiting", "hero": "module-04/m04-hero-sorted-cards-01.png", "tier": "Querying Data", "tier_css": "tier-useful-soon"},
+    {"file": "module-05-aggregate-functions.md", "short": "Module 5", "title": "Aggregate Functions", "hero": "module-05/m05-hero-zoom-out-01.png", "tier": "Querying Data", "tier_css": "tier-useful-soon"},
+    {"file": "module-06-joins.md", "short": "Module 6", "title": "Joins", "hero": "module-06/m06-hero-puzzle-pieces.png", "tier": "Combining and Modifying", "tier_css": "tier-when-ready"},
+    {"file": "module-07-subqueries-and-views.md", "short": "Module 7", "title": "Subqueries and Views", "hero": "module-07/m07-hero-nesting-dolls.png", "tier": "Combining and Modifying", "tier_css": "tier-when-ready"},
+    {"file": "module-08-updating-and-deleting.md", "short": "Module 8", "title": "Updating and Deleting", "hero": "module-08/m08-hero-red-button-01.png", "tier": "Combining and Modifying", "tier_css": "tier-when-ready"},
+    {"file": "module-09-indexes-and-best-practices.md", "short": "Module 9", "title": "Indexes and Best Practices", "hero": "module-09/m09-hero-magnifying-glass-01.png", "tier": "Performance and Design", "tier_css": "tier-advanced"},
 ]
 
 EXTRAS = [
@@ -279,10 +279,10 @@ def split_merged_blockquotes(html_content: str) -> str:
 def process_tier_badges(html_content: str) -> str:
     """Convert tier markers into styled badge elements."""
     tier_classes = {
-        "Start Here": "tier-start-here",
-        "Useful Soon": "tier-useful-soon",
-        "When You're Ready": "tier-when-ready",
-        "Advanced": "tier-advanced",
+        "Schema and Data": "tier-start-here",
+        "Querying Data": "tier-useful-soon",
+        "Combining and Modifying": "tier-when-ready",
+        "Performance and Design": "tier-advanced",
     }
 
     def replace_tier(match):

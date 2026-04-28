@@ -2,7 +2,7 @@
 
 ## Zooming Out (or: Stop Counting Rows and Start Seeing Patterns)
 
-> 🏷️ Useful Soon
+> 🏷️ Querying Data
 
 ---
 

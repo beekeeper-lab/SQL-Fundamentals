@@ -2,7 +2,7 @@
 
 ## Your Database Journey Starts Here (or: How to Talk to a Very Organized Robot)
 
-> 🏷️ Start Here
+> 🏷️ Schema and Data
 
 ---
 

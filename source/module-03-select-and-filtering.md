@@ -2,7 +2,7 @@
 
 ## Your Data Has Answers. Time to Ask the Right Questions.
 
-> 🏷️ Useful Soon
+> 🏷️ Querying Data
 
 ---
 

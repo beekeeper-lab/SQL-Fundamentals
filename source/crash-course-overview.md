@@ -2,7 +2,7 @@
 
 ## SQL Fundamentals in 10 Minutes (or: The Top 10% That Does 90% of the Work)
 
-> 🏷️ Start Here
+> 🏷️ Schema and Data
 
 ---
 

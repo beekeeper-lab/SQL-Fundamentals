@@ -2,7 +2,7 @@
 
 ## The Permanent Marker Module (or: How to Not Destroy Everything You've Built)
 
-> 🏷️ When You're Ready
+> 🏷️ Combining and Modifying
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Blueprints, Building Codes, and Why Your Database Needs Both
 
-> 🏷️ Start Here
+> 🏷️ Schema and Data
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## The Big Picture (or: Making Your Database Fast, Secure, and Not a Total Mess)
 
-> 🏷️ Advanced
+> 🏷️ Performance and Design
 
 ---
 

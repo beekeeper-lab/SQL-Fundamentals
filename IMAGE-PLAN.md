@@ -22,7 +22,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Welcome to Databases
 - **File**: `images/module-00/m00-hero-database-welcome-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "Start Here" tag
+- **Placement**: after module title and "Schema and Data" tag
 - **Description**: A welcoming, friendly illustration introducing the world of databases. Sets an approachable tone for absolute beginners.
 - **Status**: Generated
 - **Prompt**:
@@ -86,7 +86,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Blueprint
 - **File**: `images/module-01/m01-hero-blueprint-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "Start Here" tag
+- **Placement**: after module title and "Schema and Data" tag
 - **Description**: A data architect holding blueprints, setting the tone that this module is about designing the structure and rules for tables. Bridges the construction metaphor used throughout the module.
 - **Status**: Generated
 - **Prompt**:
@@ -150,7 +150,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Filling Forms
 - **File**: `images/module-02/m02-hero-filling-forms-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "Start Here" tag
+- **Placement**: after module title and "Schema and Data" tag
 - **Description**: Someone filling out paper forms to represent inserting data into tables. Sets the metaphor that INSERT is like completing a form with field labels and values.
 - **Status**: Generated
 - **Prompt**:
@@ -214,7 +214,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Detective
 - **File**: `images/module-03/m03-hero-detective-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "Useful Soon" tag
+- **Placement**: after module title and "Querying Data" tag
 - **Description**: A detective with a magnifying glass examining a spreadsheet, setting the tone that SELECT is about interrogating your data and finding answers.
 - **Status**: Generated
 - **Prompt**:
@@ -278,7 +278,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Sorted Cards
 - **File**: `images/module-04/m04-hero-sorted-cards-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "Useful Soon" tag
+- **Placement**: after module title and "Querying Data" tag
 - **Description**: A messy pile of index cards next to a neatly sorted stack, illustrating the difference between unsorted and sorted query results. Communicates that the same data becomes far more useful when organized.
 - **Status**: Generated
 - **Prompt**:
@@ -342,7 +342,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Zoom Out
 - **File**: `images/module-05/m05-hero-zoom-out-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "Useful Soon" tag
+- **Placement**: after module title and "Querying Data" tag
 - **Description**: A zoomed-out perspective shifting from individual M&Ms to piles sorted by color, representing the shift from individual rows to aggregate summaries. Sets the tone for thinking about patterns rather than individual data points.
 - **Status**: Generated
 - **Prompt**:
@@ -406,7 +406,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Puzzle Pieces
 - **File**: `images/module-06/m06-hero-puzzle-pieces.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "When You're Ready" tag
+- **Placement**: after module title and "Combining and Modifying" tag
 - **Description**: Two puzzle pieces clicking together, representing how joins connect data from separate tables into a unified result. Sets the tone for the defining feature of relational databases.
 - **Status**: Generated
 - **Prompt**:
@@ -485,7 +485,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Nesting Dolls
 - **File**: `images/module-07/m07-hero-nesting-dolls.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "When You're Ready" tag
+- **Placement**: after module title and "Combining and Modifying" tag
 - **Description**: Russian nesting dolls (matryoshka), each containing a smaller SQL query. Sets the tone for the concept of queries nested inside other queries that execute from the inside out.
 - **Status**: Generated
 - **Prompt**:
@@ -549,7 +549,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Red Button
 - **File**: `images/module-08/m08-hero-red-button-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "When You're Ready" tag
+- **Placement**: after module title and "Combining and Modifying" tag
 - **Description**: A finger hovering over a big red button labeled DELETE, conveying the gravity and permanence of data modification operations. Sets the cautious-but-confident tone for the module.
 - **Status**: Generated
 - **Prompt**:
@@ -628,7 +628,7 @@ New images needed: 42 (2026-04-22 audit additions below)
 ### Image 1: Hero -- Magnifying Glass
 - **File**: `images/module-09/m09-hero-magnifying-glass-01.png`
 - **Page**: Title / intro section
-- **Placement**: after module title and "Advanced" tag
+- **Placement**: after module title and "Performance and Design" tag
 - **Description**: A magnifying glass over a database with speed lines, representing fast, focused searching. Sets the tone for the performance, security, and design topics in this final module.
 - **Status**: Generated
 - **Prompt**:

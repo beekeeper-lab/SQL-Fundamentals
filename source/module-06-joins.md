@@ -2,7 +2,7 @@
 
 ## Two Tables Walk Into a Bar...
 
-> 🏷️ When You're Ready
+> 🏷️ Combining and Modifying
 
 ---
 

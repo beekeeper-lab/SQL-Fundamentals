@@ -89,7 +89,7 @@ Everything starts in `source/*.md`. Each day-module is one file named `module-XX
 
 A typical module file contains:
 
-- **Tier badge** — `> 🏷️ Start Here` (or `Useful Soon`, `When You're Ready`, `Advanced`) to signal difficulty.
+- **Tier badge** — `> 🏷️ Schema and Data` (or `Querying Data`, `Combining and Modifying`, `Performance and Design`) to signal the module's topical group.
 - **Teaching intents** per section — `> 🎯 **Teach:**`, `> **See:**`, `> **Feel:**` lines that state the objective before the prose.
 - **Where-this-fits callouts** — `> 🔄 **Where this fits:**` to anchor the module to the relational/SQL big picture.
 - **Inline illustrations** — `![alt](../images/module-XX/name-01.png)` + a caption on the next line.

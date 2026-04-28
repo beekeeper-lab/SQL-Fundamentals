@@ -95,10 +95,10 @@ These markers get converted into styled interactive components in the HTML outpu
 #### Tier/difficulty badges
 
 ```markdown
-> 🏷️ Start Here
+> 🏷️ Schema and Data
 ```
 
-Available tiers: `Start Here`, `Useful Soon`, `When You're Ready`, `Advanced`. Each gets a distinct color badge.
+Available tiers: `Schema and Data`, `Querying Data`, `Combining and Modifying`, `Performance and Design`. Each gets a distinct color badge.
 
 #### Teaching intent (what students should learn from this section)
 
@@ -311,7 +311,7 @@ MODULES = [
         "short": "Module 0",                # Short label for nav
         "title": "Introduction",            # Full title for cards
         "hero": "module-00/hero-image.png", # Hero image for index card
-        "tier": "Start Here",               # Difficulty tier
+        "tier": "Schema and Data",          # Topic-meaningful tier label
         "tier_css": "tier-start-here",      # CSS class for badge
     },
     # ... more modules

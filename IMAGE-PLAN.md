@@ -1397,3 +1397,19 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
   Background: white
   Text in image: minimal or none
   Avoid: photorealistic, dark, scary, complex UI screenshots
+
+## Promoted from ADDITIONS (2026-04-28)
+
+### Image 6: playing-detective-better-questions
+
+- **File**: `images/module-00/m00-playing-detective-better-questions.png`
+- **Description**: Goal: editorial illustration for a programming textbook
+  Scene: A friendly cartoon detective stands in front of a glowing database labeled "store_db." A vague question ("Which products are popular?") sits in a thought bubble. The detective writes three more precise sub-questions on a clipboard: "How many orders per product last month?", "What's the average order value per category?", "Which products have repeat buyers?". Each sub-question has a small SQL fragment beside it. The detective looks satisfied — the database is now answerable.
+  Style: Head First book illustration style, clean lines, slightly whimsical and humorous, warm colors, educational
+  Aspect ratio: 16:9
+  Background: white
+  Text in image: thought bubble, clipboard sub-questions
+  Avoid: photorealistic, dark, scary, complex UI screenshots, real database tool screenshots
+
+---
+

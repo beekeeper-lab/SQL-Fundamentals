@@ -19,10 +19,17 @@ Output schema (stdout, single JSON object):
                           }, ...}},
       "quizzes":     {"count": N, "total_questions": N,
                       "modules_without": [<source>, ...]},
-      "todos":       <int>
+      "todos":       <int>,
+      "todos_by_category": {
+          "html":        N,   # sources without compiled HTML
+          "images":      N,   # planned images not on disk
+          "audio":       N,   # narration blocks without MP3
+          "image_plan":  N,   # source ![](...) refs without a plan entry
+          "quizzes":     N    # modules without quiz JSON
+      }
     }
 
-`todos` = images.missing + (max 0 narration_blocks - audio.files) + len(quizzes.modules_without).
+`todos` = sum of all values in `todos_by_category`.
 
 This script is the canonical per-course status emitter; the parent-level
 `/ReportStatus` skill aggregates these JSON outputs into a portfolio table.
@@ -151,6 +158,35 @@ def _parse_image_plan() -> tuple[int, list[dict]]:
     return planned, missing
 
 
+# ── Image plan gap (source refs vs plan entries) ─────────────────────────────
+
+_IMAGE_REF_RE = re.compile(r"!\[[^\]]*\]\(([^)]+\.png)\)")
+
+
+def _source_image_refs(sources: list[Path]) -> set[str]:
+    """Return basenames of all `![alt](*.png)` references across source MDs."""
+    refs: set[str] = set()
+    for src in sources:
+        text = src.read_text(encoding="utf-8", errors="replace")
+        for m in _IMAGE_REF_RE.finditer(text):
+            refs.add(Path(m.group(1)).name)
+    return refs
+
+
+def _plan_image_basenames() -> set[str]:
+    """Return basenames of all `**File**:` entries across IMAGE-PLAN files."""
+    names: set[str] = set()
+    for plan_name in IMAGE_PLAN_FILES:
+        plan_path = COURSE_ROOT / plan_name
+        if not plan_path.exists():
+            continue
+        for line in plan_path.read_text(encoding="utf-8", errors="replace").splitlines():
+            m = _IMAGE_FILE_RE.match(line)
+            if m:
+                names.add(Path(m.group(1).strip()).name)
+    return names
+
+
 # ── Narration / audio ────────────────────────────────────────────────────────
 
 _NARRATION_LINE_RE = re.compile(r"^>\s*🎙️\s*(.*)$")
@@ -267,6 +303,8 @@ def build_status() -> dict:
                       "missing_chars": 0, "per_module": {}},
             "quizzes": {"count": 0, "total_questions": 0, "modules_without": []},
             "todos": 0,
+            "todos_by_category": {"html": 0, "images": 0, "audio": 0,
+                                  "image_plan": 0, "quizzes": 0},
         }
 
     stage = "post-pipeline" if BUILD_SCRIPT.exists() else "pre-pipeline"
@@ -310,11 +348,19 @@ def build_status() -> dict:
     resolve = _load_resolve_quiz_json()
     quiz_info = _quiz_stats(resolve)
 
-    todos = (
-        len(missing_imgs)
-        + max(0, total_blocks - total_audio)
-        + len(quiz_info["modules_without"])
-    )
+    # Image plan gap — source refs without a plan entry
+    src_refs = _source_image_refs(sources)
+    plan_names = _plan_image_basenames()
+    image_plan_gap = len(src_refs - plan_names) if stage == "post-pipeline" else 0
+
+    todos_by_category = {
+        "html": len(html_missing),
+        "images": len(missing_imgs),
+        "audio": max(0, total_blocks - total_audio),
+        "image_plan": image_plan_gap,
+        "quizzes": len(quiz_info["modules_without"]),
+    }
+    todos = sum(todos_by_category.values())
 
     return {
         "course_name": COURSE_ROOT.name,
@@ -334,6 +380,7 @@ def build_status() -> dict:
         },
         "quizzes": quiz_info,
         "todos": todos,
+        "todos_by_category": todos_by_category,
     }
 
 

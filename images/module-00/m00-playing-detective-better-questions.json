@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-04-27T22:37:27",
+  "provider": "gemini",
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Scene: Goal: editorial illustration for a programming textbook",
+  "output_file": "m00-playing-detective-better-questions.png",
+  "generation_time_ms": 22251,
+  "usage": {
+    "prompt_tokens": 11,
+    "candidates_tokens": 1222,
+    "total_tokens": 1421
+  }
+}

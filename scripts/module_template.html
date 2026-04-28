@@ -362,6 +362,21 @@ li > ul, li > ol { margin: 0.2rem 0; }
 }
 .narration-play:hover { transform: scale(1.1); }
 .narration-play.playing { opacity: 0.7; }
+.narration-pending {
+    flex-shrink: 0; background: var(--narration-border); color: white;
+    border: none; border-radius: 50%; width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: transform 0.2s; margin-top: 0.1rem;
+    opacity: 0.55;
+}
+.narration-pending:hover { transform: scale(1.1); opacity: 0.75; }
+.audio-pending-message {
+    display: block; margin-top: 0.5rem; padding: 0.6rem 0.75rem;
+    background: var(--bg-secondary); border: 1px dashed var(--narration-border);
+    border-radius: 6px; font-size: 0.85rem; color: var(--text-muted, var(--text));
+    line-height: 1.5; flex-basis: 100%;
+}
+.audio-pending-message[hidden] { display: none; }
 
 /* ── Narration Mute Toggle ── */
 .narration-mute {
@@ -611,6 +626,12 @@ function toggleNarrationMute() {
             playNarration(firstNarration);
         }
     }
+}
+
+function showAudioPendingMessage(btn) {
+    const msg = btn.nextElementSibling;
+    if (!msg || !msg.classList.contains('audio-pending-message')) return;
+    msg.hidden = !msg.hidden;
 }
 
 function playNarration(btn) {

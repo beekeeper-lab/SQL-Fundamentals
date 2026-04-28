@@ -3,6 +3,7 @@
 
 import argparse
 import base64
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -24,6 +25,13 @@ IMAGES_DIR = PROJECT_ROOT / "images"
 AUDIO_DIR = PROJECT_ROOT / "audio"
 HTML_DIR = PROJECT_ROOT / "html"
 QUIZ_DIR = PROJECT_ROOT / "Quiz"
+SCRIPTS_DIR = Path(__file__).parent
+FLASHCARD_TEMPLATE = SCRIPTS_DIR / "flashcard_template.html"
+FLASHCARD_JS = SCRIPTS_DIR / "flashcard.js"
+
+# Course identity for the flashcard page (slug = directory name).
+COURSE_SLUG = PROJECT_ROOT.name
+COURSE_DISPLAY_NAME = "SQL Fundamentals"
 
 # Module ordering and metadata
 MODULES = [
@@ -39,7 +47,9 @@ MODULES = [
     {"file": "module-09-indexes-and-best-practices.md", "short": "Module 9", "title": "Indexes and Best Practices", "hero": "module-09/m09-hero-magnifying-glass-01.png", "tier": "Advanced", "tier_css": "tier-advanced"},
 ]
 
-EXTRAS = []
+EXTRAS = [
+    {"file": "crash-course-overview.md", "short": "Overview", "title": "SQL Fundamentals Crash Course", "hero": "module-00/m00-hero-database-welcome-01.png"},
+]
 
 REFERENCES = []
 
@@ -102,23 +112,64 @@ def embed_images(html_content: str) -> str:
     return re.sub(r'<img[^>]+src="([^"]+)"', replace_img, html_content)
 
 
+_AUDIO_INDEX = None
+
+
+def _normalize_narration_text(text: str) -> str:
+    """Normalize narration text for content-hash lookup.
+
+    Strips HTML tags, the narration emoji, and collapses whitespace so that
+    rendered display markup hashes the same as the original manifest text.
+    """
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'🎙️\s*', '', text)
+    return ' '.join(text.split())
+
+
+def _hash_text(text: str) -> str:
+    return hashlib.sha256(_normalize_narration_text(text).encode("utf-8")).hexdigest()
+
+
+def build_audio_index() -> dict:
+    """Walk audio/*/manifest.json and return text-hash → MP3 path.
+
+    This lets any narration block (in any source MD) find its existing audio
+    if the same text was previously generated for any other module.
+    Position-based matching is intentionally dropped; content matching is
+    more robust to source reordering and enables audio reuse across pages.
+    """
+    index = {}
+    if not AUDIO_DIR.exists():
+        return index
+    for manifest_path in AUDIO_DIR.glob("*/manifest.json"):
+        try:
+            entries = json.loads(manifest_path.read_text())
+        except Exception:
+            continue
+        audio_module_dir = manifest_path.parent
+        for entry in entries:
+            text = entry.get("text", "")
+            if not text:
+                continue
+            audio_file = audio_module_dir / entry.get("audio_file", "")
+            if audio_file.exists():
+                index[_hash_text(text)] = audio_file
+    return index
+
+
 def process_narration_blocks(html_content: str, module_stem: str) -> str:
-    """Convert narration blockquotes (🎙️) into audio player widgets."""
-    audio_module_dir = AUDIO_DIR / module_stem
+    """Convert narration blockquotes (🎙️) into audio player widgets.
 
-    # Load manifest if it exists
-    manifest_path = audio_module_dir / "manifest.json"
-    audio_files = {}
-    if manifest_path.exists():
-        manifest = json.loads(manifest_path.read_text())
-        for entry in manifest:
-            audio_files[entry["index"]] = entry
-
-    narration_counter = 0
+    Uses a portfolio-content-hash lookup: any narration block whose text
+    matches an existing MP3 (in any module's audio/ dir) renders with that
+    audio. Blocks without matching audio render an "audio pending"
+    placeholder rather than a silent broken player.
+    """
+    global _AUDIO_INDEX
+    if _AUDIO_INDEX is None:
+        _AUDIO_INDEX = build_audio_index()
 
     def replace_narration(match):
-        nonlocal narration_counter
-        narration_counter += 1
         content = match.group(1)
 
         # Remove the 🎙️ emoji and clean up paragraph tags for display
@@ -127,14 +178,11 @@ def process_narration_blocks(html_content: str, module_stem: str) -> str:
         if not display_text.strip().startswith('<p>'):
             display_text = f'<p>{display_text.strip()}</p>'
 
-        # Check for audio file
-        audio_entry = audio_files.get(narration_counter)
-        audio_html = ""
-        if audio_entry:
-            audio_path = audio_module_dir / audio_entry["audio_file"]
-            if audio_path.exists():
-                audio_b64 = base64.b64encode(audio_path.read_bytes()).decode()
-                audio_html = f'''
+        # Content-hash lookup against the audio index
+        audio_path = _AUDIO_INDEX.get(_hash_text(display_text))
+        if audio_path:
+            audio_b64 = base64.b64encode(audio_path.read_bytes()).decode()
+            audio_html = f'''
                 <button class="narration-play" onclick="playNarration(this)" aria-label="Play narration">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M8 5v14l11-7z"/>
@@ -143,6 +191,14 @@ def process_narration_blocks(html_content: str, module_stem: str) -> str:
                 <audio preload="none">
                     <source src="data:audio/mpeg;base64,{audio_b64}" type="audio/mpeg">
                 </audio>'''
+        else:
+            audio_html = '''
+                <button class="narration-pending" onclick="showAudioPendingMessage(this)" aria-label="Audio narration coming soon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.5">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+                <span class="audio-pending-message" hidden>Narration for this section is being recorded and will be available in a future update. The text below covers everything the narration says.</span>'''
 
         return f'''<div class="narration-block">
             <div class="narration-icon">🎙️</div>
@@ -547,6 +603,76 @@ def _build_card(mod: dict, prefix: str = "html/") -> str:
             </a>'''
 
 
+def _quiz_bank_has_questions() -> bool:
+    """Return True if Quiz/ contains at least one *.json file with at least one
+    question. Each quiz JSON is expected to have a top-level 'questions' list,
+    but we fall back to 'any non-empty list' to be tolerant of schema drift.
+    """
+    quiz_root = PROJECT_ROOT / "Quiz"
+    if not quiz_root.exists():
+        return False
+    for json_path in quiz_root.rglob("*.json"):
+        try:
+            data = json.loads(json_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if isinstance(data, dict):
+            qs = data.get("questions")
+            if isinstance(qs, list) and len(qs) > 0:
+                return True
+        elif isinstance(data, list) and len(data) > 0:
+            return True
+    return False
+
+
+def _build_hero_tile(href: str, eyebrow: str, title: str, subtitle: str, accent_class: str) -> str:
+    """Build a single hero tile (large prominent CTA card)."""
+    return f'''
+            <a href="{href}" class="hero-tile {accent_class}">
+                <div class="hero-tile-eyebrow">{eyebrow}</div>
+                <div class="hero-tile-title">{title}</div>
+                <div class="hero-tile-subtitle">{subtitle}</div>
+                <div class="hero-tile-arrow">→</div>
+            </a>'''
+
+
+def build_hero_tiles_html() -> str:
+    """Build the hero tiles strip. Tiles render conditionally:
+    - Crash Course tile: any source/crash-course-*.md exists; prefer "overview" if multiple.
+    - Flashcards tile: only if Quiz/ has at least one JSON with questions.
+    Returns empty string if neither tile applies (so no empty strip renders).
+    """
+    tiles = []
+
+    crash_candidates = sorted(SOURCE_DIR.glob("crash-course-*.md"))
+    crash_pick = next(
+        (p for p in crash_candidates if "overview" in p.stem),
+        crash_candidates[0] if crash_candidates else None,
+    )
+    if crash_pick is not None:
+        tiles.append(_build_hero_tile(
+            href=f"html/{crash_pick.stem}.html",
+            eyebrow="Crash Course",
+            title="The top 10% of the course in one sitting",
+            subtitle="Skim the essentials, then dive deeper where it matters.",
+            accent_class="hero-tile-crash",
+        ))
+
+    if _quiz_bank_has_questions():
+        tiles.append(_build_hero_tile(
+            href="html/flashcard.html",
+            eyebrow="Flashcards",
+            title="Drill the full question bank",
+            subtitle="Spaced-repetition memory across every module quiz.",
+            accent_class="hero-tile-flash",
+        ))
+
+    if not tiles:
+        return ""
+
+    return f'<div class="hero-tiles">{"".join(tiles)}\n        </div>'
+
+
 def build_index_html() -> str:
     """Build the course landing/index page."""
     # Build card HTML organized by section
@@ -560,6 +686,9 @@ def build_index_html() -> str:
     for section_name, indices in sections.items():
         cards = [_build_card(MODULES[i]) for i in indices]
         section_cards[section_name] = "\n".join(cards)
+
+    # Build hero tiles strip (conditional: crash course + flashcards)
+    hero_tiles_html = build_hero_tiles_html()
 
     # Embed hero image
     hero_img = image_to_base64(IMAGES_DIR / "module-00" / "m00-hero-database-welcome-01.png") or ""
@@ -584,9 +713,104 @@ def build_index_html() -> str:
         cards_intermediate=section_cards["intermediate"],
         cards_advanced=section_cards["advanced"],
         cards_expert=section_cards["expert"],
+        hero_tiles=hero_tiles_html,
         hero_image=hero_img,
         quiz_passing_json=json.dumps(quiz_passing),
     )
+
+
+def collect_flashcard_questions() -> list[dict]:
+    """Walk Quiz/**/*.json, aggregate every question into a flat list.
+
+    Each entry carries a stable id (relative quiz path + question index in the
+    source file's `questions` array) so the runtime SR weighting can key off
+    something that survives reorderings inside a single quiz file.
+    """
+    if not QUIZ_DIR.exists():
+        return []
+
+    results: list[dict] = []
+    quiz_files = sorted(QUIZ_DIR.rglob("*.json"))
+    for quiz_path in quiz_files:
+        try:
+            data = json.loads(quiz_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"  WARNING: skipping {quiz_path} (malformed JSON: {e})")
+            continue
+
+        questions = data.get("questions") if isinstance(data, dict) else None
+        if not isinstance(questions, list):
+            continue
+
+        rel_path = quiz_path.relative_to(PROJECT_ROOT).as_posix()
+        quiz_title = data.get("quiz_title") if isinstance(data, dict) else None
+
+        for idx, q in enumerate(questions):
+            if not isinstance(q, dict):
+                continue
+            question_text = q.get("question")
+            options = q.get("options")
+            answer = q.get("answer")
+            if not (question_text and isinstance(options, list) and answer is not None):
+                continue
+            entry = {
+                "id": f"{rel_path}#{idx}",
+                "source_file": rel_path,
+                "source_index": idx,
+                "quiz_title": quiz_title or "",
+                "question": question_text,
+                "options": options,
+                "answer": answer,
+            }
+            if "explanation" in q and q["explanation"]:
+                entry["explanation"] = q["explanation"]
+            results.append(entry)
+
+    return results
+
+
+def build_flashcard_html() -> None:
+    """Render flashcard_template.html → html/flashcard.html with the question
+    bank embedded as a <script type="application/json"> block, and copy
+    flashcard.js next to it.
+    """
+    if not FLASHCARD_TEMPLATE.exists():
+        print(f"  SKIP: flashcard template not found at {FLASHCARD_TEMPLATE}")
+        return
+    if not FLASHCARD_JS.exists():
+        print(f"  SKIP: flashcard.js not found at {FLASHCARD_JS}")
+        return
+
+    questions = collect_flashcard_questions()
+    bank = {
+        "course_name": COURSE_DISPLAY_NAME,
+        "course_slug": COURSE_SLUG,
+        "generated_question_count": len(questions),
+        "questions": questions,
+    }
+
+    # Embedding inside <script type="application/json">: '/' is safe but a literal
+    # '</script' inside any string would close the block. Escape just that.
+    bank_json = json.dumps(bank, ensure_ascii=False)
+    bank_json = bank_json.replace("</script", "<\\/script")
+
+    template = FLASHCARD_TEMPLATE.read_text(encoding="utf-8")
+    rendered = (
+        template
+        .replace("{{COURSE_NAME}}", COURSE_DISPLAY_NAME)
+        .replace("{{COURSE_SLUG}}", COURSE_SLUG)
+        .replace("{{FLASHCARD_DATA_JSON}}", bank_json)
+    )
+
+    HTML_DIR.mkdir(parents=True, exist_ok=True)
+    out_html = HTML_DIR / "flashcard.html"
+    out_html.write_text(rendered, encoding="utf-8")
+
+    out_js = HTML_DIR / "flashcard.js"
+    out_js.write_text(FLASHCARD_JS.read_text(encoding="utf-8"), encoding="utf-8")
+
+    print(f"  Built: flashcard.html ({len(questions)} cards)")
+    print(f"  Built: flashcard.js")
 
 
 # ─── HTML Templates ───────────────────────────────────────────────
@@ -700,6 +924,96 @@ img {{
     margin: 1.5rem 0;
 }}
 
+
+/* ── Hero Tiles (prominent CTAs above the module list) ── */
+.hero-tiles {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0 2.5rem;
+}}
+
+.hero-tile {{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem 1.75rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    box-shadow: 0 4px 14px rgba(91, 33, 182, 0.25);
+    transition: transform 0.18s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    min-height: 140px;
+}}
+
+.hero-tile:hover {{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(91, 33, 182, 0.35);
+    text-decoration: none;
+    color: #fff;
+}}
+
+.hero-tile-crash {{
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    box-shadow: 0 4px 14px rgba(91, 33, 182, 0.25);
+}}
+.hero-tile-crash:hover {{
+    box-shadow: 0 8px 22px rgba(91, 33, 182, 0.35);
+}}
+
+.hero-tile-flash {{
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+}}
+.hero-tile-flash:hover {{
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
+}}
+
+.hero-tile-eyebrow {{
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.85;
+}}
+
+.hero-tile-title {{
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+}}
+
+.hero-tile-subtitle {{
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.92;
+}}
+
+.hero-tile-arrow {{
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 0.85;
+    transition: transform 0.18s ease;
+}}
+
+.hero-tile:hover .hero-tile-arrow {{
+    transform: translateX(4px);
+}}
+
+[data-theme="dark"] .hero-tile-crash {{
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}}
+[data-theme="dark"] .hero-tile-flash {{
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}}
 
 /* ── Module Grid ── */
 .section-label {{
@@ -900,6 +1214,8 @@ img {{
             <li>Design normalized schemas following best practices</li>
         </ul>
 
+        {hero_tiles}
+
         <h2>Self-Study Modules</h2>
 
         <div class="section-label">Foundations</div>
@@ -1076,6 +1392,9 @@ def main():
     index_path = PROJECT_ROOT / "index.html"
     index_path.write_text(index_html)
     print(f"  Built: index.html (project root)")
+
+    # Build flashcard study page (aggregates every Quiz/**/*.json into one bank)
+    build_flashcard_html()
 
     print(f"\nDone. Open index.html to view the course.")
 

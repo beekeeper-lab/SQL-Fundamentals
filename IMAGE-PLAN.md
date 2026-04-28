@@ -1413,3 +1413,24 @@ These 42 images fill coverage gaps identified in the 2026-04-22 narration/image 
 
 ---
 
+## Crash Course Overview
+
+The crash course (`source/crash-course-overview.md`) is a ~10-minute distillation of the full 10-day course. It reuses already-generated module hero and concept images so the visual style stays consistent and no new image generation is required.
+
+| Slot | Beat | Reused image |
+|------|------|--------------|
+| Hero | Opening welcome | `images/module-00/m00-hero-database-welcome-01.png` |
+| Beat 1 | Tables = filing cabinets | `images/module-00/m00-filing-cabinet-analogy-01.png` |
+| Beat 2 | Constraints as safety net | `images/module-01/m01-constraint-bouncers-01.png` |
+| Beat 3 | SELECT / WHERE | `images/module-03/m03-where-funnel-01.png` |
+| Beat 4 | NULL gotcha | `images/module-03/m03-is-null-mystery-01.png` |
+| Beat 5 | Aggregates zoom out | `images/module-05/m05-hero-zoom-out-01.png` |
+| Beat 6 | WHERE vs HAVING | `images/module-05/m05-where-vs-having-01.png` |
+| Beat 7 | JOINs hero | `images/module-06/m06-hero-puzzle-pieces.png` |
+| Beat 8 | Index trade-offs | `images/module-09/m09-index-tradeoff-balance-01.png` |
+| Closing | Schema capstone | `images/module-09/m09-schema-capstone-01.png` |
+
+**Status:** No new images proposed. All slots reuse existing `Generated` PNGs.
+
+---
+

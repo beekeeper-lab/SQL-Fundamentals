@@ -1,0 +1,79 @@
+[
+  {
+    "index": 1,
+    "module": "crash-course-overview",
+    "audio_file": "01_crash-course-overview.mp3",
+    "text": "Welcome to Module 0 -- the very beginning. If you've never touched a database before, perfect. If you've used spreadsheets, even better -- because you already understand more than you think. We're about to learn how to talk to databases using a language called SQL, and by the end of this module, you'll have created your first database, built a table, stuffed data into it, and asked it questions. Let's go.",
+    "size_bytes": 432631
+  },
+  {
+    "index": 2,
+    "module": "crash-course-overview",
+    "audio_file": "02_crash-course-overview.mp3",
+    "text": "Think of it this way. You wouldn't just dump a thousand paper records into a cardboard box and call it \"organized.\" You'd file them into labeled folders, in labeled drawers, in a cabinet. A relational database does the same thing -- but digitally, and with the ability to search through millions of records in milliseconds.",
+    "size_bytes": 321872
+  },
+  {
+    "index": 3,
+    "module": "crash-course-overview",
+    "audio_file": "03_crash-course-overview.mp3",
+    "text": "Here's the mindset shift. Without constraints, YOU are responsible for making sure every piece of data is valid -- every time, forever. With constraints, the DATABASE is responsible. It never gets tired, it never forgets to check, and it never lets bad data slip through because it's Friday afternoon and everyone wants to go home. Constraints are your safety net. Use them generously.",
+    "size_bytes": 419257
+  },
+  {
+    "index": 4,
+    "module": "crash-course-overview",
+    "audio_file": "04_crash-course-overview.mp3",
+    "text": "The WHERE clause is where SQL goes from \"show me a table\" to \"answer my question.\" Every comparison operator gives you a different way to slice the data. Equal, not equal, greater than, less than -- these are the fundamental building blocks of every filter you'll ever write.",
+    "size_bytes": 333157
+  },
+  {
+    "index": 5,
+    "module": "crash-course-overview",
+    "audio_file": "05_crash-course-overview.mp3",
+    "text": "NULL will bite you if you're not careful. It's not zero, it's not an empty string, it's not false -- it's the complete absence of data. And because of that, normal comparison operators don't work with it. You must use IS NULL and IS NOT NULL. Burn this into your brain. You will forget it at least once, spend twenty minutes debugging, and then remember this warning.",
+    "size_bytes": 401702
+  },
+  {
+    "index": 6,
+    "module": "crash-course-overview",
+    "audio_file": "06_crash-course-overview.mp3",
+    "text": "Five functions, five superpowers. COUNT tells you \"how many.\" SUM tells you \"how much total.\" AVG tells you \"what's typical.\" MIN and MAX tell you \"what are the extremes.\" Individually, they're useful. Combined -- and especially combined with GROUP BY, which we'll cover next -- they're transformative.",
+    "size_bytes": 365758
+  },
+  {
+    "index": 7,
+    "module": "crash-course-overview",
+    "audio_file": "07_crash-course-overview.mp3",
+    "text": "WHERE versus HAVING is probably the single most asked-about distinction in SQL. Here's the easy way to remember it: if you can point to the value in a single row of the original table, use WHERE. If you need to calculate the value across multiple rows first -- like a count or an average -- use HAVING. WHERE for rows, HAVING for groups. Tattoo it on your arm if you have to.",
+    "size_bytes": 425944
+  },
+  {
+    "index": 8,
+    "module": "crash-course-overview",
+    "audio_file": "08_crash-course-overview.mp3",
+    "text": "Welcome to Module 6, and honestly? This is the one. If there's a single concept that separates someone who \"knows a little SQL\" from someone who actually gets relational databases, it's joins. Everything you've done so far has been querying one table at a time. That's like reading one chapter of a book and saying you've read the whole thing. Joins let you read the whole story.",
+    "size_bytes": 405882
+  },
+  {
+    "index": 9,
+    "module": "crash-course-overview",
+    "audio_file": "09_crash-course-overview.mp3",
+    "text": "Don't stress about RIGHT JOIN or FULL OUTER JOIN too much. RIGHT JOIN is just a LEFT JOIN with the tables swapped, and FULL OUTER JOIN is rare in the wild. If you master INNER JOIN and LEFT JOIN, you'll handle 95% of the joins you'll ever write. The other 5%? You'll Google them and be fine.",
+    "size_bytes": 336919
+  },
+  {
+    "index": 10,
+    "module": "crash-course-overview",
+    "audio_file": "10_crash-course-overview.mp3",
+    "text": "Indexing is about trade-offs. Every index you create makes reads faster and writes slower. The art is finding the columns where the read benefit far outweighs the write cost. In most applications, that's your WHERE columns, your JOIN columns, and your ORDER BY columns.",
+    "size_bytes": 297631
+  },
+  {
+    "index": 11,
+    "module": "crash-course-overview",
+    "audio_file": "11_crash-course-overview.mp3",
+    "text": "You've gone from zero to a solid foundation in SQL. That's not a small thing. Databases are everywhere -- behind every website, every app, every system that stores and retrieves information. You now speak their language. Go build something.",
+    "size_bytes": 283420
+  }
+]

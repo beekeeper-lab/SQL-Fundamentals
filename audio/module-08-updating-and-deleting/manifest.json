@@ -31,42 +31,70 @@
     "index": 5,
     "module": "module-08-updating-and-deleting",
     "audio_file": "05_module-08-updating-and-deleting.mp3",
-    "text": "Subqueries in UPDATE and DELETE are where the golden rule matters most. You're now modifying data based on a chain of logic -- \"delete enrollments for students whose major is this, in courses from that department.\" The more complex the logic, the more critical it is to preview with SELECT first. Test every layer of the subquery before you pull the trigger.",
+    "text": "DELETE is blunt. It's not a soft delete, it's not a hide, it's not a move-to-archive. It's gone. That's why the WHERE clause is the most important part of any DELETE statement. Read your DELETE statement out loud before running it -- \"delete from enrollments where grade equals F\" sounds right. But \"delete from enrollments\" with no WHERE -- that's the one that shows up in post-mortems. Every professional DBA has a war story about a missing WHERE clause. Don't add yours to the pile.",
     "size_bytes": 374953
   },
   {
     "index": 6,
     "module": "module-08-updating-and-deleting",
     "audio_file": "06_module-08-updating-and-deleting.mp3",
-    "text": "Think of a transaction like an envelope. You put all your SQL statements inside the envelope, and you don't mail it until you're ready. BEGIN opens the envelope. Each statement goes inside. COMMIT seals it and sends it. ROLLBACK shreds the whole thing. Nothing inside the envelope affects the database until you COMMIT.",
+    "text": "Subqueries in UPDATE and DELETE are where the golden rule matters most. You're now modifying data based on a chain of logic -- \"delete enrollments for students whose major is this, in courses from that department.\" The more complex the logic, the more critical it is to preview with SELECT first. Test every layer of the subquery before you pull the trigger.",
     "size_bytes": 383730
   },
   {
     "index": 7,
     "module": "module-08-updating-and-deleting",
     "audio_file": "07_module-08-updating-and-deleting.mp3",
-    "text": "The pattern is always the same: multiple related changes that must succeed or fail together. Anytime you find yourself writing two or more statements that are logically connected -- where one without the other would leave your data in a broken state -- wrap them in a transaction. It's cheap insurance.",
+    "text": "The cascade question is the most important one here. When you delete a student, what happens to their enrollments? If you set up the foreign key with ON DELETE CASCADE, the enrollments vanish too -- automatic cleanup. Without cascade, you either get blocked by the foreign key or you leave orphan records behind. Neither is a disaster, but both need to be a conscious choice when you design the schema. Don't just copy-paste foreign keys. Think about what should happen when the parent row goes away.",
     "size_bytes": 309333
   },
   {
     "index": 8,
     "module": "module-08-updating-and-deleting",
     "audio_file": "08_module-08-updating-and-deleting.mp3",
-    "text": "None of these mistakes require advanced SQL knowledge to make. They're typos, mental slips, and moments of inattention. That's exactly what makes them so dangerous -- and exactly why the safety habits we've been drilling matter so much. The SELECT-first rule and transactions are your two best friends here.",
+    "text": "Think of a transaction like an envelope. You put all your SQL statements inside the envelope, and you don't mail it until you're ready. BEGIN opens the envelope. Each statement goes inside. COMMIT seals it and sends it. ROLLBACK shreds the whole thing. Nothing inside the envelope affects the database until you COMMIT.",
     "size_bytes": 321872
   },
   {
     "index": 9,
     "module": "module-08-updating-and-deleting",
     "audio_file": "09_module-08-updating-and-deleting.mp3",
-    "text": "Let's recap. UPDATE and DELETE are powerful and permanent. Your safety net is a three-part system: test with SELECT first, use transactions for multi-step operations, and always double-check your WHERE clause. Master those three habits and you can confidently modify data without losing sleep. Next up, we'll look at how to make your queries faster and your databases more secure.",
+    "text": "The pattern is always the same: multiple related changes that must succeed or fail together. Anytime you find yourself writing two or more statements that are logically connected -- where one without the other would leave your data in a broken state -- wrap them in a transaction. It's cheap insurance.",
     "size_bytes": 399195
   },
   {
     "index": 10,
     "module": "module-08-updating-and-deleting",
     "audio_file": "10_module-08-updating-and-deleting.mp3",
-    "text": "You now know how to do everything with data -- create it, read it, update it, delete it. The full CRUD cycle. In Module 9, we zoom out and ask the bigger questions: how do we make this fast? How do we make this secure? How do we design databases that don't become a tangled mess? See you there.",
+    "text": "Here's the workflow I want you to internalize. Type BEGIN TRANSACTION. Run your changes. Run a SELECT to verify the result looks right. If it does, COMMIT. If it doesn't, ROLLBACK. That sequence -- begin, change, verify, commit or rollback -- is the safest way to do surgery on a database. Do that every single time until it becomes muscle memory. It turns every risky operation into a preview you can walk away from.",
     "size_bytes": 339008
+  },
+  {
+    "index": 11,
+    "module": "module-08-updating-and-deleting",
+    "audio_file": "11_module-08-updating-and-deleting.mp3",
+    "text": "None of these mistakes require advanced SQL knowledge to make. They're typos, mental slips, and moments of inattention. That's exactly what makes them so dangerous -- and exactly why the safety habits we've been drilling matter so much. The SELECT-first rule and transactions are your two best friends here.",
+    "size_bytes": 341934
+  },
+  {
+    "index": 12,
+    "module": "module-08-updating-and-deleting",
+    "audio_file": "12_module-08-updating-and-deleting.mp3",
+    "text": "The transaction exercise is the one I really want you to do. Seeing ROLLBACK actually undo a DELETE you just ran is a genuinely reassuring experience -- it turns transactions from an abstract concept into a tool you trust. Run the DELETE statements, check that the rows are gone with a SELECT, then ROLLBACK, then SELECT again and watch the rows come back. That moment is why we teach transactions.",
+    "size_bytes": 467740
+  },
+  {
+    "index": 13,
+    "module": "module-08-updating-and-deleting",
+    "audio_file": "13_module-08-updating-and-deleting.mp3",
+    "text": "Let's recap. UPDATE and DELETE are powerful and permanent. Your safety net is a three-part system: test with SELECT first, use transactions for multi-step operations, and always double-check your WHERE clause. Master those three habits and you can confidently modify data without losing sleep. Next up, we'll look at how to make your queries faster and your databases more secure.",
+    "size_bytes": 406718
+  },
+  {
+    "index": 14,
+    "module": "module-08-updating-and-deleting",
+    "audio_file": "14_module-08-updating-and-deleting.mp3",
+    "text": "You now know how to do everything with data -- create it, read it, update it, delete it. The full CRUD cycle. In Module 9, we zoom out and ask the bigger questions: how do we make this fast? How do we make this secure? How do we design databases that don't become a tangled mess? See you there.",
+    "size_bytes": 342770
   }
 ]

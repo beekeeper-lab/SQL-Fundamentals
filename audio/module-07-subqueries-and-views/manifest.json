@@ -59,35 +59,42 @@
     "index": 9,
     "module": "module-07-subqueries-and-views",
     "audio_file": "09_module-07-subqueries-and-views.mp3",
-    "text": "When you face a complex question, break it into pieces. What do I need to know first? Write that as a subquery. What do I need to know next? Wrap it in another layer. Build from the inside out, test each piece, and then combine. That's the method. It works every time.",
+    "text": "Views don't have an ALTER VIEW statement in most databases -- at least not one you should rely on. The accepted pattern is drop and recreate. The IF EXISTS clause keeps things safe the first time you run the script when no view exists yet. You'll find yourself keeping a little block at the top of your SQL scripts that drops every view in reverse dependency order, then recreates them all. It's a tiny bit of ceremony that makes your schema reproducible, which is exactly what you want.",
     "size_bytes": 333993
   },
   {
     "index": 10,
     "module": "module-07-subqueries-and-views",
     "audio_file": "10_module-07-subqueries-and-views.mp3",
-    "text": "The question I get most is \"subquery or join?\" and the honest answer is: it depends on readability. Both can solve the same problem. Subqueries read more like English -- \"find students where the GPA is above the average.\" Joins are often more efficient for combining data. Learn both, and use whichever makes your intent clearer to the next person who reads your code.",
+    "text": "When you face a complex question, break it into pieces. What do I need to know first? Write that as a subquery. What do I need to know next? Wrap it in another layer. Build from the inside out, test each piece, and then combine. That's the method. It works every time.",
     "size_bytes": 423018
   },
   {
     "index": 11,
     "module": "module-07-subqueries-and-views",
     "audio_file": "11_module-07-subqueries-and-views.mp3",
-    "text": "Exercise 5 is the one that will really test your understanding of correlated subqueries. The subquery needs to find the MAX GPA for the current student's major, and then the outer query checks if the student's GPA matches that max. Think about what the correlation point is -- what value from the outer query does the inner query need?",
+    "text": "The question I get most is \"subquery or join?\" and the honest answer is: it depends on readability. Both can solve the same problem. Subqueries read more like English -- \"find students where the GPA is above the average.\" Joins are often more efficient for combining data. Learn both, and use whichever makes your intent clearer to the next person who reads your code.",
     "size_bytes": 356145
   },
   {
     "index": 12,
     "module": "module-07-subqueries-and-views",
     "audio_file": "12_module-07-subqueries-and-views.mp3",
-    "text": "Quick recap. Scalar subqueries for single values. IN and NOT IN for lists. EXISTS for checking if rows exist. Derived tables for intermediate result sets. Correlated subqueries when the inner query needs to reference the outer query. And views for saving your favorite complex queries so you never have to retype them. That's your subquery and views toolkit. Use it well.",
+    "text": "Exercise 5 is the one that will really test your understanding of correlated subqueries. The subquery needs to find the MAX GPA for the current student's major, and then the outer query checks if the student's GPA matches that max. Think about what the correlation point is -- what value from the outer query does the inner query need?",
     "size_bytes": 435139
   },
   {
     "index": 13,
     "module": "module-07-subqueries-and-views",
     "audio_file": "13_module-07-subqueries-and-views.mp3",
-    "text": "You now know how to query data in incredibly sophisticated ways -- joins, subqueries, views. But so far, you've only been reading. In the next module, we'll learn how to change what's already there. UPDATE and DELETE are powerful, and just a little bit dangerous. We'll make sure you know how to use them safely. See you in Module 8.",
+    "text": "Quick recap. Scalar subqueries for single values. IN and NOT IN for lists. EXISTS for checking if rows exist. Derived tables for intermediate result sets. Correlated subqueries when the inner query needs to reference the outer query. And views for saving your favorite complex queries so you never have to retype them. That's your subquery and views toolkit. Use it well.",
     "size_bytes": 360742
+  },
+  {
+    "index": 14,
+    "module": "module-07-subqueries-and-views",
+    "audio_file": "14_module-07-subqueries-and-views.mp3",
+    "text": "You now know how to query data in incredibly sophisticated ways -- joins, subqueries, views. But so far, you've only been reading. In the next module, we'll learn how to change what's already there. UPDATE and DELETE are powerful, and just a little bit dangerous. We'll make sure you know how to use them safely. See you in Module 8.",
+    "size_bytes": 393343
   }
 ]

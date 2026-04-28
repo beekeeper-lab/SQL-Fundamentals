@@ -24,35 +24,49 @@
     "index": 4,
     "module": "module-01-creating-tables",
     "audio_file": "04_module-01-creating-tables.mp3",
-    "text": "Foreign keys are where the magic of relational databases really shows up. Without them, you could enroll a student who doesn't exist in a course that doesn't exist. With them, the database guarantees that every reference points to something real. It's like a hyperlink that's guaranteed to never be a 404 error.",
+    "text": "Look at that students table for a second. Six lines of SQL, and each line is doing real work. One line guarantees uniqueness. One line guarantees a valid GPA range. One line fills in today's date automatically. When you see a well-designed CREATE TABLE statement, it reads like a specification document -- except the database actually enforces every rule. That's the goal. Make your tables self-documenting and self-defending.",
     "size_bytes": 341934
   },
   {
     "index": 5,
     "module": "module-01-creating-tables",
     "audio_file": "05_module-01-creating-tables.mp3",
-    "text": "DROP TABLE is the delete key for tables. Use it freely during learning -- you can always recreate the table. But in a production database with real data? Treat it like a loaded weapon. The IF EXISTS clause is your safety catch -- always include it.",
+    "text": "Foreign keys are where the magic of relational databases really shows up. Without them, you could enroll a student who doesn't exist in a course that doesn't exist. With them, the database guarantees that every reference points to something real. It's like a hyperlink that's guaranteed to never be a 404 error.",
     "size_bytes": 302646
   },
   {
     "index": 6,
     "module": "module-01-creating-tables",
     "audio_file": "06_module-01-creating-tables.mp3",
-    "text": "Exercise 4 is the most important one here. The enrollments table has a composite primary key AND foreign keys -- that's real-world table design. If you can build that table and understand why each constraint is there, you've leveled up significantly from Module 0. Take your time and make sure you understand every line.",
+    "text": "DROP TABLE is the delete key for tables. Use it freely during learning -- you can always recreate the table. But in a production database with real data? Treat it like a loaded weapon. The IF EXISTS clause is your safety catch -- always include it.",
     "size_bytes": 316021
   },
   {
     "index": 7,
     "module": "module-01-creating-tables",
     "audio_file": "07_module-01-creating-tables.mp3",
-    "text": "Let's recap. You started this module knowing how to create basic tables. Now you know how to create tables with real rules -- types that describe the data, constraints that enforce quality, and foreign keys that connect tables together. Your tables went from empty spreadsheets to self-defending data structures. In the next module, you'll learn how to fill these tables with data -- and what happens when data breaks the rules.",
+    "text": "The primary-key-versus-unique question comes up in every cohort. Here's the shorthand. Primary key is the row's official name -- the one the database uses to find it quickly. Unique is just a promise that no two rows share a value. One table, one primary key. But you can have many unique columns. Use primary key for identity, unique for anything else that shouldn't repeat.",
     "size_bytes": 427616
   },
   {
     "index": 8,
     "module": "module-01-creating-tables",
     "audio_file": "08_module-01-creating-tables.mp3",
-    "text": "That's Module 1 in the books. You know data types, constraints, composite keys, foreign keys, ALTER TABLE, and DROP TABLE. That's a serious toolkit. Next up, we're going to fill these tables with data using INSERT -- single rows, multiple rows, and what to do when things go wrong. See you in Module 2.",
+    "text": "Exercise 4 is the most important one here. The enrollments table has a composite primary key AND foreign keys -- that's real-world table design. If you can build that table and understand why each constraint is there, you've leveled up significantly from Module 0. Take your time and make sure you understand every line.",
     "size_bytes": 354891
+  },
+  {
+    "index": 9,
+    "module": "module-01-creating-tables",
+    "audio_file": "09_module-01-creating-tables.mp3",
+    "text": "Let's recap. You started this module knowing how to create basic tables. Now you know how to create tables with real rules -- types that describe the data, constraints that enforce quality, and foreign keys that connect tables together. Your tables went from empty spreadsheets to self-defending data structures. In the next module, you'll learn how to fill these tables with data -- and what happens when data breaks the rules.",
+    "size_bytes": 451439
+  },
+  {
+    "index": 10,
+    "module": "module-01-creating-tables",
+    "audio_file": "10_module-01-creating-tables.mp3",
+    "text": "That's Module 1 in the books. You know data types, constraints, composite keys, foreign keys, ALTER TABLE, and DROP TABLE. That's a serious toolkit. Next up, we're going to fill these tables with data using INSERT -- single rows, multiple rows, and what to do when things go wrong. See you in Module 2.",
+    "size_bytes": 386656
   }
 ]

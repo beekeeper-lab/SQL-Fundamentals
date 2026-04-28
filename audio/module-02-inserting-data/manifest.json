@@ -17,49 +17,63 @@
     "index": 3,
     "module": "module-02-inserting-data",
     "audio_file": "03_module-02-inserting-data.mp3",
-    "text": "Multi-row INSERT is one of those things that seems like a small convenience but matters a lot in practice. When you're populating a table with test data or loading initial records, one multi-row INSERT is cleaner to read, easier to edit, and faster for the database to process. Get comfortable with this syntax -- you'll use it constantly.",
+    "text": "I keep coming back to this one because it matters. The shortcut saves you maybe a dozen keystrokes. But the day someone adds a new column to the table and pushes it to production, every short-form INSERT in your codebase starts failing -- or worse, silently puts data in the wrong column. That's the kind of bug that makes you look bad on a Monday morning. Write the column list. Always. Future you will thank present you.",
     "size_bytes": 365758
   },
   {
     "index": 4,
     "module": "module-02-inserting-data",
     "audio_file": "04_module-02-inserting-data.mp3",
-    "text": "Here's the way to think about NULL. If I ask you \"Is an unknown number equal to another unknown number?\" -- you can't say yes. They MIGHT be equal, but you don't KNOW. That's why NULL equals NULL isn't true -- it's unknown. This seems philosophical, but it causes real bugs in real applications. When you see NULL, think \"unknown,\" and remember to use IS NULL, never equals NULL.",
+    "text": "Multi-row INSERT is one of those things that seems like a small convenience but matters a lot in practice. When you're populating a table with test data or loading initial records, one multi-row INSERT is cleaner to read, easier to edit, and faster for the database to process. Get comfortable with this syntax -- you'll use it constantly.",
     "size_bytes": 472755
   },
   {
     "index": 5,
     "module": "module-02-inserting-data",
     "audio_file": "05_module-02-inserting-data.mp3",
-    "text": "This is a subtle but important distinction. If you want the default value, leave the column OUT of your column list entirely. If you include it and pass NULL, you're telling the database \"I specifically want nothing here.\" The database respects your explicit instruction over the default. It's like a form that pre-fills your country -- if you erase it and submit blank, the system doesn't put the default back. You said blank, so blank it is.",
+    "text": "Here's the way to think about NULL. If I ask you \"Is an unknown number equal to another unknown number?\" -- you can't say yes. They MIGHT be equal, but you don't KNOW. That's why NULL equals NULL isn't true -- it's unknown. This seems philosophical, but it causes real bugs in real applications. When you see NULL, think \"unknown,\" and remember to use IS NULL, never equals NULL.",
     "size_bytes": 464814
   },
   {
     "index": 6,
     "module": "module-02-inserting-data",
     "audio_file": "06_module-02-inserting-data.mp3",
-    "text": "Here's my rule of thumb for conflict handling. If you're loading data and want to keep what you already have, use INSERT OR IGNORE. If you're loading data and want the newest version to win, use INSERT OR REPLACE -- but be careful, because it's a delete-then-insert, not an update. For most day-to-day work, the default error behavior is what you want -- it forces you to deal with the problem explicitly rather than sweeping it under the rug.",
+    "text": "This is a subtle but important distinction. If you want the default value, leave the column OUT of your column list entirely. If you include it and pass NULL, you're telling the database \"I specifically want nothing here.\" The database respects your explicit instruction over the default. It's like a form that pre-fills your country -- if you erase it and submit blank, the system doesn't put the default back. You said blank, so blank it is.",
     "size_bytes": 449768
   },
   {
     "index": 7,
     "module": "module-02-inserting-data",
     "audio_file": "07_module-02-inserting-data.mp3",
-    "text": "Pay special attention to Exercise 6. The INSERT OR REPLACE test is the one that surprises people -- when you replace Alice, her ID changes. That's because REPLACE deletes the old row and inserts a brand new one. If other tables had foreign keys pointing to Alice's old ID, those references would break. That's a real-world consequence worth understanding.",
+    "text": "Here's my rule of thumb for conflict handling. If you're loading data and want to keep what you already have, use INSERT OR IGNORE. If you're loading data and want the newest version to win, use INSERT OR REPLACE -- but be careful, because it's a delete-then-insert, not an update. For most day-to-day work, the default error behavior is what you want -- it forces you to deal with the problem explicitly rather than sweeping it under the rug.",
     "size_bytes": 382894
   },
   {
     "index": 8,
     "module": "module-02-inserting-data",
     "audio_file": "08_module-02-inserting-data.mp3",
-    "text": "Here's your Module 2 recap. You learned INSERT in all its forms -- single row, multi-row, with and without explicit columns. You learned that NULL is its own special kind of nothing. You learned how DEFAULT values work, and you learned three strategies for handling conflicts. Most importantly, you populated a complete university database with real data across three interconnected tables. In the next module, we'll finally learn SELECT in depth -- the most powerful and most-used command in all of SQL.",
+    "text": "That O'Brien question is a classic, and the double-quote trick surprises people every time. Two single quotes in a row -- that's how SQL escapes a quote inside a string. It looks weird, but it's the standard. The other two gotchas in this section are order-of-insertion for foreign keys, and letting AUTOINCREMENT do its job. Keep those in mind and your inserts will just work.",
     "size_bytes": 601487
   },
   {
     "index": 9,
     "module": "module-02-inserting-data",
     "audio_file": "09_module-02-inserting-data.mp3",
-    "text": "That wraps up Module 2. You know how to get data in. Next up, you learn how to get data out -- selectively, precisely, and powerfully. SELECT is the star of the SQL show, and Module 3 is where it takes the stage. See you there.",
+    "text": "Pay special attention to Exercise 6. The INSERT OR REPLACE test is the one that surprises people -- when you replace Alice, her ID changes. That's because REPLACE deletes the old row and inserts a brand new one. If other tables had foreign keys pointing to Alice's old ID, those references would break. That's a real-world consequence worth understanding.",
     "size_bytes": 272135
+  },
+  {
+    "index": 10,
+    "module": "module-02-inserting-data",
+    "audio_file": "10_module-02-inserting-data.mp3",
+    "text": "Here's your Module 2 recap. You learned INSERT in all its forms -- single row, multi-row, with and without explicit columns. You learned that NULL is its own special kind of nothing. You learned how DEFAULT values work, and you learned three strategies for handling conflicts. Most importantly, you populated a complete university database with real data across three interconnected tables. In the next module, we'll finally learn SELECT in depth -- the most powerful and most-used command in all of SQL.",
+    "size_bytes": 581425
+  },
+  {
+    "index": 11,
+    "module": "module-02-inserting-data",
+    "audio_file": "11_module-02-inserting-data.mp3",
+    "text": "That wraps up Module 2. You know how to get data in. Next up, you learn how to get data out -- selectively, precisely, and powerfully. SELECT is the star of the SQL show, and Module 3 is where it takes the stage. See you there.",
+    "size_bytes": 263358
   }
 ]

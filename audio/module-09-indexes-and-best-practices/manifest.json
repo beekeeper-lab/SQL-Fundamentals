@@ -24,49 +24,77 @@
     "index": 4,
     "module": "module-09-indexes-and-best-practices",
     "audio_file": "04_module-09-indexes-and-best-practices.mp3",
-    "text": "EXPLAIN QUERY PLAN is like asking the database to show its work. Instead of guessing whether your index is helping, you can see exactly what strategy the database is using. SCAN means slow. SEARCH USING INDEX means fast. That's all you need to know to start optimizing.",
+    "text": "The phone book analogy is the one that sticks for most people. A phone book is sorted by last name, then first name. You can find all the Smiths instantly because last name is the primary sort. You can find John Smith quickly because within the Smiths, it's sorted by first name. But finding every John in the book? You'd have to read every page. That's exactly how composite indexes work. Put the column you filter on most often first, and the index earns its keep on almost every query.",
     "size_bytes": 333157
   },
   {
     "index": 5,
     "module": "module-09-indexes-and-best-practices",
     "audio_file": "05_module-09-indexes-and-best-practices.mp3",
-    "text": "SQL injection has been around for decades and it's still one of the top security vulnerabilities. Not because it's hard to prevent -- the fix is literally one line of code -- but because developers forget. Or they think \"nobody would try that on my little app.\" They would. They do. Use parameterized queries everywhere, every time, no exceptions.",
+    "text": "EXPLAIN QUERY PLAN is like asking the database to show its work. Instead of guessing whether your index is helping, you can see exactly what strategy the database is using. SCAN means slow. SEARCH USING INDEX means fast. That's all you need to know to start optimizing.",
     "size_bytes": 405882
   },
   {
     "index": 6,
     "module": "module-09-indexes-and-best-practices",
     "audio_file": "06_module-09-indexes-and-best-practices.mp3",
-    "text": "The progression is logical. 1NF says no lists in cells. 2NF says every column depends on the whole key. 3NF says no column depends on another non-key column. Each step reduces redundancy and makes your data harder to accidentally mess up. For most applications, getting to 3NF is the sweet spot.",
+    "text": "SQL injection has been around for decades and it's still one of the top security vulnerabilities. Not because it's hard to prevent -- the fix is literally one line of code -- but because developers forget. Or they think \"nobody would try that on my little app.\" They would. They do. Use parameterized queries everywhere, every time, no exceptions.",
     "size_bytes": 356981
   },
   {
     "index": 7,
     "module": "module-09-indexes-and-best-practices",
     "audio_file": "07_module-09-indexes-and-best-practices.mp3",
-    "text": "The difference between a beginner and a professional often isn't what queries they write -- it's how they write them. Clean SQL is easier to read, easier to debug, and often faster. The habits you build now will serve you for your entire career.",
+    "text": "The question about why databases don't just auto-index everything is a really common one. The answer is always a trade-off. Every index makes reads faster and writes slower and takes up disk space. On a tiny table, none of that matters. On a table with millions of rows and lots of inserts, it matters a lot. Your job as the developer is to decide which columns get indexes based on how that table is actually used. There's no automatic answer -- it's a design call.",
     "size_bytes": 275897
   },
   {
     "index": 8,
     "module": "module-09-indexes-and-best-practices",
     "audio_file": "08_module-09-indexes-and-best-practices.mp3",
-    "text": "This is what it all looks like when you put it together. Every naming convention, every normalization rule, every indexing decision -- they all stack on top of each other to create a database that's fast, consistent, and a pleasure to work with. This is the difference between a hobby database and a professional one.",
+    "text": "The progression is logical. 1NF says no lists in cells. 2NF says every column depends on the whole key. 3NF says no column depends on another non-key column. Each step reduces redundancy and makes your data harder to accidentally mess up. For most applications, getting to 3NF is the sweet spot.",
     "size_bytes": 379133
   },
   {
     "index": 9,
     "module": "module-09-indexes-and-best-practices",
     "audio_file": "09_module-09-indexes-and-best-practices.mp3",
-    "text": "That wraps up not just this module, but the entire SQL Fundamentals course. You started by learning what a database even is, and now you're designing normalized schemas, optimizing queries with indexes, and defending against SQL injection. That's a real skill set. Whether you're building your own applications or working with a team, you now have the foundation to work with data professionally. Nice work.",
+    "text": "Nobody teaches naming conventions in a beginner course, but every senior developer has strong opinions about them. Pick a convention and stick to it. Tables plural, columns singular, everything lowercase with underscores. Foreign keys name the table they point to. Indexes name the table and the columns. It looks like fussiness, but it pays off the first time you're reading someone else's schema and can figure out what every column does without having to ask. Consistency is a form of kindness to the next developer.",
     "size_bytes": 449768
   },
   {
     "index": 10,
     "module": "module-09-indexes-and-best-practices",
     "audio_file": "10_module-09-indexes-and-best-practices.mp3",
-    "text": "You've gone from zero to a solid foundation in SQL. That's not a small thing. Databases are everywhere -- behind every website, every app, every system that stores and retrieves information. You now speak their language. Go build something.",
+    "text": "The difference between a beginner and a professional often isn't what queries they write -- it's how they write them. Clean SQL is easier to read, easier to debug, and often faster. The habits you build now will serve you for your entire career.",
     "size_bytes": 301810
+  },
+  {
+    "index": 11,
+    "module": "module-09-indexes-and-best-practices",
+    "audio_file": "11_module-09-indexes-and-best-practices.mp3",
+    "text": "This is what it all looks like when you put it together. Every naming convention, every normalization rule, every indexing decision -- they all stack on top of each other to create a database that's fast, consistent, and a pleasure to work with. This is the difference between a hobby database and a professional one.",
+    "size_bytes": 371191
+  },
+  {
+    "index": 12,
+    "module": "module-09-indexes-and-best-practices",
+    "audio_file": "12_module-09-indexes-and-best-practices.mp3",
+    "text": "The e-commerce schema exercise is the capstone. It pulls together everything -- normalization, foreign keys, constraints, and indexing -- on a problem you've seen a hundred times as a customer. Pay special attention to the order-items table. That's where most beginners stumble, because it stores the price at the time of purchase separately from the current product price. That's deliberate. Prices change. Orders don't. Getting that detail right is the difference between a student schema and a production schema.",
+    "size_bytes": 562199
+  },
+  {
+    "index": 13,
+    "module": "module-09-indexes-and-best-practices",
+    "audio_file": "13_module-09-indexes-and-best-practices.mp3",
+    "text": "That wraps up not just this module, but the entire SQL Fundamentals course. You started by learning what a database even is, and now you're designing normalized schemas, optimizing queries with indexes, and defending against SQL injection. That's a real skill set. Whether you're building your own applications or working with a team, you now have the foundation to work with data professionally. Nice work.",
+    "size_bytes": 456455
+  },
+  {
+    "index": 14,
+    "module": "module-09-indexes-and-best-practices",
+    "audio_file": "14_module-09-indexes-and-best-practices.mp3",
+    "text": "You've gone from zero to a solid foundation in SQL. That's not a small thing. Databases are everywhere -- behind every website, every app, every system that stores and retrieves information. You now speak their language. Go build something.",
+    "size_bytes": 311841
   }
 ]

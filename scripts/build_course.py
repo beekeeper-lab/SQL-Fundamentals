@@ -123,6 +123,10 @@ def _normalize_narration_text(text: str) -> str:
     """
     text = re.sub(r'<[^>]+>', '', text)
     text = re.sub(r'🎙️\s*', '', text)
+    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)       # bold
+    text = re.sub(r'\*(.+?)\*', r'\1', text)            # italic
+    text = re.sub(r'`(.+?)`', r'\1', text)              # inline code
+    text = re.sub(r'\[(.+?)\]\([^)]+\)', r'\1', text)  # links
     return ' '.join(text.split())
 
 
